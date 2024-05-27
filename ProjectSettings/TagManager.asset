@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Background
   - Button
+  - Foreground
   layers:
   - Default
   - TransparentFX
@@ -42,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1912183075
+    locked: 0
+  - name: Foreground
+    uniqueID: 2928565821
     locked: 0

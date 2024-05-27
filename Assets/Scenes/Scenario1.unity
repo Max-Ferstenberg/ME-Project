@@ -191,7 +191,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &468715786
+--- !u!1 &181237753
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,44 +199,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 468715787}
-  - component: {fileID: 468715789}
-  - component: {fileID: 468715788}
-  - component: {fileID: 468715791}
-  - component: {fileID: 468715792}
+  - component: {fileID: 181237754}
+  - component: {fileID: 181237756}
+  - component: {fileID: 181237755}
+  - component: {fileID: 181237758}
+  - component: {fileID: 181237757}
   m_Layer: 5
-  m_Name: PlayerImage
+  m_Name: CenterCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &468715787
+--- !u!224 &181237754
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468715786}
+  m_GameObject: {fileID: 181237753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 680203308}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -380, y: -160}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &468715788
+--- !u!114 &181237755
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468715786}
+  m_GameObject: {fileID: 181237753}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -244,13 +244,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 64aa00ef2dd98c3489ca9c9caa6ada08, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -260,25 +260,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &468715789
+--- !u!222 &181237756
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468715786}
+  m_GameObject: {fileID: 181237753}
   m_CullTransparentMesh: 1
---- !u!95 &468715791
+--- !u!95 &181237757
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468715786}
+  m_GameObject: {fileID: 181237753}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0eb136774c91bff45ac73be174a937c8, type: 2}
+  m_Controller: {fileID: 9100000, guid: b178ed647d2e2ef4bac4e008e3dfd7a1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -289,19 +289,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!225 &468715792
+--- !u!225 &181237758
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468715786}
+  m_GameObject: {fileID: 181237753}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!1 &680203304
+--- !u!1 &369657549
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -309,112 +309,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 680203308}
-  - component: {fileID: 680203307}
-  - component: {fileID: 680203306}
-  - component: {fileID: 680203305}
-  - component: {fileID: 680203310}
-  - component: {fileID: 680203309}
+  - component: {fileID: 369657550}
+  - component: {fileID: 369657552}
+  - component: {fileID: 369657551}
+  - component: {fileID: 369657554}
+  - component: {fileID: 369657553}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: RightCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &680203305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680203304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &680203306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680203304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
---- !u!223 &680203307
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680203304}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!224 &680203308
+--- !u!224 &369657550
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680203304}
+  m_GameObject: {fileID: 369657549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.5, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 859515679}
-  - {fileID: 1514667001}
-  - {fileID: 468715787}
-  - {fileID: 969735051}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 680203308}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &680203309
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 241, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &369657551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680203304}
+  m_GameObject: {fileID: 369657549}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -422,13 +354,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c1028cd4ae291814fb5c3ff061abd3d7, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -438,15 +370,48 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &680203310
+--- !u!222 &369657552
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680203304}
+  m_GameObject: {fileID: 369657549}
   m_CullTransparentMesh: 1
---- !u!1 &718772334
+--- !u!95 &369657553
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369657549}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b178ed647d2e2ef4bac4e008e3dfd7a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!225 &369657554
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369657549}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!1 &435828119
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -454,9 +419,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 718772335}
-  - component: {fileID: 718772337}
-  - component: {fileID: 718772336}
+  - component: {fileID: 435828120}
+  - component: {fileID: 435828122}
+  - component: {fileID: 435828121}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -464,32 +429,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &718772335
+--- !u!224 &435828120
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718772334}
+  m_GameObject: {fileID: 435828119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 995621777}
+  m_Father: {fileID: 1839375043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &718772336
+--- !u!114 &435828121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718772334}
+  m_GameObject: {fileID: 435828119}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -503,7 +468,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next
+  m_text: Button
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -572,14 +537,271 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &718772337
+--- !u!222 &435828122
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718772334}
+  m_GameObject: {fileID: 435828119}
   m_CullTransparentMesh: 1
+--- !u!1 &680203304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 680203308}
+  - component: {fileID: 680203307}
+  - component: {fileID: 680203306}
+  - component: {fileID: 680203305}
+  - component: {fileID: 680203310}
+  - component: {fileID: 680203309}
+  m_Layer: 5
+  m_Name: Canvas Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &680203305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680203304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 1
+--- !u!114 &680203306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680203304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &680203307
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680203304}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &680203308
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680203304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 369657550}
+  - {fileID: 181237754}
+  - {fileID: 824215147}
+  - {fileID: 1514667001}
+  - {fileID: 859515679}
+  - {fileID: 1839375043}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &680203309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680203304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c1028cd4ae291814fb5c3ff061abd3d7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &680203310
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680203304}
+  m_CullTransparentMesh: 1
+--- !u!1 &824215146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 824215147}
+  - component: {fileID: 824215149}
+  - component: {fileID: 824215148}
+  - component: {fileID: 824215151}
+  - component: {fileID: 824215150}
+  m_Layer: 5
+  m_Name: LeftCharacter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &824215147
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824215146}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.5, y: 3, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 680203308}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -236, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &824215148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824215146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &824215149
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824215146}
+  m_CullTransparentMesh: 1
+--- !u!225 &824215150
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824215146}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!95 &824215151
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824215146}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b178ed647d2e2ef4bac4e008e3dfd7a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &859515678
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -164}
+  m_AnchoredPosition: {x: 0, y: -70}
   m_SizeDelta: {x: -222, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &859515680
@@ -789,237 +1011,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &969735050
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 969735051}
-  - component: {fileID: 969735053}
-  - component: {fileID: 969735052}
-  - component: {fileID: 969735054}
-  - component: {fileID: 969735055}
-  m_Layer: 5
-  m_Name: NPCImage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &969735051
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969735050}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 680203308}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 380, y: -160}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &969735052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969735050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a983e96e8f4fb81449a65af4da9ccb52, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &969735053
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969735050}
-  m_CullTransparentMesh: 1
---- !u!95 &969735054
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969735050}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a6e6a39a602b8144cac9dd0f4df8d29e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!225 &969735055
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969735050}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!1 &995621776
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 995621777}
-  - component: {fileID: 995621780}
-  - component: {fileID: 995621779}
-  - component: {fileID: 995621778}
-  m_Layer: 5
-  m_Name: Next
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &995621777
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995621776}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 718772335}
-  m_Father: {fileID: 1514667001}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 298, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &995621778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995621776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 995621779}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &995621779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995621776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &995621780
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995621776}
-  m_CullTransparentMesh: 1
 --- !u!1 &1514667000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,6 +1023,7 @@ GameObject:
   - component: {fileID: 1514667003}
   - component: {fileID: 1514667002}
   - component: {fileID: 1514667004}
+  - component: {fileID: 1514667006}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -1052,13 +1044,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2116143493}
-  - {fileID: 995621777}
   m_Father: {fileID: 680203308}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -155}
-  m_SizeDelta: {x: 650, y: 60}
+  m_AnchoredPosition: {x: -0.5584, y: -118.7401}
+  m_SizeDelta: {x: 713.6639, y: 74.5197}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514667002
 MonoBehaviour:
@@ -1074,7 +1065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1119,6 +1110,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!225 &1514667006
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514667000}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1647771798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,6 +1168,127 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1839375042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1839375043}
+  - component: {fileID: 1839375047}
+  - component: {fileID: 1839375046}
+  - component: {fileID: 1839375045}
+  m_Layer: 5
+  m_Name: NextButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1839375043
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839375042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 435828120}
+  m_Father: {fileID: 680203308}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 316, y: -118.74}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1839375045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839375042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1839375046}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1839375046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839375042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1839375047
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839375042}
+  m_CullTransparentMesh: 1
 --- !u!1 &1948704603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,6 +1394,8 @@ GameObject:
   - component: {fileID: 2116143493}
   - component: {fileID: 2116143495}
   - component: {fileID: 2116143494}
+  - component: {fileID: 2116143497}
+  - component: {fileID: 2116143498}
   m_Layer: 5
   m_Name: Dialogue Text (TMP)
   m_TagString: Untagged
@@ -1293,8 +1419,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -269, y: 12}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -259.5063, y: 12}
+  m_SizeDelta: {x: 218.9874, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2116143494
 MonoBehaviour:
@@ -1343,7 +1469,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.75
+  m_fontSize: 57.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1379,7 +1505,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 54.269897, y: 11.375221, z: -441.02533, w: -10.253372}
+  m_margin: {x: 18.528961, y: 3.5568848, z: -435.4406, w: -18.071716}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1393,6 +1519,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116143492}
   m_CullTransparentMesh: 1
+--- !u!225 &2116143497
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116143492}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!223 &2116143498
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116143492}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!114 &2286067376845419734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1415,9 +1576,24 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 1
     isResponse: 0
-    characterImage: {fileID: 21300000, guid: 79676147ab54faa40906becbfec1972a, type: 3}
-    isPlayerCharacter: 0
-    hasSprite: 1
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 8fe04bb35c7241a44b6bb4a54bc59382, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 1
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 1
     text: <i>Students shuffle around the room in their seats, some getting up in
       small clusters to head to the canteen. No one approaches Aaron, who sits by
@@ -1427,18 +1603,48 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 2
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: df22f23a3f89d334cadf4c0dace6d009, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 1
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 2
     text: "Anna: Hey Sofia, did any of that seem\u2026 right to you? Like a lot of
       that sounded very missing-important-context right? "
     responseIDs: 
     nextDialogueID: 3
     isResponse: 0
-    characterImage: {fileID: 21300000, guid: 4e4c6b43a50184f4390086bd6076fec8, type: 3}
-    isPlayerCharacter: 1
-    hasSprite: 1
+    leftImage: {fileID: 21300000, guid: 68baebc07d8c03245affa66e5ddb535f, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 1
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 1
+    centerImage: {fileID: 21300000, guid: e4c9931e684737b458ee24986e489842, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 1
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 3
     text: "Sofia: <i>Softly sighs while staring at the last slide on the projector.</i>
       Yeah, he didn\u2019t mention a word about any of the coups that have plagued
@@ -1448,9 +1654,24 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 4
     isResponse: 0
-    characterImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
-    isPlayerCharacter: 0
-    hasSprite: 1
+    leftImage: {fileID: 21300000, guid: 050cbbf85c22c3c41a3727c45945e19c, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: e74108016153b0c4db7eff63ac1b4fd5, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 4
     text: "Anna: ...It must really suck to see all of that context and stuff just\u2026
       not mentioned here at all. I\u2019m sorry you have to sit through all that
@@ -1458,9 +1679,24 @@ MonoBehaviour:
     responseIDs: 0000000001000000
     nextDialogueID: -1
     isResponse: 0
-    characterImage: {fileID: 21300000, guid: 4e4c6b43a50184f4390086bd6076fec8, type: 3}
-    isPlayerCharacter: 1
-    hasSprite: 1
+    leftImage: {fileID: 21300000, guid: 68baebc07d8c03245affa66e5ddb535f, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: e4c9931e684737b458ee24986e489842, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 5
     text: "Sofia: I mean, I do talk it through with you though. Laughs quietly. In
       fairness, it\u2019s more like me and Kacper complaining together \u2013 but
@@ -1468,9 +1704,24 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 7
     isResponse: 0
-    characterImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
-    isPlayerCharacter: 0
-    hasSprite: 1
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 6
     text: "Probably not, to be honest. <i>Shared look of defeat with Kacper.</i>
       Most lecturers like that are too set in their ways to bother changing lectures
@@ -1478,35 +1729,95 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 7
     isResponse: 0
-    characterImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
-    isPlayerCharacter: 0
-    hasSprite: 1
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 7
     text: "Kacper: I used to \u201Ctalk back\u201D sometimes as you say, but it never
       did me any good. I don\u2019t think it changed the learning much either"
     responseIDs: 
     nextDialogueID: 8
     isResponse: 0
-    characterImage: {fileID: 21300000, guid: 916c2e8c58d9d3d49a598ff5f7871c89, type: 3}
-    isPlayerCharacter: 0
-    hasSprite: 1
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 8
     text: "Sofia: Wish I could say I\u2019m surprised by that, but I\u2019m really
       not."
     responseIDs: 
     nextDialogueID: 9
     isResponse: 0
-    characterImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
-    isPlayerCharacter: 0
-    hasSprite: 1
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 9
     text: 'Anna: What, did the teacher get upset or something?'
     responseIDs: 
     nextDialogueID: 10
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 10
     text: "Kacper: Ehhh\u2026 Kacper waves his hand to indicate yes-and-no. Sometimes
       yes, mostly no. They\u2019d say to me thank you for speaking up, but I don\u2019t
@@ -1516,9 +1827,24 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 11
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 11
     text: "Sofia: Mhmm, yep. Like, I get that Aaron\u2019s probably inherited the
       module from however long ago and he\u2019s probably not familiar with all of
@@ -1528,18 +1854,48 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 12
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 12
     text: "Sofia: But still, yeah it does suck, especially when it\u2019s like the
       lecturer just doesn\u2019t seem to care about either the module or students. "
     responseIDs: 
     nextDialogueID: 13
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 13
     text: "Anna: \u2026I don\u2019t suppose that either of you want to do anything
       about it this time? Especially since it\u2019s not just been today for this
@@ -1548,9 +1904,24 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 14
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 14
     text: "Anna: \u2026I don\u2019t suppose that either of you want to do anything
       about it this time? Especially since it\u2019s not just been today for this
@@ -1559,9 +1930,24 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 15
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 15
     text: "Sofia: Yeah, but at this point it\u2019s like, what can I actually do?
       Why would he listen to me and make any changes to module halfway through the
@@ -1571,17 +1957,47 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 16
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 16
     text: 'Kacper: Nods in agreement. '
     responseIDs: 
     nextDialogueID: 17
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 17
     text: "Sofia: I remember you said you once nipped back at a teacher in high school
       and got detention for it, Kacper. Obviously they can\u2019t give us detention
@@ -1591,26 +2007,71 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 18
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 18
     text: 'Kacper: It was probably a bit different for you and for me though, Sofia.
       Our home countries are so far apart in culture, maybe it would be fine here? '
     responseIDs: 
     nextDialogueID: 19
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 19
     text: 'Anna: You think so, Kacper? '
     responseIDs: 0200000003000000
     nextDialogueID: -1
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 20
     text: "At university, I would rather wait because if someone, like a lecturer,
       has an issue, it\u2019s gonna be a much bigger problem for me compared to high
@@ -1620,9 +2081,24 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 22
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 21
     text: "I would like to say it immediately to be honest, because now I\u2019m
       older and I understand more than I did when it happened when I was younger,
@@ -1631,9 +2107,24 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 22
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 22
     text: "Sofia: Plus a lot of the stuff isn\u2019t exactly written down anyways
       \u2013 how do you explain that the reason that no one gets the public transport
@@ -1649,35 +2140,95 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 23
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 23
     text: 'Anna: ... '
     responseIDs: 
     nextDialogueID: 24
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 24
     text: "Sofia: Lucky him where it gets to be a \u201Clittle think\u201D problem
       and for us it\u2019s much more of a \u201Cmassive pain in the ass\u201D problem.  "
     responseIDs: 
     nextDialogueID: 25
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   - id: 25
     text: 'Anna: ...now I feel bad for giving this module the benefit of the doubt
       at the start of the term. '
     responseIDs: 
     nextDialogueID: 26
     isResponse: 0
-    characterImage: {fileID: 0}
-    isPlayerCharacter: 0
-    hasSprite: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
   responses:
   - id: 0
     text: 'You can talk it through with me if you want? '
@@ -1708,13 +2259,14 @@ MonoBehaviour:
   dialogueText: {fileID: 2116143494}
   responsePanel: {fileID: 859515678}
   responsePrefab: {fileID: 6291277767501914685, guid: 3043d4c867c0f9b4780d0ea22fc6d53b, type: 3}
-  nextButton: {fileID: 995621778}
+  nextButton: {fileID: 1839375045}
   dialogueDatabase: {fileID: 2286067376845419734}
-  dialogueBoxAnimator: {fileID: 1514667004}
-  playerCharacterAnimator: {fileID: 468715791}
-  npcCharacterAnimator: {fileID: 969735054}
-  playerCharacterImage: {fileID: 468715788}
-  npcCharacterImage: {fileID: 969735052}
+  leftImageAnimator: {fileID: 824215151}
+  centerImageAnimator: {fileID: 181237757}
+  rightImageAnimator: {fileID: 369657553}
+  leftImageComponent: {fileID: 824215148}
+  centerImageComponent: {fileID: 181237755}
+  rightImageComponent: {fileID: 369657551}
 --- !u!4 &5366149892479883751
 Transform:
   m_ObjectHideFlags: 0
