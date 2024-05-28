@@ -1594,6 +1594,7 @@ MonoBehaviour:
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
   - id: 1
     text: <i>Students shuffle around the room in their seats, some getting up in
       small clusters to head to the canteen. No one approaches Aaron, who sits by
@@ -1621,30 +1622,32 @@ MonoBehaviour:
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
   - id: 2
     text: "Anna: Hey Sofia, did any of that seem\u2026 right to you? Like a lot of
       that sounded very missing-important-context right? "
     responseIDs: 
     nextDialogueID: 3
     isResponse: 0
-    leftImage: {fileID: 21300000, guid: 68baebc07d8c03245affa66e5ddb535f, type: 3}
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
     isLeftImageVisible: 1
     isLeftImageTalking: 1
     shouldLeftImageFadeIn: 1
     shouldLeftImageFadeOut: 0
-    isLeftImageMirrored: 1
-    centerImage: {fileID: 21300000, guid: e4c9931e684737b458ee24986e489842, type: 3}
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
     isCenterImageVisible: 1
     isCenterImageTalking: 0
     shouldCenterImageFadeIn: 1
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
     isRightImageTalking: 0
-    shouldRightImageFadeIn: 0
+    shouldRightImageFadeIn: 1
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
   - id: 3
     text: "Sofia: <i>Softly sighs while staring at the last slide on the projector.</i>
       Yeah, he didn\u2019t mention a word about any of the coups that have plagued
@@ -1654,24 +1657,25 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 4
     isResponse: 0
-    leftImage: {fileID: 21300000, guid: 050cbbf85c22c3c41a3727c45945e19c, type: 3}
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
     isLeftImageVisible: 1
     isLeftImageTalking: 0
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 21300000, guid: e74108016153b0c4db7eff63ac1b4fd5, type: 3}
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
     isCenterImageVisible: 1
-    isCenterImageTalking: 1
+    isCenterImageTalking: 0
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
-    isRightImageTalking: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
   - id: 4
     text: "Anna: ...It must really suck to see all of that context and stuff just\u2026
       not mentioned here at all. I\u2019m sorry you have to sit through all that
@@ -1679,172 +1683,179 @@ MonoBehaviour:
     responseIDs: 0000000001000000
     nextDialogueID: -1
     isResponse: 0
-    leftImage: {fileID: 21300000, guid: 68baebc07d8c03245affa66e5ddb535f, type: 3}
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
     isLeftImageVisible: 1
     isLeftImageTalking: 1
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 21300000, guid: e4c9931e684737b458ee24986e489842, type: 3}
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
     isCenterImageVisible: 1
     isCenterImageTalking: 0
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
     isRightImageVisible: 0
     isRightImageTalking: 0
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
   - id: 5
-    text: "Sofia: I mean, I do talk it through with you though. Laughs quietly. In
-      fairness, it\u2019s more like me and Kacper complaining together \u2013 but
-      still appreciate you trying to understand what it\u2019s like for us."
+    text: "Sofia: I mean, I do talk it through with you though. <i>Laughs quietly.</i>
+      In fairness, it\u2019s more like me and Kacper complaining together \u2013
+      but still appreciate you trying to understand what it\u2019s like for us."
     responseIDs: 
     nextDialogueID: 7
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
     isLeftImageTalking: 0
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
     isCenterImageTalking: 0
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
-    isRightImageTalking: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
   - id: 6
-    text: "Probably not, to be honest. <i>Shared look of defeat with Kacper.</i>
+    text: "Sofia: Probably not, to be honest. <i>Shared look of defeat with Kacper.</i>
       Most lecturers like that are too set in their ways to bother changing lectures
       they don\u2019t care about anyway. "
     responseIDs: 
     nextDialogueID: 7
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
     isLeftImageTalking: 0
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
     isCenterImageTalking: 0
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
-    isRightImageTalking: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
   - id: 7
     text: "Kacper: I used to \u201Ctalk back\u201D sometimes as you say, but it never
       did me any good. I don\u2019t think it changed the learning much either"
     responseIDs: 
     nextDialogueID: 8
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
     isLeftImageTalking: 0
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
-    isCenterImageTalking: 0
+    centerImage: {fileID: 21300000, guid: 916c2e8c58d9d3d49a598ff5f7871c89, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
     isRightImageTalking: 0
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
   - id: 8
     text: "Sofia: Wish I could say I\u2019m surprised by that, but I\u2019m really
       not."
     responseIDs: 
     nextDialogueID: 9
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
     isLeftImageTalking: 0
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
     isCenterImageTalking: 0
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
-    isRightImageTalking: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
   - id: 9
     text: 'Anna: What, did the teacher get upset or something?'
     responseIDs: 
     nextDialogueID: 10
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
-    isLeftImageTalking: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
     isCenterImageTalking: 0
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
     isRightImageTalking: 0
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
   - id: 10
-    text: "Kacper: Ehhh\u2026 Kacper waves his hand to indicate yes-and-no. Sometimes
-      yes, mostly no. They\u2019d say to me thank you for speaking up, but I don\u2019t
-      think they were particularly caring about this stuff. Kinda like this guy really.
-      Looks pointedly towards Dr Aaron Pearson at the front of the room, who is sipping
-      his coffee alone. "
+    text: "Kacper: Ehhh\u2026 <i>Kacper waves his hand to indicate yes-and-no.</i>
+      Sometimes yes, mostly no. They\u2019d say to me thank you for speaking up,
+      but I don\u2019t think they were particularly caring about this stuff. Kinda
+      like this guy really. <i>Looks pointedly towards Dr Aaron Pearson at the front
+      of the room, who is sipping his coffee alone.</i> "
     responseIDs: 
     nextDialogueID: 11
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
     isLeftImageTalking: 0
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
-    isCenterImageTalking: 0
+    centerImage: {fileID: 21300000, guid: 916c2e8c58d9d3d49a598ff5f7871c89, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
     isRightImageTalking: 0
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
   - id: 11
     text: "Sofia: Mhmm, yep. Like, I get that Aaron\u2019s probably inherited the
       module from however long ago and he\u2019s probably not familiar with all of
@@ -1854,278 +1865,262 @@ MonoBehaviour:
     responseIDs: 
     nextDialogueID: 12
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
     isLeftImageTalking: 0
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
     isCenterImageTalking: 0
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
-    isRightImageTalking: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
   - id: 12
     text: "Sofia: But still, yeah it does suck, especially when it\u2019s like the
       lecturer just doesn\u2019t seem to care about either the module or students. "
     responseIDs: 
     nextDialogueID: 13
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
     isLeftImageTalking: 0
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
     isCenterImageTalking: 0
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
-    isRightImageTalking: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
   - id: 13
     text: "Anna: \u2026I don\u2019t suppose that either of you want to do anything
       about it this time? Especially since it\u2019s not just been today for this
       module, it happened last week as well when you were telling me about all that
       stuff about the media campaigns in Puerto Rico too that he didn\u2019t mention."
     responseIDs: 
-    nextDialogueID: 14
-    isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
-    isLeftImageTalking: 0
-    shouldLeftImageFadeIn: 0
-    shouldLeftImageFadeOut: 0
-    isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
-    isCenterImageTalking: 0
-    shouldCenterImageFadeIn: 0
-    shouldCenterImageFadeOut: 0
-    isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
-    isRightImageTalking: 0
-    shouldRightImageFadeIn: 0
-    shouldRightImageFadeOut: 0
-    isRightImageMirrored: 0
-  - id: 14
-    text: "Anna: \u2026I don\u2019t suppose that either of you want to do anything
-      about it this time? Especially since it\u2019s not just been today for this
-      module, it happened last week as well when you were telling me about all that
-      stuff about the media campaigns in Puerto Rico too that he didn\u2019t mention. "
-    responseIDs: 
     nextDialogueID: 15
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
-    isLeftImageTalking: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
     isCenterImageTalking: 0
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
     isRightImageTalking: 0
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
-  - id: 15
+    isEndDialogue: 0
+  - id: 14
     text: "Sofia: Yeah, but at this point it\u2019s like, what can I actually do?
       Why would he listen to me and make any changes to module halfway through the
       term? It\u2019s not like I have anything to back up my points other than stuff
       I\u2019ve lived through or heard from my family, so I can\u2019t point him
       to a source to put up the slides."
     responseIDs: 
+    nextDialogueID: 15
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 15
+    text: 'Kacper: <i>Nods in agreement.</i> '
+    responseIDs: 
     nextDialogueID: 16
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
     isLeftImageTalking: 0
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
-    isCenterImageTalking: 0
+    centerImage: {fileID: 21300000, guid: c6e1cfff801ec4d47a36cc71d3689fc1, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
     isRightImageVisible: 0
     isRightImageTalking: 0
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
   - id: 16
-    text: 'Kacper: Nods in agreement. '
-    responseIDs: 
-    nextDialogueID: 17
-    isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
-    isLeftImageTalking: 0
-    shouldLeftImageFadeIn: 0
-    shouldLeftImageFadeOut: 0
-    isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
-    isCenterImageTalking: 0
-    shouldCenterImageFadeIn: 0
-    shouldCenterImageFadeOut: 0
-    isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
-    isRightImageTalking: 0
-    shouldRightImageFadeIn: 0
-    shouldRightImageFadeOut: 0
-    isRightImageMirrored: 0
-  - id: 17
     text: "Sofia: I remember you said you once nipped back at a teacher in high school
       and got detention for it, Kacper. Obviously they can\u2019t give us detention
       here, but I really don\u2019t want it to be awkward when I know they\u2019re
       going to be marking my work and they\u2019ll only remember moments like that
       when they see my name.  "
     responseIDs: 
-    nextDialogueID: 18
+    nextDialogueID: 17
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
     isLeftImageTalking: 0
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
     isCenterImageTalking: 0
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
-    isRightImageTalking: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
-  - id: 18
+    isEndDialogue: 0
+  - id: 17
     text: 'Kacper: It was probably a bit different for you and for me though, Sofia.
       Our home countries are so far apart in culture, maybe it would be fine here? '
     responseIDs: 
-    nextDialogueID: 19
+    nextDialogueID: 18
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
     isLeftImageTalking: 0
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
-    isCenterImageTalking: 0
+    centerImage: {fileID: 21300000, guid: bf5cb0d9145623840849e95866ae5b39, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
     isRightImageTalking: 0
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
-  - id: 19
+    isEndDialogue: 0
+  - id: 18
     text: 'Anna: You think so, Kacper? '
     responseIDs: 0200000003000000
     nextDialogueID: -1
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
-    isLeftImageTalking: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
+    centerImage: {fileID: 21300000, guid: 62464d32ad72f0f44857ebfe5fc17598, type: 3}
+    isCenterImageVisible: 1
     isCenterImageTalking: 0
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
     isRightImageTalking: 0
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
-  - id: 20
-    text: "At university, I would rather wait because if someone, like a lecturer,
-      has an issue, it\u2019s gonna be a much bigger problem for me compared to high
-      school homework. But it\u2019s difficult to wait so long because then people
-      will forget and just wave it off as something small because I didn\u2019t write
-      it down. "
+    isEndDialogue: 0
+  - id: 19
+    text: "Kacper: At university, I would rather wait because if someone, like a
+      lecturer, has an issue, it\u2019s gonna be a much bigger problem for me compared
+      to high school homework. But it\u2019s difficult to wait so long because then
+      people will forget and just wave it off as something small because I didn\u2019t
+      write it down. "
     responseIDs: 
-    nextDialogueID: 22
+    nextDialogueID: 21
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
     isLeftImageTalking: 0
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
-    isCenterImageTalking: 0
+    centerImage: {fileID: 21300000, guid: 916c2e8c58d9d3d49a598ff5f7871c89, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
     isRightImageTalking: 0
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
-  - id: 21
-    text: "I would like to say it immediately to be honest, because now I\u2019m
+    isEndDialogue: 0
+  - id: 20
+    text: "Kacper: I would like to say it immediately to be honest, because now I\u2019m
       older and I understand more than I did when it happened when I was younger,
       so now I really see how it could be a problem. But it\u2019s hard to say it
       when I don\u2019t have a proper way to back up my words. "
     responseIDs: 
-    nextDialogueID: 22
+    nextDialogueID: 21
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
     isLeftImageTalking: 0
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
-    isCenterImageTalking: 0
+    centerImage: {fileID: 21300000, guid: 916c2e8c58d9d3d49a598ff5f7871c89, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
     isRightImageTalking: 0
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
-  - id: 22
+    isEndDialogue: 0
+  - id: 21
     text: "Sofia: Plus a lot of the stuff isn\u2019t exactly written down anyways
       \u2013 how do you explain that the reason that no one gets the public transport
       to work is not just because of terrible infrastructure but also because the
@@ -2134,82 +2129,1817 @@ MonoBehaviour:
       standard\u201D lifestyle with a personal vehicle? And then it becomes a whole
       thing with prestige and showing face and keeping up with your richer friends
       \u2013 none of that is something you can get people to admit to in an academic
-      environment. Bitterly looking at her laptop. It\u2019s so unfair that he gets
-      to be unaware of all of these social consequences and has the nerve to tell
-      us to \u201Chave a little think about it\u201D.  "
+      environment. <i>Bitterly looking at her laptop.</i> It\u2019s so unfair that
+      he gets to be unaware of all of these social consequences and has the nerve
+      to tell us to \u201Chave a little think about it\u201D.  "
+    responseIDs: 
+    nextDialogueID: 22
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: a2e1c7c049310f84891e382f7e421406, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 22
+    text: 'Anna: ... '
     responseIDs: 
     nextDialogueID: 23
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
-    isLeftImageTalking: 0
+    leftImage: {fileID: 21300000, guid: d5e1a15a98b269e48af347712ac64253, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
     isCenterImageTalking: 0
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
+    rightImage: {fileID: 21300000, guid: a2e1c7c049310f84891e382f7e421406, type: 3}
+    isRightImageVisible: 1
     isRightImageTalking: 0
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
   - id: 23
-    text: 'Anna: ... '
-    responseIDs: 
-    nextDialogueID: 24
-    isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
-    isLeftImageTalking: 0
-    shouldLeftImageFadeIn: 0
-    shouldLeftImageFadeOut: 0
-    isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
-    isCenterImageTalking: 0
-    shouldCenterImageFadeIn: 0
-    shouldCenterImageFadeOut: 0
-    isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
-    isRightImageTalking: 0
-    shouldRightImageFadeIn: 0
-    shouldRightImageFadeOut: 0
-    isRightImageMirrored: 0
-  - id: 24
     text: "Sofia: Lucky him where it gets to be a \u201Clittle think\u201D problem
       and for us it\u2019s much more of a \u201Cmassive pain in the ass\u201D problem.  "
     responseIDs: 
-    nextDialogueID: 25
+    nextDialogueID: 24
     isResponse: 0
-    leftImage: {fileID: 0}
-    isLeftImageVisible: 0
+    leftImage: {fileID: 21300000, guid: d5e1a15a98b269e48af347712ac64253, type: 3}
+    isLeftImageVisible: 1
     isLeftImageTalking: 0
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 0}
-    isCenterImageVisible: 0
+    centerImage: {fileID: 21300000, guid: aa7358a7f0e55eb42bddcec377edddfc, type: 3}
+    isCenterImageVisible: 1
     isCenterImageTalking: 0
     shouldCenterImageFadeIn: 0
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
-    rightImage: {fileID: 0}
-    isRightImageVisible: 0
-    isRightImageTalking: 0
+    rightImage: {fileID: 21300000, guid: a2e1c7c049310f84891e382f7e421406, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
-  - id: 25
+    isEndDialogue: 0
+  - id: 24
     text: 'Anna: ...now I feel bad for giving this module the benefit of the doubt
       at the start of the term. '
     responseIDs: 
+    nextDialogueID: 25
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: a2e1c7c049310f84891e382f7e421406, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 25
+    text: 'Sofia: Hmm? What do you mean by that? '
+    responseIDs: 
     nextDialogueID: 26
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 26
+    text: "Kacper: Ah I know what she means. You mean like how you wanted it to be
+      a good class right, but now you can really tell that it\u2019s just not good? "
+    responseIDs: 
+    nextDialogueID: 27
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 916c2e8c58d9d3d49a598ff5f7871c89, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 27
+    text: 'Anna: Kinda, yeah. '
+    responseIDs: 
+    nextDialogueID: 28
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 28
+    text: "Anna: I mean like, way back at the start I didn\u2019t know as much because
+      we didn\u2019t talk a lot before, but even then I was kinda like, uh?? Why
+      isn\u2019t he at least mentioning stuff like how the local economy affected
+      things like the country\u2019s morale during the classism and fighting, stuff
+      that should\u2019ve been pretty obvious, y\u2019know? "
+    responseIDs: 
+    nextDialogueID: 29
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 29
+    text: 'Sofia: Yeah? '
+    responseIDs: 
+    nextDialogueID: 30
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 30
+    text: "Anna: And now we\u2019re what, 8, 9 weeks into the term? More than halfway
+      through and if anything it\u2019s gotten worse. I mean I\u2019m sure I\u2019m
+      noticing more now because of all the stuff you\u2019ve both been saying, but
+      even that sucks because it means you guys had to point it out to me and take
+      the burden for it \u2013 that should\u2019ve been his job, not yours. "
+    responseIDs: 
+    nextDialogueID: 31
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 31
+    text: "Sofia: Oh no, no it\u2019s fine! I don\u2019t mind explaining things to
+      you at all- "
+    responseIDs: 
+    nextDialogueID: 32
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 32
+    text: "Anna: But that\u2019s the point isn\u2019t it? It\u2019s not fair that
+      you have to explain it to me, and it\u2019s not fair that the lecturers don\u2019t
+      know to mention it in the first place. Literally the entire point of being
+      in uni is to learn new things and develop yourself and your knowledge. With
+      all this stuff, they\u2019re glossing over all the stuff you already know on
+      a personal level and you don\u2019t get the same opportunity to develop like
+      the rest of us, because really you\u2019d be more suited to teaching the module
+      than Aaron. "
+    responseIDs: 
+    nextDialogueID: 33
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d5e1a15a98b269e48af347712ac64253, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 33
+    text: "Sofia: Yeah, I know that, but really what could I even do? I\u2019m just
+      sitting here doing my job as a student when half the class hasn\u2019t even
+      shown up. "
+    responseIDs: 0400000005000000
+    nextDialogueID: -1
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d5e1a15a98b269e48af347712ac64253, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 34
+    text: "Sofia: <i>Dryly, she scoffs.</i> Yeah, it\u2019s fucking annoying, but
+      hey, at least no-one\u2019s learning the wrong stuff, right? <i>Long-suffering
+      sigh.</i>"
+    responseIDs: 
+    nextDialogueID: 36
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d5e1a15a98b269e48af347712ac64253, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: a2e1c7c049310f84891e382f7e421406, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 35
+    text: "Sofia: <i>Disdainfully, she snorts.</i> Hah, it\u2019s hardly like anyone
+      cares to see it fixed apart from us who already know better and people who
+      actually bother to speak to us. <i>Long-suffering sigh.</i>"
+    responseIDs: 
+    nextDialogueID: 36
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d5e1a15a98b269e48af347712ac64253, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: a2e1c7c049310f84891e382f7e421406, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 36
+    text: 'Kacper: It is really annoying, I understand how you feel completely. '
+    responseIDs: 
+    nextDialogueID: 37
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d5e1a15a98b269e48af347712ac64253, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: bf5cb0d9145623840849e95866ae5b39, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: a2e1c7c049310f84891e382f7e421406, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 37
+    text: "Kacper: It was same for me even in primary school, they just made a joke
+      out of how they covered the history of my country and when I told my mum, she
+      just said that\u2019s how they\u2019ve always done it. "
+    responseIDs: 
+    nextDialogueID: 38
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: bf5cb0d9145623840849e95866ae5b39, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: a2e1c7c049310f84891e382f7e421406, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 38
+    text: 'Sofia: Sometimes I think our parents had it even worse. '
+    responseIDs: 
+    nextDialogueID: 39
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 39
+    text: 'Sofia: At least we have the internet, and we talk to people from everywhere
+      nowadays. My grandparents have no idea what uni is like here. '
+    responseIDs: 
+    nextDialogueID: 40
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 40
+    text: "Anna: There\u2019s some Scottish people like that too, but I like to think
+      we\u2019re quite welcoming? "
+    responseIDs: 
+    nextDialogueID: 41
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 62941c26ac1bd6641a7b1fcb61338145, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 41
+    text: "Anna: There\u2019s always gonna be people who have experienced and seen
+      more cultures and other such things than others, that\u2019s just numbers at
+      that point. "
+    responseIDs: 
+    nextDialogueID: 42
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 62941c26ac1bd6641a7b1fcb61338145, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 42
+    text: "Sofia: Yeah, but I mean in the way that my grandparents \u2013 and Kacper\u2019s
+      parents to an extent, based on what he\u2019s said \u2013 might not dare to
+      even think what it would be like if it was different, because to them this
+      is just normal and there\u2019s nothing more to say. "
+    responseIDs: 
+    nextDialogueID: 43
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 43
+    text: "Kacper: Yes, that\u2019s it exactly. When my mother said that, she was
+      meaning like that is just the simple reality, and there is no point to even
+      discuss something different. "
+    responseIDs: 0600000007000000
+    nextDialogueID: -1
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: bf5cb0d9145623840849e95866ae5b39, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 44
+    text: "Kacper: I really don\u2019t know how much she\u2019d have expected things
+      to change, I don\u2019t even know if she expected me to go abroad at all, so
+      maybe I would have just accepted it\u2026 "
+    responseIDs: 
+    nextDialogueID: 46
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 916c2e8c58d9d3d49a598ff5f7871c89, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 45
+    text: "Kacper: I\u2019m not really sure if she would have seen how much the world
+      has changed since then, I\u2019m not even sure if she thought I\u2019d even
+      go abroad one day, so maybe I would have just fought against it from home\u2026 "
+    responseIDs: 
+    nextDialogueID: 46
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 916c2e8c58d9d3d49a598ff5f7871c89, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 46
+    text: "Kacper: But I mean, regardless of that, the internet and news sites have
+      been around for long enough, there\u2019s really no excuses here at least. "
+    responseIDs: 
+    nextDialogueID: 47
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 916c2e8c58d9d3d49a598ff5f7871c89, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 47
+    text: "Sofia: You\u2019re right with that. There really isn\u2019t a good reason
+      to leave things as they are. "
+    responseIDs: 
+    nextDialogueID: 48
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 48
+    text: "Sofia: You\u2019re right with that. There really isn\u2019t a good reason
+      to leave things as they are. "
+    responseIDs: 
+    nextDialogueID: 49
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 49
+    text: "Sofia: <i>Resentfully</i> And now if we\u2019re talking about unfair responsibilities,
+      how is it fair that it\u2019s my job to educate the lecturer on why his content
+      sucks, just because I happen to know it first hand?"
+    responseIDs: 
+    nextDialogueID: 50
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: a2e1c7c049310f84891e382f7e421406, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 50
+    text: "Anna: I wonder where they\u2019re getting this curriculum from, when you
+      put it that way though. "
+    responseIDs: 
+    nextDialogueID: 51
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: a2e1c7c049310f84891e382f7e421406, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 51
+    text: 'Kacper: What do you mean? '
+    responseIDs: 
+    nextDialogueID: 52
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 916c2e8c58d9d3d49a598ff5f7871c89, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 52
+    text: "Anna: Well, they\u2019re teaching us all this stuff, and I know that there\u2019s
+      tons of things that are either wrong or missing really important things from
+      talking to you guys\u2026 so who cut the important bits out? "
+    responseIDs: 
+    nextDialogueID: 53
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 53
+    text: "Anna: If they spoke to anyone with first-hand experience like you or Sofia,
+      they\u2019d know about all of that, and they\u2019d know not to leave it out
+      either, because context is important. "
+    responseIDs: 
+    nextDialogueID: 54
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 54
+    text: "Anna: Since that hasn\u2019t happened\u2026 did they just not talk to
+      anyone or read any papers with firsthand cultural knowledge in the first place? "
+    responseIDs: 0800000009000000
+    nextDialogueID: -1
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 55
+    text: 'Sofia: Appealing emotionally is so hard though. I hate feeling like I
+      need to emotionally grovel and cut myself up just for the people in charge
+      to even see me. '
+    responseIDs: 
+    nextDialogueID: 57
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 56
+    text: "Sofia: It really grinds at me that I\u2019d have to frame it like that,
+      as if how it makes us feel like shit isn\u2019t somehow enough of a reason
+      to fix it, only the fact that it\u2019s technically incorrect is what would
+      be noticed. "
+    responseIDs: 
+    nextDialogueID: 57
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: e74108016153b0c4db7eff63ac1b4fd5, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 57
+    text: "Sofia: <i>Quietly sighs and visibly tries to relax.</i> How is it that
+      this always happens. Don\u2019t they do some kind of teacher training for this?
+      You\u2019d think they would, wouldn\u2019t you, with the amount of international
+      students they apparently keep trying to bring in to pay their bills. "
+    responseIDs: 
+    nextDialogueID: 58
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: a2e1c7c049310f84891e382f7e421406, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 58
+    text: "Anna: ...hey, I\u2019m sorry, I didn\u2019t mean it like that. "
+    responseIDs: 
+    nextDialogueID: 59
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: a2e1c7c049310f84891e382f7e421406, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 59
+    text: "Anna: Oh shit, I\u2019m really sorry. I genuinely didn\u2019t mean for
+      it to come across like that- "
+    responseIDs: 
+    nextDialogueID: 60
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d5e1a15a98b269e48af347712ac64253, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 60
+    text: 'Sofia: <i>Shakes head while smiling reassuringly.</i> '
+    responseIDs: 
+    nextDialogueID: 61
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d5e1a15a98b269e48af347712ac64253, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 61
+    text: "Kacper: No, do not worry about it, seriously! We know how it\u2019s like! "
+    responseIDs: 
+    nextDialogueID: 62
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 62464d32ad72f0f44857ebfe5fc17598, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 62
+    text: "Sofia: <i>Understandingly.</i> No, it\u2019s fine, I know you.  "
+    responseIDs: 
+    nextDialogueID: 63
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 04cf1e035242cce4eb3839725f004335, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: c6e1cfff801ec4d47a36cc71d3689fc1, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 63
+    text: "Anna: That\u2019s why it\u2019s not fine though, I should\u2019ve realised
+      the way I phrased it would\u2019ve landed that way.  "
+    responseIDs: 
+    nextDialogueID: 64
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 62941c26ac1bd6641a7b1fcb61338145, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 64
+    text: "Sofia: It\u2019s fine, really! You\u2019re good. I\u2019m just happy someone
+      in here is actually willing to listen to me rant about everything. "
+    responseIDs: 
+    nextDialogueID: 65
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 65
+    text: "Anna: I mean, it\u2019s very justified ranting, so of course I want to
+      hear it. The context that\u2019s just straight up missing in half of these
+      classes is ridiculous. Even if it wasn\u2019t justified I\u2019d still listen
+      anyways, it\u2019s what friends do and all that, right? "
+    responseIDs: 0a0000000b000000
+    nextDialogueID: -1
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 66
+    text: "Sofia: This is plenty enough, don\u2019t worry. It\u2019s not your job
+      to make me feel okay."
+    responseIDs: 
+    nextDialogueID: 68
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 67
+    text: "Sofia: There\u2019s not really anything more, don\u2019t worry. It\u2019s
+      not your job to fix the system."
+    responseIDs: 
+    nextDialogueID: 68
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 68
+    text: "Anna: It is kind of though? That\u2019s how I see it \u2013 I should have
+      like, a moral spine by this age, I think."
+    responseIDs: 
+    nextDialogueID: 69
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 69
+    text: "Sofia: That\u2019s a really sweet way of putting it. "
+    responseIDs: 
+    nextDialogueID: 70
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 70
+    text: 'Kacper: <i>Humorously</i> Aww, I like you guys too! '
+    responseIDs: 
+    nextDialogueID: 71
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 04cf1e035242cce4eb3839725f004335, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: c6e1cfff801ec4d47a36cc71d3689fc1, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 71
+    text: <i>All three students share a good laugh, until the easy quiet resumes
+      between the three of them at the back of the room. </i>
+    responseIDs: 
+    nextDialogueID: 72
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 04cf1e035242cce4eb3839725f004335, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: c6e1cfff801ec4d47a36cc71d3689fc1, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 72
+    text: "Anna: Hey, I know you said you don\u2019t really see a way to get all
+      of these issues across to Aaron or guy who does the practical sessions, but
+      is there anything I can do to help with that, like at all? Y\u2019know, use
+      my white privilege and local privileges for the betterment of the world type
+      thing. <i>Small chuckle.</i> "
+    responseIDs: 
+    nextDialogueID: 73
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 04cf1e035242cce4eb3839725f004335, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 62464d32ad72f0f44857ebfe5fc17598, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 73
+    text: "Sofia: <i>Laughs comfortably.</i> Aww, that\u2019s real nice of you to
+      put it that way. I mean, short of asking him yourself or dumping a ton of links
+      to articles in his inbox, I think we\u2019ve got the same problem anyway where
+      he controls our grades and we really don\u2019t wanna risk his\u2026 temperamental
+      attitude towards us \u201Cyoungins\u201D to affect our marks. "
+    responseIDs: 
+    nextDialogueID: 74
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 04cf1e035242cce4eb3839725f004335, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: c6e1cfff801ec4d47a36cc71d3689fc1, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 74
+    text: "Kacper: Chuckles too. Oh don\u2019t even start talking about that too,
+      I\u2019ve seen it so much before. Wry, tired smile. "
+    responseIDs: 
+    nextDialogueID: 75
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 04cf1e035242cce4eb3839725f004335, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: c6e1cfff801ec4d47a36cc71d3689fc1, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 75
+    text: "Anna: \u201CYoung uns\u201D\u2026? "
+    responseIDs: 
+    nextDialogueID: 76
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 04cf1e035242cce4eb3839725f004335, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 62464d32ad72f0f44857ebfe5fc17598, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 76
+    text: "Kacper: It\u2019s how, when an older person gets all stuck in the past?
+      You know when they just say \u201CBack in my day, it was much harder, you should
+      be grateful for this life\u2026?\u201D "
+    responseIDs: 
+    nextDialogueID: 77
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 04cf1e035242cce4eb3839725f004335, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 62464d32ad72f0f44857ebfe5fc17598, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 77
+    text: "Kacper: I mean, I don\u2019t think Aaron is so much older than us, but
+      he is a little bit like that. "
+    responseIDs: 
+    nextDialogueID: 78
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 04cf1e035242cce4eb3839725f004335, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 62464d32ad72f0f44857ebfe5fc17598, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 78
+    text: "Sofia: Good to know the \u201Cold man shouting at the clouds for being
+      in the way\u201D is a thing across all borders. My granddad\u2019s brother
+      was like that too, always saying I should be happy they\u2019re letting little
+      girls go to school now and things like that. "
+    responseIDs: 
+    nextDialogueID: 79
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 04cf1e035242cce4eb3839725f004335, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: c6e1cfff801ec4d47a36cc71d3689fc1, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 79
+    text: "Anna: \u2026it\u2019s crazy that for some people, it wasn\u2019t that
+      long ago when it was so different. "
+    responseIDs: 
+    nextDialogueID: 80
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 80
+    text: 'Kacper: In a way, it almost makes it more respectable that older generations
+      are dealing with so much change in a kind of short period of overall human
+      history. '
+    responseIDs: 
+    nextDialogueID: 81
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 916c2e8c58d9d3d49a598ff5f7871c89, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 81
+    text: "Kacper: Although it really doesn\u2019t excuse them to say that we should
+      be somehow grateful for problems they didn\u2019t have, just because it was
+      harder for them back then. "
+    responseIDs: 0c0000000d000000
+    nextDialogueID: -1
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 916c2e8c58d9d3d49a598ff5f7871c89, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 82
+    text: "Kacper: But then if we expect less, then we will get less. And eventually,
+      it will be less, and less, then there will no change at all. And that\u2019s
+      just not fair. . "
+    responseIDs: 
+    nextDialogueID: 84
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 916c2e8c58d9d3d49a598ff5f7871c89, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 83
+    text: "Kacper: But then if we ask for more, then we will be told to be more realistic.
+      And more realistic becomes slower, and slower, until it stops changing. And
+      that\u2019s just not fair. "
+    responseIDs: 
+    nextDialogueID: 84
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 916c2e8c58d9d3d49a598ff5f7871c89, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 84
+    text: "Sofia: It\u2019s so disheartening when you say it that way. It\u2019s
+      like we are back to where our parents were, just accepting the world for what
+      it is \u2013 wrong and unfair and unkind."
+    responseIDs: 
+    nextDialogueID: 85
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 85
+    text: "Kacper: I\u2019m sorry, I did not mean to bring the mood down. "
+    responseIDs: 
+    nextDialogueID: 86
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: bf5cb0d9145623840849e95866ae5b39, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 86
+    text: "Anna: I don\u2019t think either of you should be apologizing for that
+      though. "
+    responseIDs: 
+    nextDialogueID: 87
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 87
+    text: "Anna: It\u2019s not your fault that the university has made a space where
+      it feels like you can\u2019t just share all of this with them directly. "
+    responseIDs: 
+    nextDialogueID: 88
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 88
+    text: "Anna: Why have they made us feel like we have to minimise our human experiences
+      just to get by\u2026 "
+    responseIDs: 
+    nextDialogueID: 89
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d3524afb1594f29418b9f6458c63c068, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 89
+    text: "Kacper: It\u2019s just like how Sofia said \u2013 that\u2019s how these
+      spaces have always been. Or at least, from my experiences anyway. "
+    responseIDs: 
+    nextDialogueID: 90
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 916c2e8c58d9d3d49a598ff5f7871c89, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 90
+    text: "Sofia: Yeah. I really can\u2019t be bothered with this today anymore,
+      I\u2019m gonna go home and nap after this anyway. He\u2019s not exactly inspired
+      me to work on my assignment with this joke of a class. "
+    responseIDs: 
+    nextDialogueID: 91
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: 825f6a4822ba3bd4fa7fb6314e3b61fe, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: d73193e37383128449debef257955494, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: 8b25cbd6dce029549833756eeeb4b5a2, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 1
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 91
+    text: "Anna: \u2026hmmm. "
+    responseIDs: 
+    nextDialogueID: 92
+    isResponse: 0
+    leftImage: {fileID: 21300000, guid: d5e1a15a98b269e48af347712ac64253, type: 3}
+    isLeftImageVisible: 1
+    isLeftImageTalking: 1
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 1
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: fd9eb27bccc910240bace5bb65e00e50, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 1
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 21300000, guid: da1527e36df98da49818f1f0c0d90c95, type: 3}
+    isRightImageVisible: 1
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 1
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 92
+    text: "<i>Students begin filing back into the room, clutching their university
+      caf\xE9 paper cups while slowly filtering back up into the seats. </i>"
+    responseIDs: 
+    nextDialogueID: 93
     isResponse: 0
     leftImage: {fileID: 0}
     isLeftImageVisible: 0
@@ -2229,21 +3959,166 @@ MonoBehaviour:
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 93
+    text: "Dr Aaron Pearson: Right! I hope you all had a refreshing break, and remember,
+      please do come and ask me any questions. I\u2019m here to listen and help you
+      as much as I can.  "
+    responseIDs: 
+    nextDialogueID: 94
+    isResponse: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 6d9fc06b22d2e274a9745ca0f0bf30fa, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 1
+    shouldCenterImageFadeOut: 1
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 94
+    text: 'Kacper: <i>Under his breath.</i> Yeah, because I <i>really</i> trust you
+      can do that very well after this class. '
+    responseIDs: 
+    nextDialogueID: 95
+    isResponse: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 7889ce8c76247d3448c379de1b91c233, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 1
+    shouldCenterImageFadeOut: 1
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+  - id: 95
+    text: 'Sofia: <i>Grim laugh under her breath.</i> Mhm. I feel so inspired to
+      share my experiences with you, Aaron. No sarcasm, I promise.'
+    responseIDs: 
+    nextDialogueID: -1
+    isResponse: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
+    isCenterImageVisible: 1
+    isCenterImageTalking: 1
+    shouldCenterImageFadeIn: 1
+    shouldCenterImageFadeOut: 1
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 1
   responses:
   - id: 0
     text: 'You can talk it through with me if you want? '
     nextDialogueID: 5
+    category: A
+    isSelected: 0
   - id: 1
     text: 'Anything you think I could do about it? '
     nextDialogueID: 6
+    category: B
+    isSelected: 0
   - id: 2
     text: 'Would it not be better to wait until the end of term, after assessments
       and stuff? '
-    nextDialogueID: 20
+    nextDialogueID: 19
+    category: A
+    isSelected: 0
   - id: 3
     text: "Do you think it\u2019s better if you say these things like immediately,
       so that it\u2019s fresh in their minds too? "
-    nextDialogueID: 21
+    nextDialogueID: 20
+    category: B
+    isSelected: 0
+  - id: 4
+    text: "Oh, I hadn\u2019t even thought about that, about how it must be really
+      annoying to see the information be just wrong about your home country, but
+      no-one\u2019s showing up to learn about it anyways\u2026 "
+    nextDialogueID: 34
+    category: A
+    isSelected: 0
+  - id: 5
+    text: "Oh, I hadn\u2019t even thought about that, about how there\u2019s really
+      not much to be done when this thing happens and no-one\u2019s even here to
+      back up what you saw was wrong about your home country\u2026"
+    nextDialogueID: 35
+    category: B
+    isSelected: 0
+  - id: 6
+    text: "D\u2019you reckon she maybe thought that you\u2019d be very similar to
+      her and maybe her parents? Just accepting that understanding of the world? "
+    nextDialogueID: 44
+    category: A
+    isSelected: 0
+  - id: 7
+    text: 'Do you think she maybe expected you to be completely different compared
+      to her and maybe her parents? Just immediately rejecting that view of the world? '
+    nextDialogueID: 45
+    category: B
+    isSelected: 0
+  - id: 8
+    text: "Do you think that maybe if we pointed out that they\u2019re hurting people
+      and cultures by not engaging emotionally, they\u2019d fix it? "
+    nextDialogueID: 55
+    category: A
+    isSelected: 0
+  - id: 9
+    text: "Do you think that maybe if we pointed out that they\u2019re misrepresenting
+      information by not checking with real life sources, they\u2019d fix it? "
+    nextDialogueID: 56
+    category: B
+    isSelected: 0
+  - id: 10
+    text: 'Is there anything I can do to help you feel better? '
+    nextDialogueID: 66
+    category: A
+    isSelected: 0
+  - id: 11
+    text: 'Is there anything I can do to stop it from happening as much? '
+    nextDialogueID: 67
+    category: B
+    isSelected: 0
+  - id: 12
+    text: "I wonder if we\u2019re expecting too much from the universities then?
+      About how much change can be done in a short amount of time? "
+    nextDialogueID: 82
+    category: A
+    isSelected: 0
+  - id: 13
+    text: "I wonder if we\u2019re expecting too little from the universities then?
+      About how much change can be done in a short amount of time? "
+    nextDialogueID: 83
+    category: B
+    isSelected: 0
 --- !u!114 &3623357227327181276
 MonoBehaviour:
   m_ObjectHideFlags: 0

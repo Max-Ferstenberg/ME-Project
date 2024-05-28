@@ -33,4 +33,7 @@ public class Dialogue
     public bool isRightImageMirrored; // New field to indicate if the right image should be mirrored
 
     public bool hasResponses => responseIDs != null && responseIDs.Length > 0; // Determine if the dialogue has responses
+
+        public bool isEndDialogue; // Indicates if this is the end dialogue
+
 }

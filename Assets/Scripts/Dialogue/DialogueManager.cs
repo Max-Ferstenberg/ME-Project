@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,7 +27,9 @@ public class DialogueManager : MonoBehaviour
     private bool buttonClicked = false; // Flag to prevent multiple clicks
     private bool isTransitioning = false; // Flag to prevent redundant updates
 
-    private void Awake()
+    private Dictionary<string, int> responseCategoryCounts = new Dictionary<string, int>();
+
+     private void Awake()
     {
         if (Instance != null && Instance != this)
         {
@@ -42,22 +46,19 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        // Ensure all necessary references are assigned
         if (nextButton == null || dialogueText == null || responsePanel == null || dialogueDatabase == null || leftImageComponent == null || centerImageComponent == null || rightImageComponent == null)
         {
             Debug.LogError("One or more required references are missing in DialogueManager.");
             return;
         }
 
-        nextButton.gameObject.SetActive(false); // Ensure the Next button is hidden initially
-        responsePanel.SetActive(false); // Ensure the response panel is hidden initially
+        nextButton.gameObject.SetActive(false);
+        responsePanel.SetActive(false);
 
-        // Set default images at the start of the game
         leftImageComponent.gameObject.SetActive(true);
         centerImageComponent.gameObject.SetActive(true);
         rightImageComponent.gameObject.SetActive(true);
 
-        // Remove all listeners to avoid multiple registrations
         nextButton.onClick.RemoveAllListeners();
         Debug.Log("Adding listener to Next button");
         nextButton.onClick.AddListener(OnNextButtonClicked);
@@ -69,16 +70,20 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(0.01f); // Adjust timing for typewriter speed
+            yield return new WaitForSeconds(0.01f);
         }
 
         if (currentDialogue.hasResponses)
         {
-            GenerateResponseButtons(currentDialogue.responseIDs); // Show response buttons
+            GenerateResponseButtons(currentDialogue.responseIDs);
         }
         else if (currentDialogue.nextDialogueID != -1)
         {
-            EnableNextButton(); // Enable the Next button if there is a next dialogue
+            EnableNextButton();
+        }
+        else if (currentDialogue.isEndDialogue)
+        {
+            EndScenario();
         }
     }
 
@@ -89,18 +94,17 @@ public class DialogueManager : MonoBehaviour
         {
             StopCoroutine(typeSentenceCoroutine);
         }
-        buttonClicked = false; // Reset flag
+        buttonClicked = false;
 
-        // Ensure the character animations are updated before displaying the dialogue
         if (!isTransitioning)
         {
             UpdateImageStates(dialogue);
             TriggerFadeInAnimations(dialogue);
         }
 
-        typeSentenceCoroutine = StartCoroutine(TypeSentence(dialogue.text)); // Start typewriter effect
+        typeSentenceCoroutine = StartCoroutine(TypeSentence(dialogue.text));
         responsePanel.SetActive(false);
-        if (nextButton != null) nextButton.gameObject.SetActive(false); // Initially hide the Next button
+        if (nextButton != null) nextButton.gameObject.SetActive(false);
     }
 
     public void StartDialogueById(int dialogueId)
@@ -127,10 +131,10 @@ public class DialogueManager : MonoBehaviour
 
         foreach (Transform child in responsePanel.transform)
         {
-            Destroy(child.gameObject); // Clear out existing buttons to prevent duplication
+            Destroy(child.gameObject);
         }
 
-        responsePanel.SetActive(true); // Show the response panel
+        responsePanel.SetActive(true);
 
         foreach (int id in responseIDs)
         {
@@ -150,8 +154,8 @@ public class DialogueManager : MonoBehaviour
                 }
 
                 button.onClick.AddListener(() => ResponseButtonClicked(response));
-                button.gameObject.SetActive(true); // Ensure the button is active
-                button.interactable = true; // Enable interaction immediately
+                button.gameObject.SetActive(true);
+                button.interactable = true;
             }
             else
             {
@@ -166,13 +170,94 @@ public class DialogueManager : MonoBehaviour
 
         foreach (Button btn in responsePanel.GetComponentsInChildren<Button>())
         {
-            btn.onClick.RemoveAllListeners(); // Remove all listeners from the button when clicked
+            btn.onClick.RemoveAllListeners();
         }
 
-        dialogueText.gameObject.SetActive(true); // Show dialogue text again
-        responsePanel.SetActive(false); // Hide the response panel
+        dialogueText.gameObject.SetActive(true);
+        responsePanel.SetActive(false);
 
-        StartDialogueById(response.nextDialogueID);
+        TrackResponseSelection(response);
+
+        if (response.nextDialogueID != -1)
+        {
+            StartDialogueById(response.nextDialogueID);
+        }
+        else if (currentDialogue.isEndDialogue)
+        {
+            EndScenario();
+        }
+    }
+
+    private void TrackResponseSelection(Response response)
+    {
+        response.isSelected = true;
+
+        if (!responseCategoryCounts.ContainsKey(response.category))
+        {
+            responseCategoryCounts[response.category] = 0;
+        }
+
+        responseCategoryCounts[response.category]++;
+    }
+
+    public string GetMostSelectedCategory()
+    {
+        string mostSelectedCategory = null;
+        int highestCount = 0;
+
+        foreach (var kvp in responseCategoryCounts)
+        {
+            if (kvp.Value > highestCount)
+            {
+                highestCount = kvp.Value;
+                mostSelectedCategory = kvp.Key;
+            }
+        }
+
+        return mostSelectedCategory;
+    }
+
+    private void EndScenario()
+    {
+        Debug.Log("End of Scenario reached.");
+
+        // Print debug log of response counts
+        foreach (var kvp in responseCategoryCounts)
+        {
+            Debug.Log($"Category {kvp.Key}: {kvp.Value} selections");
+        }
+
+        // Display confirmation message
+        dialogueText.text = "Scenario completed! Please click Next to proceed.";
+        nextButton.gameObject.SetActive(true);
+        nextButton.onClick.RemoveAllListeners();
+        nextButton.onClick.AddListener(OnEndScenarioConfirmed);
+    }
+
+    private void OnEndScenarioConfirmed()
+    {
+        // Determine most selected category
+        string mostSelectedCategory = GetMostSelectedCategory();
+        Debug.Log("Most selected response category: " + mostSelectedCategory);
+
+        // Determine the scene to load based on the most selected category
+        string sceneToLoad = "";
+        if (mostSelectedCategory == "A")
+        {
+            sceneToLoad = "SceneA";
+        }
+        else if (mostSelectedCategory == "B")
+        {
+            sceneToLoad = "SceneB";
+        }
+        else
+        {
+            Debug.LogError("No valid category selected. Defaulting to SceneA.");
+            sceneToLoad = "SceneA";
+        }
+
+        // Load the determined scene
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     private void UpdateImageStates(Dialogue dialogue)
