@@ -34,6 +34,10 @@ public class Dialogue
 
     public bool hasResponses => responseIDs != null && responseIDs.Length > 0; // Determine if the dialogue has responses
 
-        public bool isEndDialogue; // Indicates if this is the end dialogue
+    public bool isEndDialogue; // Indicates if this is the end dialogue
+
+    public Sprite backgroundImage; // Background image for the dialogue
+    public bool fadeOutBackground; // Indicates if the background should fade out
+    public bool fadeInBackground; // Indicates if the background should fade in
 
 }

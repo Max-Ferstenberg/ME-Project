@@ -1,14 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public DialogueManager dialogueManager; // Reference to the DialogueManager
     public DialogueDatabase dialogueDatabase; // Reference to the DialogueDatabase
 
+    public string nextSceneA; // Scene name for the next scene if Category A is most selected
+    public string nextSceneB; // Scene name for the next scene if Category B is most selected
+
     private void Start()
     {
+        // Ensure all required references are assigned
+        if (dialogueManager == null || dialogueDatabase == null)
+        {
+            Debug.LogError("DialogueManager or DialogueDatabase is not assigned in the GameManager.");
+            return;
+        }
+
         // Start the initial dialogue sequence
         StartDialogueSequence(0); // Start with the first dialogue (ID 0)
     }
@@ -37,7 +48,51 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("Dialogue sequence ended.");
+            HandleEndOfScenario();
+        }
+    }
+
+    // Function to handle the end of the scenario
+    public void HandleEndOfScenario()
+    {
+        string mostSelectedCategory = dialogueManager.GetMostSelectedCategory();
+        Debug.Log("Most selected response category: " + mostSelectedCategory);
+
+        // Determine the scene to load based on the most selected category
+        string sceneToLoad = mostSelectedCategory == "A" ? nextSceneA : nextSceneB;
+
+        // Load the determined scene
+        if (!string.IsNullOrEmpty(sceneToLoad))
+        {
+            SceneManager.LoadScene(sceneToLoad);
+        }
+        else
+        {
+            Debug.LogError("No valid scene found for the given category.");
+        }
+    }
+
+    public void SimulateResponses(int countA, int countB)
+    {
+        if (dialogueManager != null)
+        {
+            dialogueManager.SimulateResponses(countA, countB);
+        }
+        else
+        {
+            Debug.LogError("DialogueManager reference is missing.");
+        }
+    }
+
+    public void TriggerEndScenarioDebug()
+    {
+        if (dialogueManager != null)
+        {
+            dialogueManager.TriggerEndScenarioDebug();
+        }
+        else
+        {
+            Debug.LogError("DialogueManager reference is missing.");
         }
     }
 }
-

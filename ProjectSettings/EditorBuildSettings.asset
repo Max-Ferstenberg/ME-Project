@@ -8,13 +8,52 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scenario1.unity
     guid: a29a9c4d41095f3408adbd44e61dec29
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scenario2.unity
     guid: 853be87a53b1f95489dd2505693c1e64
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scenario3.unity
     guid: ccfcb73d6904e1d46af1a8aa91618c7e
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Scenario2B.unity
+    guid: b853afd951beff54a9867f2484f796d0
+  - enabled: 1
+    path: Assets/Scenes/Scenario2B.unity
+    guid: cb72a7a32cc8a9e42bb46e41ee485b8b
+  - enabled: 1
+    path: Assets/Scenes/Scenario3A.unity
+    guid: 9489107719b62144da51e3a43db77ac2
+  - enabled: 1
+    path: Assets/Scenes/Scenario3B.unity
+    guid: 227c92778becc3c4bbaf54d5b36c0e3e
+  - enabled: 1
+    path: Assets/Scenes/UnlockAaronPearson.unity
+    guid: aa12b2d0afb234047abc26ed701a4c4b
+  - enabled: 1
+    path: Assets/Scenes/UnlockAaronPearson.unity
+    guid: aa12b2d0afb234047abc26ed701a4c4b
+  - enabled: 1
+    path: Assets/Scenes/UnlockLiMei.unity
+    guid: e0401b81552ad1747a769d17b5e88e61
+  - enabled: 1
+    path: Assets/Scenes/UnlockSara.unity
+    guid: 7dd838c05c4a49d4b943ff85cf3e7b5d
+  - enabled: 1
+    path: Assets/Scenes/Epilogue.unity
+    guid: 0a17cd899bdad3a48bfad6dec9b4e24b
+  - enabled: 1
+    path: Assets/Scenes/UnlockHanaLane.unity
+    guid: 1e036afd56b29c743a6a573779440468
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 59cb322673563e4419581b37a8bebb90
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 5902643925f62a14993d2904873682f7
+  - enabled: 1
+    path: Assets/Scenes/Scenario2A.unity
+    guid: fcff19e0dfdd0a0478c00fe3638abac3
   m_configObjects: {}
