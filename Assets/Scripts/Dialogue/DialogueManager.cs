@@ -10,28 +10,39 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
 
+    // Introductory Text Flag
+    private bool introductoryTextShown = false;
+    private bool isTyping = false;
+
     // UI Components
-    public TMP_Text dialogueText; 
+    public TMP_Text dialogueText;
     public Button nextButton;
+    public TMP_Text introText;
     public Image backgroundImageComponent;
     public RectTransform dialogueBoxRectTransform;
-    public Button responseButton1; 
-    public Button responseButton2; 
+    public Button responseButton1;
+    public Button responseButton2;
     public RectTransform responseContainer;
+    public Button skipButton;
+
 
     // Dialogue Database
     public DialogueDatabase dialogueDatabase;
 
     // Image Animators and Components
-    public Animator leftImageAnimator; 
-    public Animator centerImageAnimator; 
-    public Animator rightImageAnimator; 
+    public Animator leftImageAnimator;
+    public Animator centerImageAnimator;
+    public Animator rightImageAnimator;
     public Image leftImageComponent;
-    public Image centerImageComponent; 
-    public Image rightImageComponent; 
+    public Image centerImageComponent;
+    public Image rightImageComponent;
 
     // Game Manager
-    public GameManager gameManager; 
+    public GameManager gameManager;
+
+    // Introductory Text Properties
+    public string introductoryText;
+    public Color introductoryTextColor = Color.cyan; // Customize as needed
 
     // Fade Properties
     public float fadeDuration = 1.0f;
@@ -44,7 +55,7 @@ public class DialogueManager : MonoBehaviour
     private bool buttonClicked = false;
     private bool isTransitioning = false;
     private bool isInitialized = false;
-
+    private bool isSkippingText = false;
 
     // Response Tracking
     private Dictionary<string, int> responseCategoryCounts = new Dictionary<string, int>();
@@ -53,6 +64,9 @@ public class DialogueManager : MonoBehaviour
     private Vector3 leftImageInitialPosition;
     private Vector3 centerImageInitialPosition;
     private Vector3 rightImageInitialPosition;
+
+    // Store the ID of the actual starting dialogue
+    private int actualStartingDialogueID;
 
     // Initialization
     private void Awake()
@@ -64,39 +78,54 @@ public class DialogueManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(transform.root.gameObject); // Ensure the root GameObject is marked to not be destroyed
         }
         Debug.Log("DialogueManager Instance Created");
     }
 
-    void Start()
+
+    private void AddEventTrigger(EventTrigger trigger, EventTriggerType eventType, UnityEngine.Events.UnityAction<BaseEventData> action)
     {
-        if (nextButton == null || dialogueText == null || dialogueDatabase == null ||
-            leftImageComponent == null || centerImageComponent == null || rightImageComponent == null ||
-            responseButton1 == null || responseButton2 == null || backgroundImageComponent == null ||
-            dialogueBoxRectTransform == null || responseContainer == null)
-        {
-            Debug.LogError("One or more required references are missing in DialogueManager.");
-            return;
-        }
-
-        // Store initial positions
-        leftImageInitialPosition = leftImageComponent.rectTransform.localPosition;
-        centerImageInitialPosition = centerImageComponent.rectTransform.localPosition;
-        rightImageInitialPosition = rightImageComponent.rectTransform.localPosition;
-
-        nextButton.gameObject.SetActive(false);
-
-        leftImageComponent.gameObject.SetActive(true);
-        centerImageComponent.gameObject.SetActive(true);
-        rightImageComponent.gameObject.SetActive(true);
-
-        nextButton.onClick.RemoveAllListeners();
-        Debug.Log("Adding listener to Next button");
-        nextButton.onClick.AddListener(OnNextButtonClicked);
-
-        InitializeComponents();
+        EventTrigger.Entry entry = new EventTrigger.Entry { eventID = eventType };
+        entry.callback.AddListener(action);
+        trigger.triggers.Add(entry);
     }
+
+void Start()
+{
+    Debug.Log("DialogueManager Start Method Called");
+
+    if (nextButton == null || skipButton == null || dialogueText == null || dialogueDatabase == null ||
+        leftImageComponent == null || centerImageComponent == null || rightImageComponent == null ||
+        responseButton1 == null || responseButton2 == null || backgroundImageComponent == null ||
+        dialogueBoxRectTransform == null || responseContainer == null || introText == null)
+    {
+        Debug.LogError("One or more required references are missing in DialogueManager.");
+        return;
+    }
+
+    leftImageInitialPosition = leftImageComponent.rectTransform.localPosition;
+    centerImageInitialPosition = centerImageComponent.rectTransform.localPosition;
+    rightImageInitialPosition = rightImageComponent.rectTransform.localPosition;
+
+    leftImageComponent.gameObject.SetActive(true);
+    centerImageComponent.gameObject.SetActive(true);
+    rightImageComponent.gameObject.SetActive(true);
+
+    nextButton.onClick.RemoveAllListeners();
+    skipButton.onClick.RemoveAllListeners();
+    Debug.Log("Adding listeners to Next and Skip buttons");
+    nextButton.onClick.AddListener(OnNextButtonClicked);
+    skipButton.onClick.AddListener(OnSkipButtonClicked);
+
+    InitializeComponents();
+    Debug.Log("Calling StartDialogue for testing");
+    StartDialogue(7569); // Assuming 7569 is the starting dialogue ID, adjust as necessary
+}
+
+
+
+
 
 
     private void InitializeComponents()
@@ -113,6 +142,7 @@ public class DialogueManager : MonoBehaviour
         if (backgroundImageComponent != null) Debug.Log("Background Image Component Initialized.");
         if (dialogueBoxRectTransform != null) Debug.Log("Dialogue Box RectTransform Initialized.");
         if (responseContainer != null) Debug.Log("Response Container Initialized.");
+        if (introText != null) Debug.Log("Intro Text Initialized.");
         if (gameManager != null) Debug.Log("Game Manager Initialized.");
 
         if (leftImageComponent != null && centerImageComponent != null && rightImageComponent != null)
@@ -126,90 +156,366 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(int dialogueId)
     {
+        Debug.Log("StartDialogue called with ID: " + dialogueId);
+
         if (!isInitialized)
         {
             Debug.LogError("DialogueManager is not initialized. Aborting dialogue sequence.");
             return;
         }
 
-        StartCoroutine(HandleDialogueTransition(dialogue));
+        // Always start with dialogue ID 7569
+        dialogueId = 7569;
+
+        actualStartingDialogueID = dialogueId;
+
+        if (!string.IsNullOrEmpty(introductoryText) && !introductoryTextShown)
+        {
+            Debug.Log("Introductory text detected, showing it first.");
+            ShowIntroductoryText();
+        }
+        else
+        {
+            Debug.Log("No introductory text, starting dialogue directly.");
+            StartDialogueById(dialogueId);
+        }
+    }
+
+    private void ShowIntroductoryText()
+    {
+        Debug.Log("Showing introductory text");
+        introText.color = introductoryTextColor;
+        introText.text = introductoryText;
+        introText.gameObject.SetActive(true);
+        nextButton.gameObject.SetActive(true);
+        introductoryTextShown = true; // Set the flag here
+        Debug.Log("Introductory text shown: " + introductoryText);
+    }
+
+public void OnNextButtonClicked()
+{
+    Debug.Log("OnNextButtonClicked called");
+
+    if (isTyping)
+    {
+        Debug.Log("Button pressed while typing, ignoring next action.");
+        return;
+    }
+
+    Debug.Log("Next button in Next state");
+    buttonClicked = true;
+    ProceedToNextDialogue();
+}
+
+
+public void OnSkipButtonClicked()
+{
+    Debug.Log("OnSkipButtonClicked called");
+
+    if (isTyping)
+    {
+        Debug.Log("Skip button in Skip state");
+        if (typeSentenceCoroutine != null)
+        {
+            StopCoroutine(typeSentenceCoroutine);
+            dialogueText.text = currentDialogue.text; // Immediately display the full text
+            typeSentenceCoroutine = null;
+            isTyping = false;
+
+            Debug.Log("Skipped typing, enabling next button");
+            EnableNextButton();
+        }
+    }
+}
+
+
+
+
+    private IEnumerator AllowNextAction()
+    {
+        yield return new WaitForSeconds(0.1f); // Short delay to allow button release
+        buttonClicked = false;
+        SetNextButtonState(false); // Set button to Next state
+    }
+
+
+    private IEnumerator WaitAndAllowNextButton()
+    {
+        yield return new WaitForEndOfFrame();
+        buttonClicked = false;
+        Debug.Log("Button click state reset.");
+        SetNextButtonState(false); // Set button to Next state
+    }
+
+    private void ProceedToNextDialogue()
+    {
+        Debug.Log("Proceeding to the next dialogue");
+
+        TransitionAllToIdle();
+
+        StartCoroutine(DisableButtonTemporarily());
+
+        if (currentDialogue.hasResponses)
+        {
+            Debug.Log("Generating response buttons for current dialogue.");
+            GenerateResponseButtons(currentDialogue.responseIDs);
+        }
+        else if (currentDialogue.nextDialogueID != -1)
+        {
+            Debug.Log("Transitioning to next dialogue with ID: " + currentDialogue.nextDialogueID);
+            StartDialogueById(currentDialogue.nextDialogueID);
+        }
+        else
+        {
+            Debug.Log("No more dialogues");
+        }
+    }
+    private IEnumerator DelayAfterSkip()
+    {
+        yield return new WaitForSeconds(0.2f); // Adjust the delay as needed
+        isTyping = false;
+        buttonClicked = false;
+        SetNextButtonState(false); // Set button to Next state
+    }
+
+
+
+    private IEnumerator DelayNextButtonAction()
+    {
+        yield return new WaitForEndOfFrame();
+        buttonClicked = false;
+    }
+
+    private void OnNextButtonPointerDown(BaseEventData eventData)
+    {
+        if (isTyping)
+        {
+            isSkippingText = true;
+        }
+    }
+
+    private void OnNextButtonPointerUp(BaseEventData eventData)
+    {
+        if (isSkippingText)
+        {
+            isSkippingText = false;
+        }
+    }
+
+
+private void SetNextButtonState(bool isTyping)
+{
+    this.isTyping = isTyping;
+
+    nextButton.onClick.RemoveAllListeners();
+    skipButton.onClick.RemoveAllListeners();
+
+    if (isTyping)
+    {
+        Debug.Log("Setting next button to Skip state");
+        nextButton.gameObject.SetActive(false); // Hide next button while typing
+        skipButton.gameObject.SetActive(true);  // Show skip button while typing
+        skipButton.onClick.AddListener(OnSkipButtonClicked);
+    }
+    else
+    {
+        Debug.Log("Setting next button to Next state");
+        nextButton.gameObject.SetActive(true); // Show next button after typing
+        skipButton.gameObject.SetActive(false); // Hide skip button after typing
+        nextButton.onClick.AddListener(OnNextButtonClicked);
+    }
+}
+
+
+
+
+
+
+    private void SkipToTextEnd()
+    {
+        Debug.Log("Skipping to the end of the text");
+
+        if (typeSentenceCoroutine != null)
+        {
+            StopCoroutine(typeSentenceCoroutine);
+            dialogueText.text = currentDialogue.text; // Immediately display the full text
+            typeSentenceCoroutine = null;
+            SetNextButtonState(false); // Set button to Next state after skipping
+        }
+    }
+
+
+    private IEnumerator HandleDialogueTransition(Dialogue dialogue)
+    {
+        if (isTransitioning)
+        {
+            Debug.Log("Skipping HandleDialogueTransition because a transition is in progress");
+            yield break;
+        }
+
+        isTransitioning = true;
+
+        // Smoothly transition from talking to idle for all active image components
+        if (leftImageComponent.gameObject.activeSelf && leftImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("Talking"))
+        {
+            TriggerTalkingToIdleTransition(leftImageAnimator, 0.5f);
+        }
+        if (centerImageComponent.gameObject.activeSelf && centerImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("Talking"))
+        {
+            TriggerTalkingToIdleTransition(centerImageAnimator, 0.5f);
+        }
+        if (rightImageComponent.gameObject.activeSelf && rightImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("Talking"))
+        {
+            TriggerTalkingToIdleTransition(rightImageAnimator, 0.5f);
+        }
+
+        if (fadeOutBackground)
+        {
+            yield return StartCoroutine(FadeOutBackground());
+        }
+
+        TriggerFadeOutAnimations(dialogue);
+
+        yield return new WaitForSeconds(1.0f);
+
+        Dialogue nextDialogue = dialogueDatabase.GetDialogueById(dialogue.nextDialogueID);
+        if (nextDialogue != null)
+        {
+            Debug.Log("Updating image states before fade-in");
+            UpdateImageStates(nextDialogue);
+            yield return new WaitForSeconds(0.1f);
+
+            Debug.Log("Triggering fade-in animations for the next dialogue");
+            TriggerFadeInAnimations(nextDialogue); // Ensure this method call is correct
+            yield return new WaitForSeconds(1.0f);
+
+            if (nextDialogue.fadeInBackground && nextDialogue.backgroundImage != null)
+            {
+                StartCoroutine(FadeInBackground(nextDialogue.backgroundImage));
+            }
+
+            Debug.Log("Displaying next dialogue");
+            DisplayDialogue(nextDialogue);
+        }
+        else
+        {
+            Debug.LogError("No dialogue found with ID: " + dialogue.nextDialogueID);
+        }
+
+        isTransitioning = false;
     }
 
     // Section: Dialogue Management
     public void DisplayDialogue(Dialogue dialogue)
     {
+        Debug.Log("Displaying dialogue with ID: " + dialogue.id);
         currentDialogue = dialogue;
         if (typeSentenceCoroutine != null)
         {
             StopCoroutine(typeSentenceCoroutine);
         }
-        buttonClicked = false; 
+        buttonClicked = false;
 
         fadeOutBackground = dialogue.fadeOutBackground;
         fadeInBackground = dialogue.fadeInBackground;
 
         if (!isTransitioning)
         {
+            Debug.Log("Updating image states and triggering fade-in animations.");
             UpdateImageStates(dialogue);
             TriggerFadeInAnimations(dialogue);
 
             if (fadeInBackground && dialogue.backgroundImage != null)
             {
+                Debug.Log("Fading in background image.");
                 StartCoroutine(FadeInBackground(dialogue.backgroundImage));
             }
         }
 
+        dialogueText.color = dialogue.textColor; // Set the text color
+        dialogueText.enableAutoSizing = true; // Enable auto-sizing
+        dialogueText.fontSizeMin = 10; // Set a reasonable minimum size
+        dialogueText.fontSizeMax = 50; // Set a reasonable maximum size
+        dialogueText.text = ""; // Clear text to trigger auto-size recalculation
+        dialogueText.text = dialogue.text; // Temporarily set text to get proper size
+
+        // Adjust the final font size to fit
+        dialogueText.ForceMeshUpdate();
+        var textInfo = dialogueText.textInfo;
+        float newSize = dialogueText.fontSize;
+
+        while (textInfo.lineCount > 1 && newSize > dialogueText.fontSizeMin)
+        {
+            newSize--;
+            dialogueText.fontSize = newSize;
+            dialogueText.ForceMeshUpdate();
+            textInfo = dialogueText.textInfo;
+        }
+
+        dialogueText.text = ""; // Clear text again for typing effect
         typeSentenceCoroutine = StartCoroutine(TypeSentence(dialogue.text));
         responseButton1.gameObject.SetActive(false);
         responseButton2.gameObject.SetActive(false);
-        if (nextButton != null) nextButton.gameObject.SetActive(false);
+        if (nextButton != null) nextButton.gameObject.SetActive(true);
     }
 
-    IEnumerator TypeSentence(string sentence)
+IEnumerator TypeSentence(string sentence)
+{
+    Debug.Log("Typing sentence: " + sentence);
+    dialogueText.text = "";
+    isTyping = true;
+    SetNextButtonState(true); // Set button to Skip state
+
+    foreach (char letter in sentence.ToCharArray())
     {
-        dialogueText.text = "";
-        bool skip = false;
-
-        foreach (char letter in sentence.ToCharArray())
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                skip = true;
-            }
-            
-            if (skip)
-            {
-                dialogueText.text = sentence;
-                break;
-            }
-
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(0.01f);
-        }
-
-        if (currentDialogue.hasResponses)
-        {
-            GenerateResponseButtons(currentDialogue.responseIDs);
-        }
-        else if (currentDialogue.nextDialogueID != -1)
-        {
-            EnableNextButton();
-        }
-        else if (currentDialogue.isEndDialogue)
-        {
-            EndScenario();
-        }
+        dialogueText.text += letter;
+        yield return new WaitForSeconds(0.01f);
     }
+
+    Debug.Log("Finished typing sentence.");
+    isTyping = false;
+    SetNextButtonState(false); // Set button to Next state
+
+    if (currentDialogue.hasResponses)
+    {
+        Debug.Log("Current dialogue has responses, generating buttons.");
+        GenerateResponseButtons(currentDialogue.responseIDs);
+    }
+    else if (currentDialogue.nextDialogueID != -1)
+    {
+        Debug.Log("Enabling next button for next dialogue.");
+        EnableNextButton();
+    }
+    else if (currentDialogue.isEndDialogue)
+    {
+        Debug.Log("End of dialogue sequence reached.");
+        EndScenario();
+    }
+}
+
+
+
+
+
 
     public void StartDialogueById(int dialogueId)
     {
         Debug.Log("StartDialogueById called with ID: " + dialogueId);
+
+        if (dialogueId == 0 && !introductoryTextShown)
+        {
+            // Starting dialogue with introductory text
+            Debug.Log("Initial dialogue ID detected, starting with introductory dialogue ID 7569.");
+            dialogueId = 7569;
+            introductoryTextShown = true; // Set the flag to true to avoid loop
+        }
+
         Dialogue dialogueToStart = dialogueDatabase.GetDialogueById(dialogueId);
         if (dialogueToStart != null)
         {
+            Debug.Log("Dialogue found with ID: " + dialogueId);
             DisplayDialogue(dialogueToStart);
         }
         else
@@ -242,8 +548,6 @@ public class DialogueManager : MonoBehaviour
         PositionResponseButtons();
     }
 
-
-
     void SetupResponseButton(Button button, int responseID)
     {
         Response response = dialogueDatabase.GetResponseById(responseID);
@@ -271,7 +575,6 @@ public class DialogueManager : MonoBehaviour
             Debug.LogError("No response found for ID: " + responseID);
         }
     }
-
 
     private void PositionResponseButtons()
     {
@@ -397,12 +700,10 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-
     private void TriggerTalkingToIdleTransition(Animator animator, float transitionDuration)
     {
         animator.CrossFade("Idle", transitionDuration);
     }
-
 
     private void ResetAnimatorState(Animator animator)
     {
@@ -486,7 +787,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-
     private IEnumerator TransitionToIdleAndFadeOut(Animator animator, Image imageComponent)
     {
         animator.Play("Idle");
@@ -520,7 +820,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-
     private IEnumerator FadeOutBackground()
     {
         Debug.Log("Fading out background");
@@ -551,99 +850,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Background fade-in complete");
     }
 
-    // Section: Button and Dialogue Transitions
-    public void OnNextButtonClicked()
-    {
-        Debug.Log("OnNextButtonClicked called");
-        if (buttonClicked) return;
-
-        buttonClicked = true;
-        Debug.Log("Next button clicked");
-
-        TransitionAllToIdle();
-
-        StartCoroutine(DisableButtonTemporarily());
-
-        if (currentDialogue.hasResponses)
-        {
-            GenerateResponseButtons(currentDialogue.responseIDs);
-        }
-        else if (currentDialogue.nextDialogueID != -1)
-        {
-            Debug.Log("Transitioning to next dialogue with ID: " + currentDialogue.nextDialogueID);
-            StartCoroutine(HandleDialogueTransition(currentDialogue));
-        }
-        else
-        {
-            Debug.Log("No more dialogues");
-        }
-
-        if (nextButton != null) nextButton.gameObject.SetActive(false);
-    }
-
-    private IEnumerator HandleDialogueTransition(Dialogue dialogue)
-    {
-        if (isTransitioning)
-        {
-            Debug.Log("Skipping HandleDialogueTransition because a transition is in progress");
-            yield break;
-        }
-
-        isTransitioning = true;
-
-        // Smoothly transition from talking to idle for all active image components
-        if (leftImageComponent.gameObject.activeSelf && leftImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("Talking"))
-        {
-            TriggerTalkingToIdleTransition(leftImageAnimator, 0.5f);
-        }
-        if (centerImageComponent.gameObject.activeSelf && centerImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("Talking"))
-        {
-            TriggerTalkingToIdleTransition(centerImageAnimator, 0.5f);
-        }
-        if (rightImageComponent.gameObject.activeSelf && rightImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("Talking"))
-        {
-            TriggerTalkingToIdleTransition(rightImageAnimator, 0.5f);
-        }
-
-        if (fadeOutBackground)
-        {
-            yield return StartCoroutine(FadeOutBackground());
-        }
-
-        TriggerFadeOutAnimations(dialogue);
-
-        yield return new WaitForSeconds(1.0f);
-
-        Dialogue nextDialogue = dialogueDatabase.GetDialogueById(dialogue.nextDialogueID);
-        if (nextDialogue != null)
-        {
-            Debug.Log("Updating image states before fade-in");
-            UpdateImageStates(nextDialogue);
-            yield return new WaitForSeconds(0.1f);
-
-            Debug.Log("Triggering fade-in animations for the next dialogue");
-            TriggerFadeInAnimations(nextDialogue); // Ensure this method call is correct
-            yield return new WaitForSeconds(1.0f);
-
-            if (nextDialogue.fadeInBackground && nextDialogue.backgroundImage != null)
-            {
-                StartCoroutine(FadeInBackground(nextDialogue.backgroundImage));
-            }
-
-            Debug.Log("Displaying next dialogue");
-            DisplayDialogue(nextDialogue);
-        }
-        else
-        {
-            Debug.LogError("No dialogue found with ID: " + dialogue.nextDialogueID);
-        }
-
-        isTransitioning = false;
-    }
-
-
-
-
+    // Method to disable button temporarily
     private IEnumerator DisableButtonTemporarily()
     {
         if (nextButton != null) nextButton.interactable = false;
@@ -652,15 +859,18 @@ public class DialogueManager : MonoBehaviour
         buttonClicked = false;
     }
 
-    private void EnableNextButton()
+private void EnableNextButton()
+{
+    if (nextButton != null)
     {
-        if (nextButton != null)
-        {
-            nextButton.gameObject.SetActive(true);
-            nextButton.interactable = true;
-            buttonClicked = false;
-        }
+        nextButton.gameObject.SetActive(true);
+        nextButton.interactable = true;
+        nextButton.onClick.RemoveAllListeners();
+        nextButton.onClick.AddListener(OnNextButtonClicked);
+        buttonClicked = false;
     }
+}
+
 
     // Method to configure the hover effect for a button
     void ConfigureButtonHoverEffect(Button button)
@@ -677,13 +887,6 @@ public class DialogueManager : MonoBehaviour
 
         AddEventTrigger(trigger, EventTriggerType.PointerEnter, (eventData) => OnButtonHoverEnter(button));
         AddEventTrigger(trigger, EventTriggerType.PointerExit, (eventData) => OnButtonHoverExit(button));
-    }
-
-    void AddEventTrigger(EventTrigger trigger, EventTriggerType eventType, UnityEngine.Events.UnityAction<BaseEventData> action)
-    {
-        EventTrigger.Entry entry = new EventTrigger.Entry { eventID = eventType };
-        entry.callback.AddListener(action);
-        trigger.triggers.Add(entry);
     }
 
     void OnButtonHoverEnter(Button button)
@@ -722,7 +925,6 @@ public class DialogueManager : MonoBehaviour
             rightImageAnimator.Play("Idle");
         }
     }
-
 
     // Section: Debug Tools
     public void SimulateResponses(int countA, int countB)

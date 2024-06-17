@@ -16,21 +16,21 @@ public class Dialogue
     public bool isLeftImageTalking;
     public bool shouldLeftImageFadeIn;
     public bool shouldLeftImageFadeOut;
-    public bool isLeftImageMirrored; // New field to indicate if the left image should be mirrored
+    public bool isLeftImageMirrored;
 
     public Sprite centerImage;
     public bool isCenterImageVisible;
     public bool isCenterImageTalking;
     public bool shouldCenterImageFadeIn;
     public bool shouldCenterImageFadeOut;
-    public bool isCenterImageMirrored; // New field to indicate if the center image should be mirrored
+    public bool isCenterImageMirrored;
 
     public Sprite rightImage;
     public bool isRightImageVisible;
     public bool isRightImageTalking;
     public bool shouldRightImageFadeIn;
     public bool shouldRightImageFadeOut;
-    public bool isRightImageMirrored; // New field to indicate if the right image should be mirrored
+    public bool isRightImageMirrored;
 
     public bool hasResponses => responseIDs != null && responseIDs.Length > 0; // Determine if the dialogue has responses
 
@@ -39,5 +39,5 @@ public class Dialogue
     public Sprite backgroundImage; // Background image for the dialogue
     public bool fadeOutBackground; // Indicates if the background should fade out
     public bool fadeInBackground; // Indicates if the background should fade in
-
+    public Color textColor = Color.white; // Text color (default is white)
 }

@@ -325,6 +325,152 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107305854}
   m_CullTransparentMesh: 1
+--- !u!1 &112077160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 112077161}
+  - component: {fileID: 112077165}
+  - component: {fileID: 112077164}
+  - component: {fileID: 112077163}
+  - component: {fileID: 112077162}
+  m_Layer: 5
+  m_Name: SkipButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &112077161
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112077160}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 680203308}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 675, y: -501}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &112077162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112077160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1711b49c68008a54fb9504fc534f99bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPressSFX: {fileID: 1121129087}
+--- !u!114 &112077163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112077160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 112077164}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 112077162}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonPressSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &112077164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112077160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -5611136652117499180, guid: 2a01691a87fedbe4aa6de6f1c0c0f3d4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &112077165
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112077160}
+  m_CullTransparentMesh: 1
 --- !u!1 &181237753
 GameObject:
   m_ObjectHideFlags: 0
@@ -2180,6 +2326,7 @@ RectTransform:
   - {fileID: 389993911}
   - {fileID: 1514667001}
   - {fileID: 1839375043}
+  - {fileID: 112077161}
   - {fileID: 345572769}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3290,6 +3437,50 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!1 &1565426289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1565426290}
+  - component: {fileID: 1565426291}
+  m_Layer: 0
+  m_Name: GlobalVolumeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1565426290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565426289}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 339.1924, y: 258.62152, z: -0.63446736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1565426291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565426289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff6a6006ed7add46b1facb6f02bf68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1615364124
 GameObject:
   m_ObjectHideFlags: 0
@@ -4096,6 +4287,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 1
     text: <i>Students shuffle around the room in their seats, some getting up in
       small clusters to head to the canteen. No one approaches Aaron, who sits by
@@ -4127,6 +4319,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 2
     text: "Anna: Hey Sofia, did any of that seem\u2026 right to you? Like a lot of
       that sounded very missing-important-context right? "
@@ -4155,6 +4348,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 3
     text: "Sofia: <i>Softly sighs while staring at the last slide on the projector.</i>
       Yeah, he didn\u2019t mention a word about any of the coups that have plagued
@@ -4186,6 +4380,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 4
     text: "Anna: ...It must really suck to see all of that context and stuff just\u2026
       not mentioned here at all. I\u2019m sorry you have to sit through all that
@@ -4215,6 +4410,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 5
     text: "Sofia: I mean, I do talk it through with you though. <i>Laughs quietly.</i>
       In fairness, it\u2019s more like me and Kacper complaining together \u2013
@@ -4244,6 +4440,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 6
     text: "Sofia: Probably not, to be honest. <i>Shared look of defeat with Kacper.</i>
       Most lecturers like that are too set in their ways to bother changing lectures
@@ -4273,6 +4470,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 7
     text: "Kacper: I used to \u201Ctalk back\u201D sometimes as you say, but it never
       did me any good. I don\u2019t think it changed the learning much either"
@@ -4301,6 +4499,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 8
     text: "Sofia: Wish I could say I\u2019m surprised by that, but I\u2019m really
       not."
@@ -4329,6 +4528,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 9
     text: 'Anna: What, did the teacher get upset or something?'
     responseIDs: 
@@ -4356,6 +4556,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 10
     text: "Kacper: Ehhh\u2026 <i>Kacper waves his hand to indicate yes-and-no.</i>
       Sometimes yes, mostly no. They\u2019d say to me thank you for speaking up,
@@ -4387,6 +4588,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 11
     text: "Sofia: Mhmm, yep. Like, I get that Aaron\u2019s probably inherited the
       module from however long ago and he\u2019s probably not familiar with all of
@@ -4418,6 +4620,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 12
     text: "Sofia: But still, yeah it does suck, especially when it\u2019s like the
       lecturer just doesn\u2019t seem to care about either the module or students. "
@@ -4446,6 +4649,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 13
     text: "Anna: \u2026I don\u2019t suppose that either of you want to do anything
       about it this time? Especially since it\u2019s not just been today for this
@@ -4476,6 +4680,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 14
     text: "Sofia: Yeah, but at this point it\u2019s like, what can I actually do?
       Why would he listen to me and make any changes to module halfway through the
@@ -4507,6 +4712,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 15
     text: 'Kacper: <i>Nods in agreement.</i> '
     responseIDs: 
@@ -4525,7 +4731,7 @@ MonoBehaviour:
     shouldCenterImageFadeOut: 0
     isCenterImageMirrored: 0
     rightImage: {fileID: 21300000, guid: 493835a44ce681f4b8879ce874dd4685, type: 3}
-    isRightImageVisible: 0
+    isRightImageVisible: 1
     isRightImageTalking: 0
     shouldRightImageFadeIn: 0
     shouldRightImageFadeOut: 0
@@ -4534,6 +4740,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 16
     text: "Sofia: I remember you said you once nipped back at a teacher in high school
       and got detention for it, Kacper. Obviously they can\u2019t give us detention
@@ -4565,6 +4772,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 17
     text: 'Kacper: It was probably a bit different for you and for me though, Sofia.
       Our home countries are so far apart in culture, maybe it would be fine here? '
@@ -4593,6 +4801,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 18
     text: 'Anna: You think so, Kacper? '
     responseIDs: 0200000003000000
@@ -4620,6 +4829,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 19
     text: "Kacper: At university, I would rather wait because if someone, like a
       lecturer, has an issue, it\u2019s gonna be a much bigger problem for me compared
@@ -4651,6 +4861,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 20
     text: "Kacper: I would like to say it immediately to be honest, because now I\u2019m
       older and I understand more than I did when it happened when I was younger,
@@ -4681,6 +4892,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 21
     text: "Sofia: Plus a lot of the stuff isn\u2019t exactly written down anyways
       \u2013 how do you explain that the reason that no one gets the public transport
@@ -4718,6 +4930,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 22
     text: 'Anna: ... '
     responseIDs: 
@@ -4745,6 +4958,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 23
     text: "Sofia: Lucky him where it gets to be a \u201Clittle think\u201D problem
       and for us it\u2019s much more of a \u201Cmassive pain in the ass\u201D problem.  "
@@ -4773,6 +4987,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 24
     text: 'Anna: ...now I feel bad for giving this module the benefit of the doubt
       at the start of the term. '
@@ -4801,6 +5016,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 25
     text: 'Sofia: Hmm? What do you mean by that? '
     responseIDs: 
@@ -4828,6 +5044,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 26
     text: "Kacper: Ah I know what she means. You mean like how you wanted it to be
       a good class right, but now you can really tell that it\u2019s just not good? "
@@ -4856,6 +5073,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 27
     text: 'Anna: Kinda, yeah. '
     responseIDs: 
@@ -4883,6 +5101,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 28
     text: "Anna: I mean like, way back at the start I didn\u2019t know as much because
       we didn\u2019t talk a lot before, but even then I was kinda like, uh?? Why
@@ -4914,6 +5133,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 29
     text: 'Sofia: Yeah? '
     responseIDs: 
@@ -4941,6 +5161,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 30
     text: "Anna: And now we\u2019re what, 8, 9 weeks into the term? More than halfway
       through and if anything it\u2019s gotten worse. I mean I\u2019m sure I\u2019m
@@ -4972,6 +5193,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 31
     text: "Sofia: Oh no, no it\u2019s fine! I don\u2019t mind explaining things to
       you at all- "
@@ -5000,6 +5222,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 32
     text: "Anna: But that\u2019s the point isn\u2019t it? It\u2019s not fair that
       you have to explain it to me, and it\u2019s not fair that the lecturers don\u2019t
@@ -5034,6 +5257,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 33
     text: "Sofia: Yeah, I know that, but really what could I even do? I\u2019m just
       sitting here doing my job as a student when half the class hasn\u2019t even
@@ -5063,6 +5287,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 34
     text: "Sofia: <i>Dryly, she scoffs.</i> Yeah, it\u2019s fucking annoying, but
       hey, at least no-one\u2019s learning the wrong stuff, right? <i>Long-suffering
@@ -5092,6 +5317,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 35
     text: "Sofia: <i>Disdainfully, she snorts.</i> Hah, it\u2019s hardly like anyone
       cares to see it fixed apart from us who already know better and people who
@@ -5121,6 +5347,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 36
     text: 'Kacper: It is really annoying, I understand how you feel completely. '
     responseIDs: 
@@ -5148,6 +5375,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 37
     text: "Kacper: It was same for me even in primary school, they just made a joke
       out of how they covered the history of my country and when I told my mum, she
@@ -5177,6 +5405,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 38
     text: 'Sofia: Sometimes I think our parents had it even worse. '
     responseIDs: 
@@ -5204,6 +5433,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 39
     text: 'Sofia: At least we have the internet, and we talk to people from everywhere
       nowadays. My grandparents have no idea what uni is like here. '
@@ -5232,6 +5462,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 40
     text: "Anna: There\u2019s some Scottish people like that too, but I like to think
       we\u2019re quite welcoming? "
@@ -5260,6 +5491,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 41
     text: "Anna: There\u2019s always gonna be people who have experienced and seen
       more cultures and other such things than others, that\u2019s just numbers at
@@ -5289,6 +5521,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 42
     text: "Sofia: Yeah, but I mean in the way that my grandparents \u2013 and Kacper\u2019s
       parents to an extent, based on what he\u2019s said \u2013 might not dare to
@@ -5319,6 +5552,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 43
     text: "Kacper: Yes, that\u2019s it exactly. When my mother said that, she was
       meaning like that is just the simple reality, and there is no point to even
@@ -5348,6 +5582,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 44
     text: "Kacper: I really don\u2019t know how much she\u2019d have expected things
       to change, I don\u2019t even know if she expected me to go abroad at all, so
@@ -5377,6 +5612,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 45
     text: "Kacper: I\u2019m not really sure if she would have seen how much the world
       has changed since then, I\u2019m not even sure if she thought I\u2019d even
@@ -5406,6 +5642,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 46
     text: "Kacper: But I mean, regardless of that, the internet and news sites have
       been around for long enough, there\u2019s really no excuses here at least. "
@@ -5434,6 +5671,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 47
     text: "Sofia: You\u2019re right with that. There really isn\u2019t a good reason
       to leave things as they are. "
@@ -5462,6 +5700,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 48
     text: "Sofia: You\u2019re right with that. There really isn\u2019t a good reason
       to leave things as they are. "
@@ -5490,6 +5729,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 49
     text: "Sofia: <i>Resentfully</i> And now if we\u2019re talking about unfair responsibilities,
       how is it fair that it\u2019s my job to educate the lecturer on why his content
@@ -5519,6 +5759,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 50
     text: "Anna: I wonder where they\u2019re getting this curriculum from, when you
       put it that way though. "
@@ -5547,6 +5788,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 51
     text: 'Kacper: What do you mean? '
     responseIDs: 
@@ -5574,6 +5816,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 52
     text: "Anna: Well, they\u2019re teaching us all this stuff, and I know that there\u2019s
       tons of things that are either wrong or missing really important things from
@@ -5603,6 +5846,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 53
     text: "Anna: If they spoke to anyone with first-hand experience like you or Sofia,
       they\u2019d know about all of that, and they\u2019d know not to leave it out
@@ -5632,6 +5876,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 54
     text: "Anna: Since that hasn\u2019t happened\u2026 did they just not talk to
       anyone or read any papers with firsthand cultural knowledge in the first place? "
@@ -5660,6 +5905,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 55
     text: 'Sofia: Appealing emotionally is so hard though. I hate feeling like I
       need to emotionally grovel and cut myself up just for the people in charge
@@ -5689,6 +5935,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 56
     text: "Sofia: It really grinds at me that I\u2019d have to frame it like that,
       as if how it makes us feel like shit isn\u2019t somehow enough of a reason
@@ -5719,6 +5966,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 57
     text: "Sofia: <i>Quietly sighs and visibly tries to relax.</i> How is it that
       this always happens. Don\u2019t they do some kind of teacher training for this?
@@ -5749,6 +5997,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 58
     text: "Anna: ...hey, I\u2019m sorry, I didn\u2019t mean it like that. "
     responseIDs: 
@@ -5776,6 +6025,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 59
     text: "Anna: Oh shit, I\u2019m really sorry. I genuinely didn\u2019t mean for
       it to come across like that- "
@@ -5804,6 +6054,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 60
     text: 'Sofia: <i>Shakes head while smiling reassuringly.</i> '
     responseIDs: 
@@ -5831,6 +6082,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 61
     text: "Kacper: No, do not worry about it, seriously! We know how it\u2019s like! "
     responseIDs: 
@@ -5858,6 +6110,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 62
     text: "Sofia: <i>Understandingly.</i> No, it\u2019s fine, I know you.  "
     responseIDs: 
@@ -5885,6 +6138,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 63
     text: "Anna: That\u2019s why it\u2019s not fine though, I should\u2019ve realised
       the way I phrased it would\u2019ve landed that way.  "
@@ -5913,6 +6167,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 64
     text: "Sofia: It\u2019s fine, really! You\u2019re good. I\u2019m just happy someone
       in here is actually willing to listen to me rant about everything. "
@@ -5941,6 +6196,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 65
     text: "Anna: I mean, it\u2019s very justified ranting, so of course I want to
       hear it. The context that\u2019s just straight up missing in half of these
@@ -5971,6 +6227,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 66
     text: "Sofia: This is plenty enough, don\u2019t worry. It\u2019s not your job
       to make me feel okay."
@@ -5999,6 +6256,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 67
     text: "Sofia: There\u2019s not really anything more, don\u2019t worry. It\u2019s
       not your job to fix the system."
@@ -6027,6 +6285,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 68
     text: "Anna: It is kind of though? That\u2019s how I see it \u2013 I should have
       like, a moral spine by this age, I think."
@@ -6055,6 +6314,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 69
     text: "Sofia: That\u2019s a really sweet way of putting it. "
     responseIDs: 
@@ -6082,6 +6342,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 70
     text: 'Kacper: <i>Humorously</i> Aww, I like you guys too! '
     responseIDs: 
@@ -6109,6 +6370,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 71
     text: <i>All three students share a good laugh, until the easy quiet resumes
       between the three of them at the back of the room. </i>
@@ -6137,6 +6399,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 72
     text: "Anna: Hey, I know you said you don\u2019t really see a way to get all
       of these issues across to Aaron or guy who does the practical sessions, but
@@ -6168,6 +6431,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 73
     text: "Sofia: <i>Laughs comfortably.</i> Aww, that\u2019s real nice of you to
       put it that way. I mean, short of asking him yourself or dumping a ton of links
@@ -6199,6 +6463,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 74
     text: "Kacper: Chuckles too. Oh don\u2019t even start talking about that too,
       I\u2019ve seen it so much before. Wry, tired smile. "
@@ -6227,6 +6492,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 75
     text: "Anna: \u201CYoung uns\u201D\u2026? "
     responseIDs: 
@@ -6254,6 +6520,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 76
     text: "Kacper: It\u2019s how, when an older person gets all stuck in the past?
       You know when they just say \u201CBack in my day, it was much harder, you should
@@ -6283,6 +6550,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 77
     text: "Kacper: I mean, I don\u2019t think Aaron is so much older than us, but
       he is a little bit like that. "
@@ -6311,6 +6579,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 78
     text: "Sofia: Good to know the \u201Cold man shouting at the clouds for being
       in the way\u201D is a thing across all borders. My granddad\u2019s brother
@@ -6341,6 +6610,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 79
     text: "Anna: \u2026it\u2019s crazy that for some people, it wasn\u2019t that
       long ago when it was so different. "
@@ -6369,6 +6639,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 80
     text: 'Kacper: In a way, it almost makes it more respectable that older generations
       are dealing with so much change in a kind of short period of overall human
@@ -6398,6 +6669,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 81
     text: "Kacper: Although it really doesn\u2019t excuse them to say that we should
       be somehow grateful for problems they didn\u2019t have, just because it was
@@ -6427,6 +6699,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 82
     text: "Kacper: But then if we expect less, then we will get less. And eventually,
       it will be less, and less, then there will no change at all. And that\u2019s
@@ -6456,6 +6729,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 83
     text: "Kacper: But then if we ask for more, then we will be told to be more realistic.
       And more realistic becomes slower, and slower, until it stops changing. And
@@ -6485,6 +6759,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 84
     text: "Sofia: It\u2019s so disheartening when you say it that way. It\u2019s
       like we are back to where our parents were, just accepting the world for what
@@ -6514,6 +6789,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 85
     text: "Kacper: I\u2019m sorry, I did not mean to bring the mood down. "
     responseIDs: 
@@ -6541,6 +6817,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 86
     text: "Anna: I don\u2019t think either of you should be apologizing for that
       though. "
@@ -6569,6 +6846,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 87
     text: "Anna: It\u2019s not your fault that the university has made a space where
       it feels like you can\u2019t just share all of this with them directly. "
@@ -6597,6 +6875,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 88
     text: "Anna: Why have they made us feel like we have to minimise our human experiences
       just to get by\u2026 "
@@ -6625,6 +6904,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 89
     text: "Kacper: It\u2019s just like how Sofia said \u2013 that\u2019s how these
       spaces have always been. Or at least, from my experiences anyway. "
@@ -6653,6 +6933,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 90
     text: "Sofia: Yeah. I really can\u2019t be bothered with this today anymore,
       I\u2019m gonna go home and nap after this anyway. He\u2019s not exactly inspired
@@ -6682,6 +6963,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 91
     text: "Anna: \u2026hmmm. "
     responseIDs: 
@@ -6709,6 +6991,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 92
     text: "<i>Students begin filing back into the room, clutching their university
       caf\xE9 paper cups while slowly filtering back up into the seats. </i>"
@@ -6737,6 +7020,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 93
     text: "Dr Aaron Pearson: Right! I hope you all had a refreshing break, and remember,
       please do come and ask me any questions. I\u2019m here to listen and help you
@@ -6766,6 +7050,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 94
     text: 'Kacper: <i>Under his breath.</i> Yeah, because I <i>really</i> trust you
       can do that very well after this class. '
@@ -6794,6 +7079,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 95
     text: 'Sofia: <i>Grim laugh under her breath.</i> Mhm. I feel so inspired to
       share my experiences with you, Aaron. No sarcasm, I promise.'
@@ -6822,6 +7108,39 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+  - id: 7569
+    text: <i>A wide mid-sized lecture room that is only half full of students, all
+      sitting towards the back. Quiet and informal conversation fills the room at
+      the back, while no-one particularly wants to approach the teaching staff at
+      any point beyond handing back the sign in sheet. Numerous students are intermittently
+      messaging on their phones.</i>
+    responseIDs: 
+    nextDialogueID: 0
+    isResponse: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+    backgroundImage: {fileID: 0}
+    fadeOutBackground: 0
+    fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 0, a: 1}
   responses:
   - id: 0
     text: 'You can talk it through with me if you want? '
@@ -6933,11 +7252,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 2116143494}
   nextButton: {fileID: 1839375045}
+  introText: {fileID: 2116143494}
   backgroundImageComponent: {fileID: 680203309}
   dialogueBoxRectTransform: {fileID: 1514667001}
   responseButton1: {fileID: 193036277}
   responseButton2: {fileID: 498893365}
   responseContainer: {fileID: 389993911}
+  skipButton: {fileID: 112077163}
   dialogueDatabase: {fileID: 2286067376845419734}
   leftImageAnimator: {fileID: 824215151}
   centerImageAnimator: {fileID: 181237757}
@@ -6946,6 +7267,8 @@ MonoBehaviour:
   centerImageComponent: {fileID: 181237755}
   rightImageComponent: {fileID: 369657551}
   gameManager: {fileID: 1647771799}
+  introductoryText: 
+  introductoryTextColor: {r: 1, g: 0.9171633, b: 0, a: 1}
   fadeDuration: 1
 --- !u!4 &5366149892479883751
 Transform:
@@ -6996,3 +7319,4 @@ SceneRoots:
   - {fileID: 595920045}
   - {fileID: 1615364126}
   - {fileID: 1755830785}
+  - {fileID: 1565426290}

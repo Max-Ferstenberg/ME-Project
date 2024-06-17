@@ -509,6 +509,152 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150859418}
   m_CullTransparentMesh: 1
+--- !u!1 &182942419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 182942420}
+  - component: {fileID: 182942424}
+  - component: {fileID: 182942423}
+  - component: {fileID: 182942422}
+  - component: {fileID: 182942421}
+  m_Layer: 5
+  m_Name: SkipButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &182942420
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182942419}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000113, y: 1.0000113, z: 1.0000113}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1567817800}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 675.0001, y: -500.99994}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &182942421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182942419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1711b49c68008a54fb9504fc534f99bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPressSFX: {fileID: 1173505067}
+--- !u!114 &182942422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182942419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 182942423}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 182942421}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonPressSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &182942423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182942419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -5611136652117499180, guid: 2a01691a87fedbe4aa6de6f1c0c0f3d4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &182942424
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182942419}
+  m_CullTransparentMesh: 1
 --- !u!1 &243072086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,7 +1403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1711b49c68008a54fb9504fc534f99bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPressSFX: {fileID: 0}
+  buttonPressSFX: {fileID: 1173505067}
 --- !u!114 &462101353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2972,6 +3118,7 @@ RectTransform:
   - {fileID: 58992819}
   - {fileID: 150859419}
   - {fileID: 462101351}
+  - {fileID: 182942420}
   - {fileID: 443930890}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4111,6 +4258,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 1
     text: "Dr Aaron Pearson: <i>[Internally] Okay, let\u2019s do this again. I hope
       they\u2019re a bit more co-operative this time\u2026 </i>"
@@ -4139,6 +4287,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 2
     text: "Dr Aaron Pearson: Okay everyone, welcome back everyone, I hope you all
       had a good break\u2026 "
@@ -4167,6 +4316,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 3
     text: <i>The chatter dulls as students return their focus to Aaron at the front
       of the room, although some scuffles and muttering still continues. </i>
@@ -4195,6 +4345,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 4
     text: "Dr Aaron Pearson: So, does anyone have any further questions about the
       assignment, now you\u2019ve had time to discuss with your friends about what
@@ -4224,6 +4375,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 5
     text: "<i>A half-raised hand and confident voice jumps in immediately, almost
       cutting off the end of Aaron\u2019s question to the room. </i>"
@@ -4252,6 +4404,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 6
     text: "Kacper: Sorry, for those who don\u2019t really understand the difference
       in the approaches we can choose, could you say again how the marking will be
@@ -4281,6 +4434,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 7
     text: "Dr Aaron Pearson: <i>[Internally] I said at least twice earlier that although
       I am the one responsible for the grading rubric in this module, I won\u2019t
@@ -4311,6 +4465,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 8
     text: "Dr Aaron Pearson: <i>[Internally] At least this is a logical question.
       Unlike a certain question of \u201CWhere is the closest women\u2019s bathrooms?\u201D
@@ -4340,6 +4495,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 9
     text: "Dr Aaron Pearson: <i>[Internally] Why would I know that anyway? I\u2019m
       clearly male-presenting\u2026 </i>"
@@ -4368,6 +4524,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 10
     text: "Dr Aaron Pearson: <i>Patiently.</i> As I said earlier, I am involved with
       the grading process for this module, but today I\u2019m here to provide you
@@ -4398,6 +4555,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 11
     text: 'Dr Aaron Pearson: You will be graded on the same professional criteria
       regardless of how you choose to approach your assignment. If you write an essay,
@@ -4428,6 +4586,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 12
     text: 'Kacper: Okay, so there is no difference between how each one will be graded,
       it will be the same categories just in a different form? '
@@ -4456,6 +4615,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 13
     text: "Dr Aaron Pearson: Yes, that\u2019s correct. "
     responseIDs: 
@@ -4483,6 +4643,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 14
     text: 'Dr Aaron Pearson: Does anyone else have any quick questions? '
     responseIDs: 
@@ -4510,6 +4671,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 15
     text: <i>Long, awkward silence. </i>
     responseIDs: 
@@ -4537,6 +4699,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 16
     text: "Dr Aaron Pearson: Surely, anyone got a little something to ask? I can
       see some deliberation and thoughts I think, maybe I\u2019ll just wait to move
@@ -4566,6 +4729,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 17
     text: <i>More awkward silence, with students carefully trying to avoid eye contact
       with Aaron. Eventually, one student raises his hand hesitantly. </i>
@@ -4594,6 +4758,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 18
     text: "Male Student 1: \u2026So, why are we doing this though? Surely having
       the option of one way or another is unfair, because whoever\u2019s marking
@@ -4624,6 +4789,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 19
     text: "<i>Dr Aaron Pearson: [Internally] So much for an easier group today. At
       least it\u2019s on topic, but it feels like pulling teeth to get them to engage\u2026
@@ -4653,6 +4819,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 20
     text: 'Dr Aaron Pearson: And that is why we have anonymous marking, and second
       markers. If you are familiar with the process from previous modules, then you
@@ -4683,6 +4850,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 21
     text: "<i>At the mention of \u201Cas equal as possible\u201D, there seems to
       be a ripple of disagreement within a couple of groups of students. It is only
@@ -4713,6 +4881,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 22
     text: 'Dr Aaron Pearson: I think we can move from that into where we were before
       we left off, discussing the benefits of each approach when it comes to academic
@@ -4742,6 +4911,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 23
     text: "Dr Aaron Pearson: So you\u2019ve all been given the option to either write
       a traditional 2000-word essay, or to record a screencapture of yourself giving
@@ -4771,6 +4941,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 24
     text: "<i>Again, only a few students seem to hear Aaron\u2019s prompt. Most avoid
       doing anything to catch Aaron\u2019s attention. </i>"
@@ -4799,6 +4970,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 25
     text: "Dr Aaron Pearson: <i>[Internally] God, what else do I do here. It\u2019s
       not like this information isn\u2019t relevant to their marks, but they still
@@ -4829,6 +5001,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 26
     text: <i>Aaron looks around the classroom, eventually spotting a young man at
       the back who is looking at the slide with a slightly confused expression. </i>
@@ -4857,6 +5030,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 27
     text: "Dr Aaron Pearson: How you about yourself, at the back there? You look
       like you\u2019ve got something on your mind? "
@@ -4885,6 +5059,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 28
     text: <i>The male student spooks a bit, looking like a deer in the headlights.
       </i>
@@ -4913,6 +5088,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 29
     text: 'Male Student 2: <i>Hesitantly calling from the back</i>. Um, I was going
       to ask if the topics still free choice for both options? '
@@ -4941,6 +5117,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 30
     text: "Male Student 2: <i>Sheepishly.</i> Sorry \u2013 Hana takes a lot of questions,
       so I was going to ask her later."
@@ -4969,6 +5146,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 31
     text: 'Male Student 2: <i>Begrudgingly.</i> Sorry Aaron, but Hana usually takes
       more questions, so I was going to ask in her session instead.'
@@ -4997,6 +5175,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 32
     text: "Dr Aaron Pearson: <i>[Internally] It\u2019s not that Hana takes more questions,
       it\u2019s that none of you want to ask me any questions at all ffs. </i>"
@@ -5025,6 +5204,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 33
     text: "Dr Aaron Pearson: Dryly. Hmm, yes, well of course I encourage everybody
       to ask as many questions as needed, but remember that Hana isn\u2019t as involved
@@ -5054,6 +5234,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 34
     text: <i>Amused looks flicker across the student faces this time, with a couple
       of glances between Male Student 1 and Male Student 2, who are openly trying
@@ -5083,6 +5264,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 35
     text: 'Dr Aaron Pearson: <i>[Internally] God, what does it take to be taken even
       a little seriously these days? </i>'
@@ -5111,6 +5293,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 36
     text: 'Dr Aaron Pearson: But to answer you, yes, it is still free choice on the
       topic as long as it is related to the module. '
@@ -5139,6 +5322,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 37
     text: <i>Aaron clicks to the next slide, with a list of example topics. The students
       turn their gaze to the projector screen behind him. </i>
@@ -5167,6 +5351,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 38
     text: 'Dr Aaron Pearson: I do have a list of example topics here for you all
       as well.  '
@@ -5195,6 +5380,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 39
     text: 'Dr Aaron Pearson: Does anyone see anything that piques your interest?
       An idea for a style of writing, or a position to discuss in a presentation. '
@@ -5223,6 +5409,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 40
     text: "<i>Most students nod understandingly, although a few students\u2019 faces
       twist at this phrasing again. Kacper, and another woman \u2013 a Sophie, or
@@ -5253,6 +5440,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 41
     text: "<i>Most students nod understandingly, but two students visibly show their
       distaste for this wording. Kacper, and another woman \u2013 a Sophie, or a
@@ -5284,6 +5472,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 42
     text: "Dr Aaron Pearson: <i>[Internally] Why do I feel like those two will always
       have a bone to pick with whatever I say\u2026  </i>"
@@ -5312,6 +5501,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 43
     text: "<i>As if Aaron\u2019s thoughts were heard, Sofia motions to cautiously
       raise a hand. She seems guarded, based on how Kacper looks to be ready to assess
@@ -5341,6 +5531,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 44
     text: "Dr Aaron Pearson: <i>[Internally] I\u2019m really struggling to get any
       momentum, but I don\u2019t want to jump the gun and cut off a legitimate ask\u2026
@@ -5371,6 +5562,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 45
     text: <i>The woman nods as if she knows that Aaron is afraid of out-of-context
       questions, but she still seems at odds with this call as she pulls her hand
@@ -5402,6 +5594,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 46
     text: "<i>She seems surprised by this admission, then smiles and shakes her head
       gently. \u201CI\u2019ll ask you afterwards,\u201D she replies quietly from
@@ -5433,6 +5626,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 47
     text: "Dr Aaron Pearson:<i> [Internally] That was\u2026 something. Ah shoot,
       did I get her name wrong? I hope not, but on we go.</i>"
@@ -5461,6 +5655,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 48
     text: "Dr Aaron Pearson: So, as you can see here, we\u2019ve got the examples
       of a comparative essay, a persuasive essay, a oppositional essay, and a discursive
@@ -5490,6 +5685,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 49
     text: 'Dr Aaron Pearson: For comparative examples, you can lean into larger topics
       across wide gaps, so maybe considering political figures in country compared
@@ -5520,6 +5716,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 50
     text: "Dr Aaron Pearson: You can also focus in, in the opposite direction \u2013
       maybe something like two different ways of executing a very specific institutional
@@ -5549,6 +5746,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 51
     text: 'Dr Aaron Pearson: A persuasive essay-  '
     responseIDs: 
@@ -5576,6 +5774,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 52
     text: <i>Male Student 1 perks up, and looks as if he is pondering something again.
       </i>
@@ -5604,6 +5803,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 53
     text: "Dr Aaron Pearson:<i> [Internally] I bet he wants to ask about those doing
       presentations, and he won\u2019t ask if I don\u2019t call on it\u2026 but what
@@ -5633,6 +5833,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 54
     text: <i>Male Student 1 closes his mouth as his face shows some confusion. Other
       students nod, but the gesture is made on autopilot, as there is no indication
@@ -5662,6 +5863,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 55
     text: <i>Male Student 1 closes his mouth as he smiles and nods appreciatively.
       Other students seem appreciate this as well, as a few of them also nod with
@@ -5691,6 +5893,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 56
     text: "Dr Aaron Pearson: <i>[Internally] Surely that\u2019s not just me noticing
       something that isn\u2019t there? Why do I keep feeling like there\u2019s something
@@ -5720,6 +5923,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 57
     text: "Dr Aaron Pearson: So, as I\u2019ve got written here, there are several
       ways you can approach this\u2026 "
@@ -5748,6 +5952,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 58
     text: <i>The classroom returns to its previous rhythms, Aaron giving information
       and students being very reluctant to share their questions with the floor.
@@ -5778,6 +5983,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 59
     text: <i>When the class is over, Aaron packs up his laptop and starts to head
       to the staff area for a coffee. The last student to leave hesitates by the
@@ -5807,6 +6013,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 60
     text: "Dr Aaron Pearson: <i>Looks up.</i> Hello, can I help you with something,
       is it Sophie? Sorry, I\u2019m not too familiar with everybody. "
@@ -5835,6 +6042,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 61
     text: "Sofia: \u2026it\u2019s Sofia, and uhm, I just had a question about some
       of the teaching content. "
@@ -5863,6 +6071,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 62
     text: 'Dr Aaron Pearson: Of course, what is it? '
     responseIDs: 
@@ -5890,6 +6099,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 63
     text: 'Sofia: Do you know who helps make the learning content? Like, who do they
       ask about the stuff that goes into the lectures? '
@@ -5918,6 +6128,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 64
     text: "Dr Aaron Pearson: <i>Confused, but not rejecting.</i> I\u2019m not quite
       sure what you mean? I mean, all of the stuff in the lectures needs to be approved
@@ -5948,6 +6159,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 65
     text: "Sofia: No, I mean more like\u2026 who taught the lecturer the stuff in
       the first place? Like, who\u2019s personal stories about how writing works
@@ -5977,6 +6189,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 66
     text: "Dr Aaron Pearson: <i>Pauses in thought.</i> I\u2026 I\u2019m not really
       sure. I\u2019ve never thought about that before. "
@@ -6005,6 +6218,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 67
     text: "Sofia: <i>A touch disappointedly.</i> Ah, it\u2019s okay. It\u2019s not
       super important anyway, thank you for the class today. <i>She begins to turn
@@ -6034,6 +6248,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 68
     text: "Dr Aaron Pearson: <i>Half calling out to her.</i> Sorry I don\u2019t have
       a better answer, I\u2019ll ask around for you! "
@@ -6062,6 +6277,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 69
     text: <i>Sofia gives a blameless smile and half-waves as she leaves the room,
       leaving Aaron to finish picking up his things alone in the now-quiet room.
@@ -6091,6 +6307,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 0}
     fadeOutBackground: 1
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 70
     text: '<i>The class has ended, and Aaron has gone to the staff space to discuss
       the outcome of the class with their colleagues. In tired-looking room with
@@ -6123,6 +6340,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 1
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 71
     text: 'Dr Aaron Pearson: ...Yeah, I know that meeting felt a bit useless because
       all they were talking about was the fact that class was cancelled at the last
@@ -6153,6 +6371,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 72
     text: "Dr Aaron Pearson: I mean come on. These people are adults. I\u2019m not
       the only one thinking that they chose to come to university, so they should
@@ -6182,6 +6401,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 73
     text: "Dr Hana Lane: I mean of course, I don\u2019t think that\u2019s an unpopular
       opinion- "
@@ -6210,6 +6430,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 74
     text: "Dr Aaron Pearson: Thank you! They know they\u2019re here to learn, but
       apparently being irked by this behaviour is radical to some people... "
@@ -6238,6 +6459,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 75
     text: "Dr Aaron Pearson: And year after year it just gets worse - did you know
       I had this complaint last week from a student who told me that she felt \u201Cdisrespected\u201D
@@ -6267,6 +6489,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 76
     text: "Prof Mary Cooke: <i>Uncomfortably looking around.</i> ...I\u2019m sure
       there must\u2019ve been a reason for that, though, surely? "
@@ -6295,6 +6518,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 77
     text: "Dr Aaron Pearson: I mean, it turned out this student was not from China,
       but she was actually Scottish but her parents are from South Korea. She seemed
@@ -6325,6 +6549,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 78
     text: "Dr Aaron Pearson: But see, that\u2019s what they told us to do in that
       daft staff development workshop the other week, suggesting we invite global
@@ -6356,6 +6581,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 79
     text: "Dr Hana Lane: \u2026Don\u2019t you think you\u2019re writing off a valuable
       student experience by saying that though? You could maybe have apologised and
@@ -6386,6 +6612,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 80
     text: "Dr Hana Lane: It\u2019s not their job to help as us teachers though \u2013
       we\u2019re supposed to be the ones doing the guiding here."
@@ -6414,6 +6641,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 81
     text: "Dr Hana Lane: And that\u2019s our problem to fix as their teachers, not
       theirs - we\u2019re supposed to be the ones doing the guiding here.  "
@@ -6442,6 +6670,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 82
     text: "Dr Hana Lane: Aaron, please don\u2019t think I\u2019m looking to argue
       with you about this, but I do have to say as someone who\u2019s most definitely
@@ -6473,6 +6702,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 83
     text: 'Dr Aaron Pearson: <i>Grumbling.</i> Oh great, here we go... '
     responseIDs: 
@@ -6500,6 +6730,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 84
     text: "Dr Hana Lane: No, seriously, Aaron. Again, I\u2019m not looking to argue
       with you here, but from what you\u2019ve told us, the entire incident comes
@@ -6529,6 +6760,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 85
     text: "Dr Hana Lane: Saying this as a friend and as a colleague, what I\u2019ve
       learned is that it\u2019s all too easy to accidentally offend students these
@@ -6559,6 +6791,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 86
     text: 'Dr Aaron Pearson: Oh look, something we agree on at least! '
     responseIDs: 
@@ -6586,6 +6819,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 87
     text: "Dr Hana Lane: <i>Sharp look.</i> Don\u2019t mistake me as approving how
       you\u2019re talking about it though... I just think new best practice is to
@@ -6619,6 +6853,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 88
     text: "Dr Hana Lane: <i>Directed to Aaron.</i> Even in the class that I was just
       in, the students practically admitted to feeling like it was fine to interrupt
@@ -6648,6 +6883,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 89
     text: "Dr Aaron Pearson: I\u2019d be glad to have that problem! In my class,
       it was like pulling teeth trying to get them to just talk to me! "
@@ -6676,6 +6912,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 90
     text: "Dr. Hana Lane: I\u2019m sorry, I really don\u2019t know. I\u2019d just
       invite them warmly to talk to me at the start of a session, but I\u2019ve never
@@ -6705,6 +6942,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 91
     text: "Dr. Hana Lane: I really don\u2019t know, I rarely get students being afraid
       like that at all, let alone being reserved with their questions\u2026  "
@@ -6733,6 +6971,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 92
     text: 'Prof Mary Cooke: Oh come on, you two- '
     responseIDs: 
@@ -6760,6 +6999,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 93
     text: "Dr Luke Simpson: <i>Interrupting for the first time.</i> She\u2019s right
       though, how is it fair that she\u2019s fighting to be heard as the voice in
@@ -6789,6 +7029,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 94
     text: "Prof Mary Cooke: I hear what you\u2019re both saying, but recently, I
       accompanied a group of international students to that new exhibition at the
@@ -6820,6 +7061,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 95
     text: "Dr Aaron Pearson: I fail to see how that relates to what we\u2019re talking
       about though- "
@@ -6848,6 +7090,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 96
     text: "Dr Hana Lane: <i>Cutting him off.</i> -but what do you mean by that? That\u2019s
       at least some conductive insight I feel. "
@@ -6876,6 +7119,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 97
     text: 'Prof Mary Cooke: They were talking about the way the exhibits portrayed
       British history, and about how their history of the same event in India had
@@ -6906,6 +7150,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 98
     text: "Prof Mary Cooke: In fact, do you know I learned that the reason we throw
       our caps in the air at graduation comes from men\u2019s outrage at women being
@@ -6938,6 +7183,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 99
     text: "Dr Hana Lane: Wow, really? That\u2019s such an interesting piece of information
       about something that everyone knows as a cornerstone of most students\u2019
@@ -6967,6 +7213,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 100
     text: 'Dr Aaron Pearson: <i>Begrudgingly.</i>  Alright, I will readily say that
       is an intriguing fact worth discussing. '
@@ -6995,6 +7242,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 101
     text: "Prof Mary Cooke: It\u2019s more than that though, isn\u2019t it? Seeing
       our world through the lens of these students got me thinking\u2026 the world
@@ -7026,6 +7274,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 102
     text: "Dr Aaron Pearson:  I suppose. There was a few moments earlier today where
       I saw some faces in the seats, and I really couldn\u2019t place what they were
@@ -7055,6 +7304,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 103
     text: "Dr Aaron Pearson: Almost like I couldn\u2019t fathom the connection between
       what I was doing and how they were feeling, but I just don\u2019t know enough
@@ -7085,6 +7335,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 104
     text: "Prof. Mary Cooke: That\u2019s a really good point. We have all these teacher
       resources and workshops, but we still don\u2019t know where to go to learn
@@ -7117,6 +7368,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 105
     text: "Prof. Mary Cooke: That\u2019s a really good point. There\u2019s so many
       support staff and support resources for a lot of things, but nobody\u2019s
@@ -7148,6 +7400,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 106
     text: "Prof Mary Cooke: I suppose I will say good on you, Aaron, for trying to
       bring in another perspective at least. Shame it didn\u2019t work this time
@@ -7177,6 +7430,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 107
     text: 'Dr Luke Simpson: <i>Hurriedly.</i> Ha! Yet more student dissatisfaction! '
     responseIDs: 
@@ -7204,6 +7458,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 108
     text: 'Dr Aaron Pearson: A moment of silence, followed by uncomfortable laughter
       between the others. Did you have an opinion to add here Luke? '
@@ -7232,6 +7487,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 109
     text: "Dr Luke Simpson: Oh, I hear what you\u2019re saying, Aaron. Times are
       indeed changing. I even often feel very guilty when I look at those international
@@ -7262,6 +7518,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 110
     text: "Dr Hana Lane: Oh definitely, it\u2019s easy to forget to be especially
       empathetic when it comes to minor things we take as a given simply because
@@ -7291,6 +7548,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 111
     text: "Dr Luke Simpson: -Mhm! So, I had heard about this activity that a colleague
       of mine has done at the University of X and I thought I would try it. They
@@ -7323,6 +7581,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 112
     text: "Dr Aaron Pearson: Hang on, are you talking about potentially changing
       our approach? I have a massive grant bid deadline and while don\u2019t get
@@ -7353,6 +7612,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 113
     text: 'Prof Mary Cooke: <i>Placating but clearly frustrated.</i> But if not now,
       then when? '
@@ -7381,6 +7641,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 114
     text: "Prof Mary Cooke: There\u2019s always going to be a project bid in the
       waiting line, or some initiative in the wings, or some significant faculty
@@ -7411,6 +7672,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 115
     text: "Dr Hana Lane: Oh I agree, putting it like that really shows how we prioritise
       different aspects of development at our university compared to all the rest...
@@ -7443,6 +7705,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 116
     text: "Dr Aaron Pearson: Hey now, I know I probably am the most, ahem, uninformed,
       of everyone in our little circle at the moment, but that seems a little harsh,
@@ -7474,6 +7737,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 117
     text: "Dr Aaron Pearson: Defensively. I think it\u2019s hardly fair to frame
       it that way when I, and all of you as my hard-working colleagues, have had
@@ -7504,6 +7768,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 118
     text: "Prof Mary Cooke: But isn\u2019t that just it? Our colleagues and fellow
       academics across many institutions should be able to recognise the intent of
@@ -7534,6 +7799,7 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 119
     text: "Dr Aaron Pearson: Well, I think I do, all I\u2019m saying is that I don\u2019t
       know how popular any of us would be if we were to start touting the horns of
@@ -7561,9 +7827,10 @@ MonoBehaviour:
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
     isEndDialogue: 0
-    backgroundImage: {fileID: 21300000, guid: cf0fd307f6fb5904a94ae907fd7d725d, type: 3}
+    backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 120
     text: "Dr Hana Lane: <i>Quietly.</i> But it shouldn\u2019t matter about how \u201Cunpopular\u201D
       a stance is. It should be about what\u2019s best, and what\u2019s right. "
@@ -7589,9 +7856,10 @@ MonoBehaviour:
     shouldRightImageFadeOut: 0
     isRightImageMirrored: 0
     isEndDialogue: 0
-    backgroundImage: {fileID: 21300000, guid: cf0fd307f6fb5904a94ae907fd7d725d, type: 3}
+    backgroundImage: {fileID: 21300000, guid: b756d33b6fc6fda409ae3af9b83d21da, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 121
     text: "Prof Mary Cooke: <i>Quietly.</i> As well as what\u2019s needed, both for
       the academic world, and for the students... "
@@ -7620,6 +7888,41 @@ MonoBehaviour:
     backgroundImage: {fileID: 21300000, guid: cf0fd307f6fb5904a94ae907fd7d725d, type: 3}
     fadeOutBackground: 0
     fadeInBackground: 0
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+  - id: 7569
+    text: <i>The same wide mid-sized lecture room that is once again only half full
+      of students, who are clustered into settled friend groups at this stage in
+      the module. Quiet and informal conversation fills the room at the back, interspersed
+      with more familiar discussions about non-university related topics. A few students
+      offer a small nod or brief hello to the lecturer at the front, but most are
+      more focused on finding their friends in the staggered seating arrangement.
+      </i>
+    responseIDs: 
+    nextDialogueID: 0
+    isResponse: 0
+    leftImage: {fileID: 0}
+    isLeftImageVisible: 0
+    isLeftImageTalking: 0
+    shouldLeftImageFadeIn: 0
+    shouldLeftImageFadeOut: 0
+    isLeftImageMirrored: 0
+    centerImage: {fileID: 0}
+    isCenterImageVisible: 0
+    isCenterImageTalking: 0
+    shouldCenterImageFadeIn: 0
+    shouldCenterImageFadeOut: 0
+    isCenterImageMirrored: 0
+    rightImage: {fileID: 0}
+    isRightImageVisible: 0
+    isRightImageTalking: 0
+    shouldRightImageFadeIn: 0
+    shouldRightImageFadeOut: 0
+    isRightImageMirrored: 0
+    isEndDialogue: 0
+    backgroundImage: {fileID: 0}
+    fadeOutBackground: 0
+    fadeInBackground: 0
+    textColor: {r: 0.9550984, g: 1, b: 0, a: 1}
   responses:
   - id: 0
     text: "<i>Attempting humour.</i> See, that wasn\u2019t so bad, was it?"
@@ -7737,11 +8040,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1296664165}
   nextButton: {fileID: 462101353}
+  introText: {fileID: 1296664165}
   backgroundImageComponent: {fileID: 1567817795}
   dialogueBoxRectTransform: {fileID: 150859419}
   responseButton1: {fileID: 426966206}
   responseButton2: {fileID: 2145894370}
   responseContainer: {fileID: 58992819}
+  skipButton: {fileID: 182942422}
   dialogueDatabase: {fileID: 2286067376845419734}
   leftImageAnimator: {fileID: 1105165910}
   centerImageAnimator: {fileID: 1576657035}
@@ -7750,6 +8055,8 @@ MonoBehaviour:
   centerImageComponent: {fileID: 1576657037}
   rightImageComponent: {fileID: 1407205540}
   gameManager: {fileID: 1647771799}
+  introductoryText: 
+  introductoryTextColor: {r: 0, g: 1, b: 1, a: 1}
   fadeDuration: 1
 --- !u!4 &5366149892479883751
 Transform:

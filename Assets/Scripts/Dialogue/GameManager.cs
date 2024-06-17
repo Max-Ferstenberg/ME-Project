@@ -41,8 +41,11 @@ public class GameManager : MonoBehaviour
     // Function to handle when a dialogue ends and next dialogue should start
     public void OnDialogueEnded(int nextDialogueId)
     {
+        Debug.Log("OnDialogueEnded called with nextDialogueId: " + nextDialogueId);
+
         if (nextDialogueId != -1)
         {
+            Debug.Log("Starting next dialogue sequence with ID: " + nextDialogueId);
             StartDialogueSequence(nextDialogueId);
         }
         else
@@ -51,6 +54,7 @@ public class GameManager : MonoBehaviour
             HandleEndOfScenario();
         }
     }
+
 
     // Function to handle the end of the scenario
     public void HandleEndOfScenario()
