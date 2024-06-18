@@ -549,10 +549,11 @@ IEnumerator TypeSentence(string sentence)
     {
         // Get the height of the dialogue box
         float dialogueBoxHeight = dialogueBoxRectTransform.rect.height;
+        float responseContainerHeight = responseContainer.rect.height;
 
         // Calculate the position for the response container
         Vector3 dialogueBoxPosition = dialogueBoxRectTransform.position;
-        float responseContainerYPosition = dialogueBoxPosition.y + dialogueBoxHeight / 2 ; // Adjust the initial offset as needed
+        float responseContainerYPosition = dialogueBoxPosition.y + (dialogueBoxHeight/2) + responseContainerHeight + 50;
 
         // Set the position of the response container
         responseContainer.position = new Vector3(dialogueBoxPosition.x, responseContainerYPosition, dialogueBoxPosition.z);
