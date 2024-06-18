@@ -80,7 +80,6 @@ public class DialogueManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(transform.root.gameObject); // Ensure the root GameObject is marked to not be destroyed
         }
-        Debug.Log("DialogueManager Instance Created");
     }
 
 
@@ -93,8 +92,6 @@ public class DialogueManager : MonoBehaviour
 
 void Start()
 {
-    Debug.Log("DialogueManager Start Method Called");
-
     if (nextButton == null || skipButton == null || dialogueText == null || dialogueDatabase == null ||
         leftImageComponent == null || centerImageComponent == null || rightImageComponent == null ||
         responseButton1 == null || responseButton2 == null || backgroundImageComponent == null ||
@@ -114,13 +111,11 @@ void Start()
 
     nextButton.onClick.RemoveAllListeners();
     skipButton.onClick.RemoveAllListeners();
-    Debug.Log("Adding listeners to Next and Skip buttons");
     nextButton.onClick.AddListener(OnNextButtonClicked);
     skipButton.onClick.AddListener(OnSkipButtonClicked);
 
     InitializeComponents();
-    Debug.Log("Calling StartDialogue for testing");
-    StartDialogue(7569); // Assuming 7569 is the starting dialogue ID, adjust as necessary
+    StartDialogue(7569);
 }
 
 
@@ -158,8 +153,6 @@ void Start()
 
     public void StartDialogue(int dialogueId)
     {
-        Debug.Log("StartDialogue called with ID: " + dialogueId);
-
         if (!isInitialized)
         {
             Debug.LogError("DialogueManager is not initialized. Aborting dialogue sequence.");
@@ -173,25 +166,21 @@ void Start()
 
         if (!string.IsNullOrEmpty(introductoryText) && !introductoryTextShown)
         {
-            Debug.Log("Introductory text detected, showing it first.");
             ShowIntroductoryText();
         }
         else
         {
-            Debug.Log("No introductory text, starting dialogue directly.");
             StartDialogueById(dialogueId);
         }
     }
 
     private void ShowIntroductoryText()
     {
-        Debug.Log("Showing introductory text");
         introText.color = introductoryTextColor;
         introText.text = introductoryText;
         introText.gameObject.SetActive(true);
         nextButton.gameObject.SetActive(true);
         introductoryTextShown = true; // Set the flag here
-        Debug.Log("Introductory text shown: " + introductoryText);
     }
 
 public void OnNextButtonClicked()
@@ -200,7 +189,6 @@ public void OnNextButtonClicked()
 
     if (isTyping)
     {
-        Debug.Log("Button pressed while typing, ignoring next action.");
         return;
     }
 
@@ -245,26 +233,21 @@ public void OnSkipButtonClicked()
     {
         yield return new WaitForEndOfFrame();
         buttonClicked = false;
-        Debug.Log("Button click state reset.");
         SetNextButtonState(false); // Set button to Next state
     }
 
     private void ProceedToNextDialogue()
     {
-        Debug.Log("Proceeding to the next dialogue");
-
         TransitionAllToIdle();
 
         StartCoroutine(DisableButtonTemporarily());
 
         if (currentDialogue.hasResponses)
         {
-            Debug.Log("Generating response buttons for current dialogue.");
             GenerateResponseButtons(currentDialogue.responseIDs);
         }
         else if (currentDialogue.nextDialogueID != -1)
         {
-            Debug.Log("Transitioning to next dialogue with ID: " + currentDialogue.nextDialogueID);
             StartDialogueById(currentDialogue.nextDialogueID);
         }
         else
@@ -351,7 +334,6 @@ private void SetNextButtonState(bool isTyping)
     {
         if (isTransitioning)
         {
-            Debug.Log("Skipping HandleDialogueTransition because a transition is in progress");
             yield break;
         }
 
@@ -383,11 +365,9 @@ private void SetNextButtonState(bool isTyping)
         Dialogue nextDialogue = dialogueDatabase.GetDialogueById(dialogue.nextDialogueID);
         if (nextDialogue != null)
         {
-            Debug.Log("Updating image states before fade-in");
             UpdateImageStates(nextDialogue);
             yield return new WaitForSeconds(0.1f);
 
-            Debug.Log("Triggering fade-in animations for the next dialogue");
             TriggerFadeInAnimations(nextDialogue); // Ensure this method call is correct
             yield return new WaitForSeconds(1.0f);
 
@@ -396,7 +376,6 @@ private void SetNextButtonState(bool isTyping)
                 StartCoroutine(FadeInBackground(nextDialogue.backgroundImage));
             }
 
-            Debug.Log("Displaying next dialogue");
             DisplayDialogue(nextDialogue);
         }
         else
@@ -410,7 +389,6 @@ private void SetNextButtonState(bool isTyping)
     // Section: Dialogue Management
     public void DisplayDialogue(Dialogue dialogue)
     {
-        Debug.Log("Displaying dialogue with ID: " + dialogue.id);
         currentDialogue = dialogue;
         if (typeSentenceCoroutine != null)
         {
@@ -423,13 +401,11 @@ private void SetNextButtonState(bool isTyping)
 
         if (!isTransitioning)
         {
-            Debug.Log("Updating image states and triggering fade-in animations.");
             UpdateImageStates(dialogue);
             TriggerFadeInAnimations(dialogue);
 
             if (fadeInBackground && dialogue.backgroundImage != null)
             {
-                Debug.Log("Fading in background image.");
                 StartCoroutine(FadeInBackground(dialogue.backgroundImage));
             }
         }
@@ -480,17 +456,14 @@ IEnumerator TypeSentence(string sentence)
 
     if (currentDialogue.hasResponses)
     {
-        Debug.Log("Current dialogue has responses, generating buttons.");
         GenerateResponseButtons(currentDialogue.responseIDs);
     }
     else if (currentDialogue.nextDialogueID != -1)
     {
-        Debug.Log("Enabling next button for next dialogue.");
         EnableNextButton();
     }
     else if (currentDialogue.isEndDialogue)
     {
-        Debug.Log("End of dialogue sequence reached.");
         EndScenario();
     }
 }
@@ -502,12 +475,9 @@ IEnumerator TypeSentence(string sentence)
 
     public void StartDialogueById(int dialogueId)
     {
-        Debug.Log("StartDialogueById called with ID: " + dialogueId);
-
         if (dialogueId == 0 && !introductoryTextShown)
         {
             // Starting dialogue with introductory text
-            Debug.Log("Initial dialogue ID detected, starting with introductory dialogue ID 7569.");
             dialogueId = 7569;
             introductoryTextShown = true; // Set the flag to true to avoid loop
         }
@@ -515,7 +485,6 @@ IEnumerator TypeSentence(string sentence)
         Dialogue dialogueToStart = dialogueDatabase.GetDialogueById(dialogueId);
         if (dialogueToStart != null)
         {
-            Debug.Log("Dialogue found with ID: " + dialogueId);
             DisplayDialogue(dialogueToStart);
         }
         else
@@ -583,7 +552,7 @@ IEnumerator TypeSentence(string sentence)
 
         // Calculate the position for the response container
         Vector3 dialogueBoxPosition = dialogueBoxRectTransform.position;
-        float responseContainerYPosition = dialogueBoxPosition.y + dialogueBoxHeight / 2 - 10; // Adjust the initial offset as needed
+        float responseContainerYPosition = dialogueBoxPosition.y + dialogueBoxHeight / 2 ; // Adjust the initial offset as needed
 
         // Set the position of the response container
         responseContainer.position = new Vector3(dialogueBoxPosition.x, responseContainerYPosition, dialogueBoxPosition.z);
@@ -670,8 +639,6 @@ IEnumerator TypeSentence(string sentence)
     // Section: Image Management
     private void UpdateImageStates(Dialogue dialogue)
     {
-        Debug.Log("Updating image states for dialogue ID: " + dialogue.id);
-
         UpdateImageComponent(leftImageComponent, leftImageAnimator, dialogue.isLeftImageVisible, dialogue.leftImage, dialogue.isLeftImageTalking);
         UpdateImageComponent(centerImageComponent, centerImageAnimator, dialogue.isCenterImageVisible, dialogue.centerImage, dialogue.isCenterImageTalking);
         UpdateImageComponent(rightImageComponent, rightImageAnimator, dialogue.isRightImageVisible, dialogue.rightImage, dialogue.isRightImageTalking);
@@ -715,7 +682,6 @@ IEnumerator TypeSentence(string sentence)
     // Section: Fade Animations
     private void TriggerFadeOutAnimations(Dialogue dialogue)
     {
-        Debug.Log("Triggering fade-out animations");
 
         TriggerFadeOut(leftImageAnimator, leftImageComponent, dialogue.shouldLeftImageFadeOut);
         TriggerFadeOut(centerImageAnimator, centerImageComponent, dialogue.shouldCenterImageFadeOut);
@@ -726,14 +692,12 @@ IEnumerator TypeSentence(string sentence)
     {
         if (shouldFadeOut && imageComponent.gameObject.activeSelf)
         {
-            Debug.Log($"{imageComponent.name} fade-out");
             StartCoroutine(TransitionToIdleAndFadeOut(animator, imageComponent));
         }
     }
 
     private void TriggerFadeInAnimations(Dialogue dialogue)
     {
-        Debug.Log("Triggering fade-in animations");
 
         if (dialogue.isLeftImageVisible && leftImageComponent.gameObject.activeSelf)
         {
@@ -753,7 +717,6 @@ IEnumerator TypeSentence(string sentence)
     {
         if (shouldFadeIn && isVisible && imageComponent.gameObject.activeSelf)
         {
-            Debug.Log($"{imageComponent.name} fade-in");
             animator.Play("FadeIn");
             StartCoroutine(HandleFadeInCompletion(animator, isTalking, isMirrored, imageComponent));
         }
@@ -822,7 +785,6 @@ IEnumerator TypeSentence(string sentence)
 
     private IEnumerator FadeOutBackground()
     {
-        Debug.Log("Fading out background");
         Color originalColor = backgroundImageComponent.color;
         for (float t = 0; t < fadeDuration; t += Time.deltaTime)
         {
@@ -835,7 +797,6 @@ IEnumerator TypeSentence(string sentence)
 
     private IEnumerator FadeInBackground(Sprite newBackground)
     {
-        Debug.Log("Fading in new background");
         backgroundImageComponent.sprite = newBackground;
         backgroundImageComponent.color = new Color(0, 0, 0, 0);
 
@@ -847,7 +808,6 @@ IEnumerator TypeSentence(string sentence)
             yield return null;
         }
         backgroundImageComponent.color = targetColor;
-        Debug.Log("Background fade-in complete");
     }
 
     // Method to disable button temporarily
