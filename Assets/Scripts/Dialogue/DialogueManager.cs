@@ -10,24 +10,24 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
 
-    // Introductory Text Flag
-    private bool introductoryTextShown = false;
+    // Flags for various states
     private bool isTyping = false;
 
     // UI Components
-    public TMP_Text dialogueText;
-    public Button nextButton;
-    public TMP_Text introText;
-    public Image backgroundImageComponent;
-    public RectTransform dialogueBoxRectTransform;
-    public Button responseButton1;
-    public Button responseButton2;
-    public RectTransform responseContainer;
-    public Button skipButton;
+    public TMP_Text dialogueText; // Main dialogue text
+    public Button nextButton; // Button to proceed to the next dialogue
+    public Image backgroundImageComponent; // Background image component
+    public RectTransform dialogueBoxRectTransform; // RectTransform for dialogue box
+    public Button responseButton1; // Response button 1
+    public Button responseButton2; // Response button 2
+    public RectTransform responseContainer; // Container for response buttons
+    public Button skipButton; // Button to skip typing effect
+        public ScrollRect scrollRect;          // Reference to the ScrollRect component
+
 
 
     // Dialogue Database
-    public DialogueDatabase dialogueDatabase;
+    public DialogueDatabase dialogueDatabase; // Database containing all dialogues
 
     // Image Animators and Components
     public Animator leftImageAnimator;
@@ -40,37 +40,30 @@ public class DialogueManager : MonoBehaviour
     // Game Manager
     public GameManager gameManager;
 
-    // Introductory Text Properties
-    public string introductoryText;
-    public Color introductoryTextColor = Color.cyan; // Customize as needed
-
     // Fade Properties
-    public float fadeDuration = 1.0f;
-    private bool fadeOutBackground = false;
-    private bool fadeInBackground = false;
+    public float fadeDuration = 1.0f; // Duration for fade effects
+    private bool fadeOutBackground = false; // Flag for fading out background
+    private bool fadeInBackground = false; // Flag for fading in background
 
     // Internal State
-    private Dialogue currentDialogue;
-    private Coroutine typeSentenceCoroutine;
-    private bool buttonClicked = false;
-    private bool isTransitioning = false;
-    private bool isInitialized = false;
-    private bool isSkippingText = false;
+    private Dialogue currentDialogue; // Current dialogue being displayed
+    private Coroutine typeSentenceCoroutine; // Coroutine for typing effect
+    private bool isTransitioning = false; // Flag for transition state
+    private bool isInitialized = false; // Flag for initialization state
+    private bool isSkippingText = false; // Flag for skipping text
 
     // Response Tracking
     private Dictionary<string, int> responseCategoryCounts = new Dictionary<string, int>();
 
-    // Initial Positions
+    // Initial Positions of Image Components
     private Vector3 leftImageInitialPosition;
     private Vector3 centerImageInitialPosition;
     private Vector3 rightImageInitialPosition;
 
-    // Store the ID of the actual starting dialogue
-    private int actualStartingDialogueID;
-
     // Initialization
     private void Awake()
     {
+        // Singleton pattern to ensure only one instance of DialogueManager exists
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -78,453 +71,164 @@ public class DialogueManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(transform.root.gameObject); // Ensure the root GameObject is marked to not be destroyed
+            DontDestroyOnLoad(transform.root.gameObject); // Ensure the root GameObject is not destroyed
         }
     }
 
-
-    private void AddEventTrigger(EventTrigger trigger, EventTriggerType eventType, UnityEngine.Events.UnityAction<BaseEventData> action)
-    {
+    // Method to add event triggers to buttons
+    private void AddEventTrigger(EventTrigger trigger, EventTriggerType eventType, UnityEngine.Events.UnityAction<BaseEventData> action) {
         EventTrigger.Entry entry = new EventTrigger.Entry { eventID = eventType };
         entry.callback.AddListener(action);
         trigger.triggers.Add(entry);
     }
 
-void Start()
-{
-    if (nextButton == null || skipButton == null || dialogueText == null || dialogueDatabase == null ||
-        leftImageComponent == null || centerImageComponent == null || rightImageComponent == null ||
-        responseButton1 == null || responseButton2 == null || backgroundImageComponent == null ||
-        dialogueBoxRectTransform == null || responseContainer == null || introText == null)
-    {
-        Debug.LogError("One or more required references are missing in DialogueManager.");
-        return;
+    // Initialization on start
+    void Start() {
+        // Store initial positions of image components
+        leftImageInitialPosition = leftImageComponent.rectTransform.localPosition;
+        centerImageInitialPosition = centerImageComponent.rectTransform.localPosition;
+        rightImageInitialPosition = rightImageComponent.rectTransform.localPosition;
+
+        // Enable image components
+        leftImageComponent.gameObject.SetActive(true);
+        centerImageComponent.gameObject.SetActive(true);
+        rightImageComponent.gameObject.SetActive(true);
+
+        // Set up button listeners
+        nextButton.onClick.RemoveAllListeners();
+        skipButton.onClick.RemoveAllListeners();
+        nextButton.onClick.AddListener(ProceedToNextDialogue);
+        skipButton.onClick.AddListener(OnSkipButtonClicked);
+
+        StartDialogueById(7569); // Start the dialogue sequence
+
+        Canvas.ForceUpdateCanvases();
+        scrollRect.verticalNormalizedPosition = 1f;
     }
 
-    leftImageInitialPosition = leftImageComponent.rectTransform.localPosition;
-    centerImageInitialPosition = centerImageComponent.rectTransform.localPosition;
-    rightImageInitialPosition = rightImageComponent.rectTransform.localPosition;
-
-    leftImageComponent.gameObject.SetActive(true);
-    centerImageComponent.gameObject.SetActive(true);
-    rightImageComponent.gameObject.SetActive(true);
-
-    nextButton.onClick.RemoveAllListeners();
-    skipButton.onClick.RemoveAllListeners();
-    nextButton.onClick.AddListener(OnNextButtonClicked);
-    skipButton.onClick.AddListener(OnSkipButtonClicked);
-
-    InitializeComponents();
-    StartDialogue(7569);
-}
-
-
-
-
-
-
-    private void InitializeComponents()
-    {
-        Debug.Log("Initializing Components...");
-        if (leftImageComponent != null) Debug.Log("Left Image Component Initialized.");
-        if (centerImageComponent != null) Debug.Log("Center Image Component Initialized.");
-        if (rightImageComponent != null) Debug.Log("Right Image Component Initialized.");
-        if (dialogueDatabase != null) Debug.Log("Dialogue Database Initialized.");
-        if (nextButton != null) Debug.Log("Next Button Initialized.");
-        if (dialogueText != null) Debug.Log("Dialogue Text Initialized.");
-        if (responseButton1 != null) Debug.Log("Response Button 1 Initialized.");
-        if (responseButton2 != null) Debug.Log("Response Button 2 Initialized.");
-        if (backgroundImageComponent != null) Debug.Log("Background Image Component Initialized.");
-        if (dialogueBoxRectTransform != null) Debug.Log("Dialogue Box RectTransform Initialized.");
-        if (responseContainer != null) Debug.Log("Response Container Initialized.");
-        if (introText != null) Debug.Log("Intro Text Initialized.");
-        if (gameManager != null) Debug.Log("Game Manager Initialized.");
-
-        if (leftImageComponent != null && centerImageComponent != null && rightImageComponent != null)
-        {
-            isInitialized = true;
-            Debug.Log("All required components are initialized.");
-        }
-        else
-        {
-            Debug.LogError("Failed to initialize components. Check your component assignments.");
+    public void StartDialogueById(int dialogueId) {
+        Dialogue dialogueToStart = dialogueDatabase.GetDialogueById(dialogueId);
+        if (dialogueToStart != null) {
+            DisplayDialogue(dialogueToStart);
+        } else {
+            Debug.LogError("No dialogue found with ID: " + dialogueId);
         }
     }
 
-    public void StartDialogue(int dialogueId)
-    {
-        if (!isInitialized)
-        {
-            Debug.LogError("DialogueManager is not initialized. Aborting dialogue sequence.");
-            return;
-        }
-
-        // Always start with dialogue ID 7569
-        dialogueId = 7569;
-
-        actualStartingDialogueID = dialogueId;
-
-        if (!string.IsNullOrEmpty(introductoryText) && !introductoryTextShown)
-        {
-            ShowIntroductoryText();
-        }
-        else
-        {
-            StartDialogueById(dialogueId);
-        }
-    }
-
-    private void ShowIntroductoryText()
-    {
-        introText.color = introductoryTextColor;
-        introText.text = introductoryText;
-        introText.gameObject.SetActive(true);
-        nextButton.gameObject.SetActive(true);
-        introductoryTextShown = true; // Set the flag here
-    }
-
-public void OnNextButtonClicked()
-{
-    Debug.Log("OnNextButtonClicked called");
-
-    if (isTyping)
-    {
-        return;
-    }
-
-    Debug.Log("Next button in Next state");
-    buttonClicked = true;
-    ProceedToNextDialogue();
-}
-
-
-public void OnSkipButtonClicked()
-{
-    Debug.Log("OnSkipButtonClicked called");
-
-    if (isTyping)
-    {
-        Debug.Log("Skip button in Skip state");
-        if (typeSentenceCoroutine != null)
-        {
-            StopCoroutine(typeSentenceCoroutine);
-            dialogueText.text = currentDialogue.text; // Immediately display the full text
-            typeSentenceCoroutine = null;
-            isTyping = false;
-
-            Debug.Log("Skipped typing, enabling next button");
-            EnableNextButton();
-        }
-    }
-}
-
-
-
-
-    private IEnumerator AllowNextAction()
-    {
-        yield return new WaitForSeconds(0.1f); // Short delay to allow button release
-        buttonClicked = false;
-        SetNextButtonState(false); // Set button to Next state
-    }
-
-
-    private IEnumerator WaitAndAllowNextButton()
-    {
-        yield return new WaitForEndOfFrame();
-        buttonClicked = false;
-        SetNextButtonState(false); // Set button to Next state
-    }
-
-    private void ProceedToNextDialogue()
-    {
+    private void ProceedToNextDialogue() {
+        if (isTyping) return;
         TransitionAllToIdle();
-
         StartCoroutine(DisableButtonTemporarily());
 
-        if (currentDialogue.hasResponses)
-        {
+        if (currentDialogue.hasResponses) {
             GenerateResponseButtons(currentDialogue.responseIDs);
-        }
-        else if (currentDialogue.nextDialogueID != -1)
-        {
+        } else if (currentDialogue.nextDialogueID != -1) {
             StartDialogueById(currentDialogue.nextDialogueID);
-        }
-        else
-        {
+        } else {
             Debug.Log("No more dialogues");
         }
-    }
-    private IEnumerator DelayAfterSkip()
-    {
-        yield return new WaitForSeconds(0.2f); // Adjust the delay as needed
-        isTyping = false;
-        buttonClicked = false;
-        SetNextButtonState(false); // Set button to Next state
+
     }
 
+    public void OnSkipButtonClicked() {
+        if (isTyping) {
+            if (typeSentenceCoroutine != null) {
+                StopCoroutine(typeSentenceCoroutine);
+                dialogueText.text = currentDialogue.text;
+                typeSentenceCoroutine = null;
+                isTyping = false;
 
-
-    private IEnumerator DelayNextButtonAction()
-    {
-        yield return new WaitForEndOfFrame();
-        buttonClicked = false;
-    }
-
-    private void OnNextButtonPointerDown(BaseEventData eventData)
-    {
-        if (isTyping)
-        {
-            isSkippingText = true;
-        }
-    }
-
-    private void OnNextButtonPointerUp(BaseEventData eventData)
-    {
-        if (isSkippingText)
-        {
-            isSkippingText = false;
-        }
-    }
-
-
-private void SetNextButtonState(bool isTyping)
-{
-    this.isTyping = isTyping;
-
-    nextButton.onClick.RemoveAllListeners();
-    skipButton.onClick.RemoveAllListeners();
-
-    if (isTyping)
-    {
-        Debug.Log("Setting next button to Skip state");
-        nextButton.gameObject.SetActive(false); // Hide next button while typing
-        skipButton.gameObject.SetActive(true);  // Show skip button while typing
-        skipButton.onClick.AddListener(OnSkipButtonClicked);
-    }
-    else
-    {
-        Debug.Log("Setting next button to Next state");
-        nextButton.gameObject.SetActive(true); // Show next button after typing
-        skipButton.gameObject.SetActive(false); // Hide skip button after typing
-        nextButton.onClick.AddListener(OnNextButtonClicked);
-    }
-}
-
-
-
-
-
-
-    private void SkipToTextEnd()
-    {
-        Debug.Log("Skipping to the end of the text");
-
-        if (typeSentenceCoroutine != null)
-        {
-            StopCoroutine(typeSentenceCoroutine);
-            dialogueText.text = currentDialogue.text; // Immediately display the full text
-            typeSentenceCoroutine = null;
-            SetNextButtonState(false); // Set button to Next state after skipping
-        }
-    }
-
-
-    private IEnumerator HandleDialogueTransition(Dialogue dialogue)
-    {
-        if (isTransitioning)
-        {
-            yield break;
-        }
-
-        isTransitioning = true;
-
-        // Smoothly transition from talking to idle for all active image components
-        if (leftImageComponent.gameObject.activeSelf && leftImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("Talking"))
-        {
-            TriggerTalkingToIdleTransition(leftImageAnimator, 0.5f);
-        }
-        if (centerImageComponent.gameObject.activeSelf && centerImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("Talking"))
-        {
-            TriggerTalkingToIdleTransition(centerImageAnimator, 0.5f);
-        }
-        if (rightImageComponent.gameObject.activeSelf && rightImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("Talking"))
-        {
-            TriggerTalkingToIdleTransition(rightImageAnimator, 0.5f);
-        }
-
-        if (fadeOutBackground)
-        {
-            yield return StartCoroutine(FadeOutBackground());
-        }
-
-        TriggerFadeOutAnimations(dialogue);
-
-        yield return new WaitForSeconds(1.0f);
-
-        Dialogue nextDialogue = dialogueDatabase.GetDialogueById(dialogue.nextDialogueID);
-        if (nextDialogue != null)
-        {
-            UpdateImageStates(nextDialogue);
-            yield return new WaitForSeconds(0.1f);
-
-            TriggerFadeInAnimations(nextDialogue); // Ensure this method call is correct
-            yield return new WaitForSeconds(1.0f);
-
-            if (nextDialogue.fadeInBackground && nextDialogue.backgroundImage != null)
-            {
-                StartCoroutine(FadeInBackground(nextDialogue.backgroundImage));
+                EnableNextButton();
             }
-
-            DisplayDialogue(nextDialogue);
         }
-        else
-        {
-            Debug.LogError("No dialogue found with ID: " + dialogue.nextDialogueID);
-        }
-
-        isTransitioning = false;
     }
 
-    // Section: Dialogue Management
-    public void DisplayDialogue(Dialogue dialogue)
-    {
+    // Method to display a dialogue
+    public void DisplayDialogue(Dialogue dialogue) {
         currentDialogue = dialogue;
-        if (typeSentenceCoroutine != null)
-        {
+        // If there is an ongoing coroutine for typing the sentence, stop it
+        if (typeSentenceCoroutine != null) {
             StopCoroutine(typeSentenceCoroutine);
         }
-        buttonClicked = false;
 
-        fadeOutBackground = dialogue.fadeOutBackground;
-        fadeInBackground = dialogue.fadeInBackground;
+        typeSentenceCoroutine = StartCoroutine(TypeSentence(dialogue.text));
 
-        if (!isTransitioning)
-        {
+        // If the dialogue manager is not in a transition state, update the images and trigger fade-in animations
+        if (!isTransitioning) {
             UpdateImageStates(dialogue);
             TriggerFadeInAnimations(dialogue);
-
             if (fadeInBackground && dialogue.backgroundImage != null)
             {
                 StartCoroutine(FadeInBackground(dialogue.backgroundImage));
             }
         }
-
-        dialogueText.color = dialogue.textColor; // Set the text color
-        dialogueText.enableAutoSizing = true; // Enable auto-sizing
-        dialogueText.fontSizeMin = 10; // Set a reasonable minimum size
-        dialogueText.fontSizeMax = 50; // Set a reasonable maximum size
-        dialogueText.text = ""; // Clear text to trigger auto-size recalculation
-        dialogueText.text = dialogue.text; // Temporarily set text to get proper size
-
-        // Adjust the final font size to fit
-        dialogueText.ForceMeshUpdate();
-        var textInfo = dialogueText.textInfo;
-        float newSize = dialogueText.fontSize;
-
-        while (textInfo.lineCount > 1 && newSize > dialogueText.fontSizeMin)
-        {
-            newSize--;
-            dialogueText.fontSize = newSize;
-            dialogueText.ForceMeshUpdate();
-            textInfo = dialogueText.textInfo;
-        }
-
-        dialogueText.text = ""; // Clear text again for typing effect
-        typeSentenceCoroutine = StartCoroutine(TypeSentence(dialogue.text));
         responseButton1.gameObject.SetActive(false);
         responseButton2.gameObject.SetActive(false);
-        if (nextButton != null) nextButton.gameObject.SetActive(true);
     }
 
-IEnumerator TypeSentence(string sentence)
-{
-    Debug.Log("Typing sentence: " + sentence);
-    dialogueText.text = "";
-    isTyping = true;
-    SetNextButtonState(true); // Set button to Skip state
+    // Coroutine to type out the sentence letter by letter
+    IEnumerator TypeSentence(string sentence) {
+        dialogueText.text = "";
+        isTyping = true;
 
-    foreach (char letter in sentence.ToCharArray())
-    {
-        dialogueText.text += letter;
-        yield return new WaitForSeconds(0.01f);
-    }
-
-    Debug.Log("Finished typing sentence.");
-    isTyping = false;
-    SetNextButtonState(false); // Set button to Next state
-
-    if (currentDialogue.hasResponses)
-    {
-        GenerateResponseButtons(currentDialogue.responseIDs);
-    }
-    else if (currentDialogue.nextDialogueID != -1)
-    {
-        EnableNextButton();
-    }
-    else if (currentDialogue.isEndDialogue)
-    {
-        EndScenario();
-    }
-}
-
-
-
-
-
-
-    public void StartDialogueById(int dialogueId)
-    {
-        if (dialogueId == 0 && !introductoryTextShown)
-        {
-            // Starting dialogue with introductory text
-            dialogueId = 7569;
-            introductoryTextShown = true; // Set the flag to true to avoid loop
+        foreach (char letter in sentence.ToCharArray()) {
+            dialogueText.text += letter;
+            AdjustContentHeight();
+            yield return new WaitForSeconds(0.01f);
         }
 
-        Dialogue dialogueToStart = dialogueDatabase.GetDialogueById(dialogueId);
-        if (dialogueToStart != null)
-        {
-            DisplayDialogue(dialogueToStart);
+        isTyping = false;
+
+        if (currentDialogue.nextDialogueID != -1) {
+            EnableNextButton();
         }
-        else
-        {
-            Debug.LogError("No dialogue found with ID: " + dialogueId);
+        else if (currentDialogue.isEndDialogue) {
+            EndScenario();
         }
     }
 
-    // Section: Response Management
-    void GenerateResponseButtons(int[] responseIDs)
+    // Adjust the height of the Content to fit the TextMeshProUGUI component
+    void AdjustContentHeight()
     {
-        if (responseButton1 == null || responseButton2 == null)
-        {
-            Debug.LogError("Response buttons are not assigned.");
-            return;
-        }
+        Canvas.ForceUpdateCanvases();
+        RectTransform textRectTransform = dialogueText.GetComponent<RectTransform>();
+        RectTransform contentRectTransform = dialogueText.transform.parent.GetComponent<RectTransform>();
 
-        responseButton1.gameObject.SetActive(false);
-        responseButton2.gameObject.SetActive(false);
+        // Update the size of the content based on the preferred height of the text
+        float preferredHeight = dialogueText.preferredHeight;
+        contentRectTransform.sizeDelta = new Vector2(contentRectTransform.sizeDelta.x, preferredHeight);
 
-        if (responseIDs.Length > 0)
-        {
-            SetupResponseButton(responseButton1, responseIDs[0]);
-        }
-        if (responseIDs.Length > 1)
-        {
-            SetupResponseButton(responseButton2, responseIDs[1]);
-        }
+        // Recalculate the layout of the ScrollRect
+        LayoutRebuilder.ForceRebuildLayoutImmediate(contentRectTransform);
 
+        // Adjust the vertical position to keep the text in view
+        scrollRect.verticalNormalizedPosition = 1f;
+    }
+
+    void SetScrollbarToTop()
+    {
+        // Force update to ensure layout is correct before setting scroll position
+        Canvas.ForceUpdateCanvases();
+        scrollRect.verticalNormalizedPosition = 1f;
+
+        // Manually set content position
+        RectTransform contentRectTransform = scrollRect.content;
+        contentRectTransform.anchoredPosition = new Vector2(contentRectTransform.anchoredPosition.x, 0);
+    }
+
+    void GenerateResponseButtons(int[] responseIDs) {
+        SetupResponseButton(responseButton1, responseIDs[0]);
+        SetupResponseButton(responseButton2, responseIDs[1]);
         PositionResponseButtons();
     }
 
+    // Method to set up response button
     void SetupResponseButton(Button button, int responseID)
     {
         Response response = dialogueDatabase.GetResponseById(responseID);
-        if (response != null)
-        {
+        if (response != null) {
             DialogueResponseButton responseButton = button.GetComponent<DialogueResponseButton>();
-            if (responseButton != null)
-            {
+            if (responseButton != null) {
                 responseButton.SetResponseText(response.text);
                 button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(() => ResponseButtonClicked(response));
@@ -539,28 +243,21 @@ IEnumerator TypeSentence(string sentence)
                 Debug.LogError("Button is missing a DialogueResponseButton component.");
             }
         }
-        else
-        {
-            Debug.LogError("No response found for ID: " + responseID);
-        }
     }
 
-    private void PositionResponseButtons()
-    {
-        // Get the height of the dialogue box
+    // Method to position response buttons
+    private void PositionResponseButtons() {
         float dialogueBoxHeight = dialogueBoxRectTransform.rect.height;
         float responseContainerHeight = responseContainer.rect.height;
 
-        // Calculate the position for the response container
         Vector3 dialogueBoxPosition = dialogueBoxRectTransform.position;
-        float responseContainerYPosition = dialogueBoxPosition.y + (dialogueBoxHeight/2) + responseContainerHeight + 50;
+        float responseContainerYPosition = dialogueBoxPosition.y + (dialogueBoxHeight / 2) + responseContainerHeight + 50;
 
-        // Set the position of the response container
         responseContainer.position = new Vector3(dialogueBoxPosition.x, responseContainerYPosition, dialogueBoxPosition.z);
     }
 
-    private void ResponseButtonClicked(Response response)
-    {
+    // Method called when a response button is clicked
+    private void ResponseButtonClicked(Response response) {
         responseButton1.onClick.RemoveAllListeners();
         responseButton2.onClick.RemoveAllListeners();
 
@@ -580,20 +277,19 @@ IEnumerator TypeSentence(string sentence)
         }
     }
 
-    private void TrackResponseSelection(Response response)
-    {
+    // Method to track response selection
+    private void TrackResponseSelection(Response response) {
         response.isSelected = true;
 
-        if (!responseCategoryCounts.ContainsKey(response.category))
-        {
+        if (!responseCategoryCounts.ContainsKey(response.category)) {
             responseCategoryCounts[response.category] = 0;
         }
 
         responseCategoryCounts[response.category]++;
     }
 
-    public string GetMostSelectedCategory()
-    {
+    // Method to get the most selected category
+    public string GetMostSelectedCategory() {
         string mostSelectedCategory = null;
         int highestCount = 0;
 
@@ -609,11 +305,8 @@ IEnumerator TypeSentence(string sentence)
         return mostSelectedCategory;
     }
 
-    // Section: Scenario Management
-    private void EndScenario()
-    {
-        Debug.Log("End of Scenario reached.");
-
+    // Method to end the scenario
+    private void EndScenario() {
         foreach (var kvp in responseCategoryCounts)
         {
             Debug.Log($"Category {kvp.Key}: {kvp.Value} selections");
@@ -625,6 +318,7 @@ IEnumerator TypeSentence(string sentence)
         nextButton.onClick.AddListener(OnEndScenarioConfirmed);
     }
 
+    // Method called when end scenario is confirmed
     private void OnEndScenarioConfirmed()
     {
         if (gameManager != null)
@@ -637,7 +331,7 @@ IEnumerator TypeSentence(string sentence)
         }
     }
 
-    // Section: Image Management
+    // Method to update image states
     private void UpdateImageStates(Dialogue dialogue)
     {
         UpdateImageComponent(leftImageComponent, leftImageAnimator, dialogue.isLeftImageVisible, dialogue.leftImage, dialogue.isLeftImageTalking);
@@ -645,6 +339,7 @@ IEnumerator TypeSentence(string sentence)
         UpdateImageComponent(rightImageComponent, rightImageAnimator, dialogue.isRightImageVisible, dialogue.rightImage, dialogue.isRightImageTalking);
     }
 
+    // Method to update an individual image component
     private void UpdateImageComponent(Image imageComponent, Animator animator, bool isVisible, Sprite image, bool isTalking)
     {
         if (isVisible && image != null)
@@ -668,11 +363,13 @@ IEnumerator TypeSentence(string sentence)
         }
     }
 
+    // Method to trigger transition from talking to idle
     private void TriggerTalkingToIdleTransition(Animator animator, float transitionDuration)
     {
         animator.CrossFade("Idle", transitionDuration);
     }
 
+    // Method to reset the animator state
     private void ResetAnimatorState(Animator animator)
     {
         animator.SetBool("isTalking", false);
@@ -680,15 +377,15 @@ IEnumerator TypeSentence(string sentence)
         animator.SetBool("isFadingOut", false);
     }
 
-    // Section: Fade Animations
+    // Method to trigger fade out animations
     private void TriggerFadeOutAnimations(Dialogue dialogue)
     {
-
         TriggerFadeOut(leftImageAnimator, leftImageComponent, dialogue.shouldLeftImageFadeOut);
         TriggerFadeOut(centerImageAnimator, centerImageComponent, dialogue.shouldCenterImageFadeOut);
         TriggerFadeOut(rightImageAnimator, rightImageComponent, dialogue.shouldRightImageFadeOut);
     }
 
+    // Method to trigger fade out of an individual image component
     private void TriggerFadeOut(Animator animator, Image imageComponent, bool shouldFadeOut)
     {
         if (shouldFadeOut && imageComponent.gameObject.activeSelf)
@@ -697,9 +394,9 @@ IEnumerator TypeSentence(string sentence)
         }
     }
 
+    // Method to trigger fade in animations
     private void TriggerFadeInAnimations(Dialogue dialogue)
     {
-
         if (dialogue.isLeftImageVisible && leftImageComponent.gameObject.activeSelf)
         {
             TriggerFadeIn(leftImageAnimator, leftImageComponent, dialogue.shouldLeftImageFadeIn, dialogue.isLeftImageVisible, dialogue.isLeftImageTalking, dialogue.isLeftImageMirrored);
@@ -714,6 +411,7 @@ IEnumerator TypeSentence(string sentence)
         }
     }
 
+    // Method to trigger fade in of an individual image component
     private void TriggerFadeIn(Animator animator, Image imageComponent, bool shouldFadeIn, bool isVisible, bool isTalking, bool isMirrored)
     {
         if (shouldFadeIn && isVisible && imageComponent.gameObject.activeSelf)
@@ -723,6 +421,7 @@ IEnumerator TypeSentence(string sentence)
         }
     }
 
+    // Coroutine to handle fade in completion
     private IEnumerator HandleFadeInCompletion(Animator animator, bool isTalking, bool isMirrored, Image imageComponent)
     {
         yield return new WaitForSeconds(1.0f); // Adjust this duration to match your FadeIn animation duration
@@ -733,7 +432,6 @@ IEnumerator TypeSentence(string sentence)
             animator.SetBool("isTalking", isTalking);
             imageComponent.rectTransform.localScale = new Vector3(isMirrored ? -1 : 1, 1, 1);
 
-            // Ensure the image alpha remains 1 (fully visible)
             float elapsedTime = 0f;
             float fadeDuration = 0.5f; // Adjust this duration as needed
             while (elapsedTime < fadeDuration)
@@ -746,11 +444,12 @@ IEnumerator TypeSentence(string sentence)
 
             if (!isTalking)
             {
-                TriggerTalkingToIdleTransition(animator, 0.5f); // Smooth transition with a duration of 0.5 seconds
+                TriggerTalkingToIdleTransition(animator, 0.5f);
             }
         }
     }
 
+    // Coroutine to handle transition to idle and fade out
     private IEnumerator TransitionToIdleAndFadeOut(Animator animator, Image imageComponent)
     {
         animator.Play("Idle");
@@ -759,10 +458,10 @@ IEnumerator TypeSentence(string sentence)
         yield return new WaitForSeconds(1.0f);
         animator.SetBool("isFadingOut", false);
 
-        // Reset the position to the initial position after fade-out
         ResetImagePosition(imageComponent);
     }
 
+    // Method to set an image to talking state
     private void SetImageToTalkingState(Image image)
     {
         if (image != null)
@@ -784,6 +483,7 @@ IEnumerator TypeSentence(string sentence)
         }
     }
 
+    // Coroutine to fade out background
     private IEnumerator FadeOutBackground()
     {
         Color originalColor = backgroundImageComponent.color;
@@ -796,6 +496,7 @@ IEnumerator TypeSentence(string sentence)
         backgroundImageComponent.color = Color.black;
     }
 
+    // Coroutine to fade in background
     private IEnumerator FadeInBackground(Sprite newBackground)
     {
         backgroundImageComponent.sprite = newBackground;
@@ -811,31 +512,28 @@ IEnumerator TypeSentence(string sentence)
         backgroundImageComponent.color = targetColor;
     }
 
-    // Method to disable button temporarily
+    // Coroutine to temporarily disable the next button
     private IEnumerator DisableButtonTemporarily()
     {
         if (nextButton != null) nextButton.interactable = false;
         yield return new WaitForSeconds(0.5f);
         if (nextButton != null) nextButton.interactable = true;
-        buttonClicked = false;
     }
 
-private void EnableNextButton()
-{
-    if (nextButton != null)
+    // Method to enable the next button
+    private void EnableNextButton()
     {
-        nextButton.gameObject.SetActive(true);
-        nextButton.interactable = true;
-        nextButton.onClick.RemoveAllListeners();
-        nextButton.onClick.AddListener(OnNextButtonClicked);
-        buttonClicked = false;
+        if (nextButton != null)
+        {
+            nextButton.gameObject.SetActive(true);
+            nextButton.interactable = true;
+            nextButton.onClick.RemoveAllListeners();
+            nextButton.onClick.AddListener(ProceedToNextDialogue);
+        }
     }
-}
 
-
-    // Method to configure the hover effect for a button
-    void ConfigureButtonHoverEffect(Button button)
-    {
+    // Method to configure hover effect for a button
+    void ConfigureButtonHoverEffect(Button button) {
         EventTrigger trigger = button.GetComponent<EventTrigger>();
         if (trigger == null)
         {
@@ -850,6 +548,7 @@ private void EnableNextButton()
         AddEventTrigger(trigger, EventTriggerType.PointerExit, (eventData) => OnButtonHoverExit(button));
     }
 
+    // Method called when button hover enter event is triggered
     void OnButtonHoverEnter(Button button)
     {
         TMP_Text buttonText = button.GetComponentInChildren<TMP_Text>();
@@ -859,6 +558,7 @@ private void EnableNextButton()
         }
     }
 
+    // Method called when button hover exit event is triggered
     void OnButtonHoverExit(Button button)
     {
         TMP_Text buttonText = button.GetComponentInChildren<TMP_Text>();
@@ -868,6 +568,7 @@ private void EnableNextButton()
         }
     }
 
+    // Method to transition all images to idle state
     private void TransitionAllToIdle()
     {
         if (leftImageComponent.gameObject.activeSelf)
@@ -887,33 +588,27 @@ private void EnableNextButton()
         }
     }
 
-    // Section: Debug Tools
+    // Debug tools
+
+    // Method to simulate responses for testing
     public void SimulateResponses(int countA, int countB)
     {
         responseCategoryCounts["A"] = 0;
         responseCategoryCounts["B"] = 0;
 
-        if (!responseCategoryCounts.ContainsKey("A"))
-        {
-            responseCategoryCounts["A"] = 0;
-        }
         responseCategoryCounts["A"] += countA;
-
-        if (!responseCategoryCounts.ContainsKey("B"))
-        {
-            responseCategoryCounts["B"] = 0;
-        }
         responseCategoryCounts["B"] += countB;
 
         Debug.Log($"Simulated {countA} responses for category A and {countB} responses for category B");
     }
 
+    // Method to trigger end of scenario for debugging
     public void TriggerEndScenarioDebug()
     {
         EndScenario();
     }
 
-    // Method to reset image positions
+    // Method to reset image positions to initial positions
     private void ResetImagePosition(Image imageComponent)
     {
         if (imageComponent == leftImageComponent)

@@ -61,7 +61,6 @@ public class FadeManager : MonoBehaviour
 
     private IEnumerator FadeIn()
     {
-        Debug.Log("FadeIn started");
         float elapsedTime = 0f;
         while (elapsedTime < fadeDuration)
         {
@@ -72,12 +71,10 @@ public class FadeManager : MonoBehaviour
             yield return null;
         }
         fadeCanvasGroup.blocksRaycasts = false;
-        Debug.Log("FadeIn completed");
     }
 
     private IEnumerator FadeOutAndLoadScene(string sceneName)
     {
-        Debug.Log("FadeOut started");
         fadeCanvasGroup.blocksRaycasts = true;
         float elapsedTime = 0f;
         while (elapsedTime < fadeDuration)
