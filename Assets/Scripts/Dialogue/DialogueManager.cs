@@ -22,7 +22,9 @@ public class DialogueManager : MonoBehaviour
     public Button responseButton2; // Response button 2
     public RectTransform responseContainer; // Container for response buttons
     public Button skipButton; // Button to skip typing effect
-        public ScrollRect scrollRect;          // Reference to the ScrollRect component
+    public ScrollRect scrollRect;          // Reference to the ScrollRect component
+    public GameObject tutorialPanel; // Tutorial Panel
+    public Button closeTutorialButton; // Close Tutorial Button
 
 
 
@@ -51,6 +53,7 @@ public class DialogueManager : MonoBehaviour
     private bool isTransitioning = false; // Flag for transition state
     private bool isInitialized = false; // Flag for initialization state
     private bool isSkippingText = false; // Flag for skipping text
+    private bool isTutorialClosed = false;
 
     // Response Tracking
     private Dictionary<string, int> responseCategoryCounts = new Dictionary<string, int>();
@@ -60,21 +63,6 @@ public class DialogueManager : MonoBehaviour
     private Vector3 centerImageInitialPosition;
     private Vector3 rightImageInitialPosition;
 
-    // Initialization
-    private void Awake()
-    {
-        // Singleton pattern to ensure only one instance of DialogueManager exists
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(transform.root.gameObject); // Ensure the root GameObject is not destroyed
-        }
-    }
-
     // Method to add event triggers to buttons
     private void AddEventTrigger(EventTrigger trigger, EventTriggerType eventType, UnityEngine.Events.UnityAction<BaseEventData> action) {
         EventTrigger.Entry entry = new EventTrigger.Entry { eventID = eventType };
@@ -83,16 +71,18 @@ public class DialogueManager : MonoBehaviour
     }
 
     // Initialization on start
-    void Start() {
+    async void Start() {
         // Store initial positions of image components
         leftImageInitialPosition = leftImageComponent.rectTransform.localPosition;
         centerImageInitialPosition = centerImageComponent.rectTransform.localPosition;
         rightImageInitialPosition = rightImageComponent.rectTransform.localPosition;
 
-        // Enable image components
-        leftImageComponent.gameObject.SetActive(true);
-        centerImageComponent.gameObject.SetActive(true);
-        rightImageComponent.gameObject.SetActive(true);
+        // Disable image components
+        leftImageComponent.gameObject.SetActive(false);
+        centerImageComponent.gameObject.SetActive(false);
+        rightImageComponent.gameObject.SetActive(false);
+        responseContainer.gameObject.SetActive(false);
+        tutorialPanel.SetActive(false);
 
         // Set up button listeners
         nextButton.onClick.RemoveAllListeners();
@@ -100,10 +90,24 @@ public class DialogueManager : MonoBehaviour
         nextButton.onClick.AddListener(ProceedToNextDialogue);
         skipButton.onClick.AddListener(OnSkipButtonClicked);
 
-        StartDialogueById(7569); // Start the dialogue sequence
+        if(SceneManager.GetActiveScene().name == "Scenario1") {
+            ShowTutorialPanel();
+            StartCoroutine(CloseTutorialPanelAndStartDialogue());
+        } else {
+            StartDialogueById(7569);
+        }
 
         Canvas.ForceUpdateCanvases();
         scrollRect.verticalNormalizedPosition = 1f;
+    }
+
+    private IEnumerator CloseTutorialPanelAndStartDialogue(){
+        yield return new WaitUntil(() => isTutorialClosed);
+        leftImageComponent.gameObject.SetActive(true);
+        centerImageComponent.gameObject.SetActive(true);
+        rightImageComponent.gameObject.SetActive(true);
+        responseContainer.gameObject.SetActive(true);
+        StartDialogueById(7569);
     }
 
     public void StartDialogueById(int dialogueId) {
@@ -115,6 +119,19 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public void CloseTutorialPanel(){
+        isTutorialClosed = true;
+        tutorialPanel.SetActive(false);
+    }
+
+    public void ShowTutorialPanel() {
+        isTutorialClosed = false;
+        tutorialPanel.SetActive(true);
+        SceneSettingsManager.Instance.CloseSettingsMenu();
+        closeTutorialButton.onClick.RemoveAllListeners();
+        closeTutorialButton.onClick.AddListener(CloseTutorialPanel);
+    }
+
     private void ProceedToNextDialogue() {
         if (isTyping) return;
         TransitionAllToIdle();
@@ -124,6 +141,8 @@ public class DialogueManager : MonoBehaviour
             GenerateResponseButtons(currentDialogue.responseIDs);
         } else if (currentDialogue.nextDialogueID != -1) {
             StartDialogueById(currentDialogue.nextDialogueID);
+        } else if(currentDialogue.isEndDialogue){
+            EndScenario();
         } else {
             Debug.Log("No more dialogues");
         }
@@ -181,9 +200,6 @@ public class DialogueManager : MonoBehaviour
 
         if (currentDialogue.nextDialogueID != -1) {
             EnableNextButton();
-        }
-        else if (currentDialogue.isEndDialogue) {
-            EndScenario();
         }
     }
 
@@ -270,10 +286,8 @@ public class DialogueManager : MonoBehaviour
         if (response.nextDialogueID != -1)
         {
             StartDialogueById(response.nextDialogueID);
-        }
-        else if (currentDialogue.isEndDialogue)
-        {
-            EndScenario();
+        } else {
+            Debug.Log("No more dialogues");
         }
     }
 

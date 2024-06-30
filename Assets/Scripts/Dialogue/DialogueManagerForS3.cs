@@ -23,6 +23,8 @@ public class DialogueManagerForS3 : MonoBehaviour
     public RectTransform responseContainer; // Container for response buttons
     public Button skipButton; // Button to skip typing effect
     public ScrollRect scrollRect; // Reference to the ScrollRect component
+    public GameObject tutorialPanel; // Tutorial Panel
+    public Button closeTutorialButton; // Close Tutorial Button
 
     // Dialogue Database
     public DialogueDatabaseForS3 dialogueDatabase; // Database containing all dialogues
@@ -53,6 +55,7 @@ public class DialogueManagerForS3 : MonoBehaviour
     private bool isTransitioning = false; // Flag for transition state
     private bool isInitialized = false; // Flag for initialization state
     private bool isSkippingText = false; // Flag for skipping text
+    private bool isTutorialClosed = false;
 
     // Response Tracking
     private Dictionary<string, int> responseCategoryCounts = new Dictionary<string, int>();
@@ -63,21 +66,6 @@ public class DialogueManagerForS3 : MonoBehaviour
     private Vector3 centerImageInitialPosition;
     private Vector3 centerRightImageInitialPosition;
     private Vector3 rightImageInitialPosition;
-
-    // Initialization
-    private void Awake()
-    {
-        // Singleton pattern to ensure only one instance of DialogueManager exists
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(transform.root.gameObject); // Ensure the root GameObject is not destroyed
-        }
-    }
 
     // Method to add event triggers to buttons
     private void AddEventTrigger(EventTrigger trigger, EventTriggerType eventType, UnityEngine.Events.UnityAction<BaseEventData> action) {
@@ -101,6 +89,8 @@ public class DialogueManagerForS3 : MonoBehaviour
         centerImageComponent.gameObject.SetActive(true);
         centerRightImageComponent.gameObject.SetActive(true);
         rightImageComponent.gameObject.SetActive(true);
+        tutorialPanel.SetActive(false);
+
 
         // Set up button listeners
         nextButton.onClick.RemoveAllListeners();
@@ -112,6 +102,20 @@ public class DialogueManagerForS3 : MonoBehaviour
 
         Canvas.ForceUpdateCanvases();
         scrollRect.verticalNormalizedPosition = 1f;
+    }
+
+    //Tutorial Panel Functions
+    public void CloseTutorialPanel(){
+        isTutorialClosed = true;
+        tutorialPanel.SetActive(false);
+    }
+
+    public void ShowTutorialPanel() {
+        isTutorialClosed = false;
+        tutorialPanel.SetActive(true);
+        SceneSettingsManager.Instance.CloseSettingsMenu();
+        closeTutorialButton.onClick.RemoveAllListeners();
+        closeTutorialButton.onClick.AddListener(CloseTutorialPanel);
     }
 
     public void StartDialogueById(int dialogueId) {
@@ -132,7 +136,9 @@ public class DialogueManagerForS3 : MonoBehaviour
             GenerateResponseButtons(currentDialogue.responseIDs);
         } else if (currentDialogue.nextDialogueID != -1) {
             StartDialogueById(currentDialogue.nextDialogueID);
-        } else {
+        } else if(currentDialogue.isEndDialogue){
+            EndScenario(); 
+        } else{
             Debug.Log("No more dialogues");
         }
 
@@ -194,9 +200,6 @@ public class DialogueManagerForS3 : MonoBehaviour
 
         if (currentDialogue.nextDialogueID != -1) {
             EnableNextButton();
-        }
-        else if (currentDialogue.isEndDialogue) {
-            EndScenario();
         }
     }
 
@@ -283,10 +286,8 @@ public class DialogueManagerForS3 : MonoBehaviour
         if (response.nextDialogueID != -1)
         {
             StartDialogueById(response.nextDialogueID);
-        }
-        else if (currentDialogue.isEndDialogue)
-        {
-            EndScenario();
+        } else {
+            Debug.LogError("Invalid response dialogue ID");
         }
     }
 

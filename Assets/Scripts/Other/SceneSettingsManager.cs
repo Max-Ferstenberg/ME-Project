@@ -2,22 +2,58 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using System.Collections.Generic;
 
 public class SceneSettingsManager : MonoBehaviour
 {
+    public static SceneSettingsManager Instance { get; private set; }
+
     public GameObject settingsMenu;
+    public GameObject settingsManager;
+    public Button settingsButton;
     public Slider volumeSlider;
+    public AudioSource backgroundMusic; // Added from SettingsManager
     public CanvasGroup fadeCanvasGroup;
     public float fadeDuration = 0.5f;
     private FadeManager fadeManager;
 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        settingsMenu.SetActive(false);
+        if (volumeSlider != null)
+        {
+            volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
+            volumeSlider.value = AudioListener.volume; // Initialize slider value
+        }
+    }
+
     private void Start()
     {
-        settingsMenu.SetActive(false);
-        volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
-        volumeSlider.value = GlobalVolumeManager.Instance.GetVolume(); // Initialize slider value
+        if (settingsButton != null)
+        {
+            settingsButton.onClick.AddListener(OpenSettingsMenu);
+        }
+
+        if (settingsMenu.activeSelf)
+        {
+            Debug.LogWarning("Settings menu was active on scene load. Deactivating.");
+            settingsMenu.SetActive(false);
+        }
+
         fadeManager = FindObjectOfType<FadeManager>(); // Get the FadeManager in the current scene
+        if (fadeManager == null)
+        {
+            Debug.LogError("FadeManager not found.");
+        }
     }
 
     public void OpenSettingsMenu()
@@ -32,7 +68,7 @@ public class SceneSettingsManager : MonoBehaviour
 
     public void OnVolumeChanged(float value)
     {
-        GlobalVolumeManager.Instance.SetVolume(value);
+        AudioListener.volume = value;
     }
 
     public void ResumeGame()
@@ -42,7 +78,10 @@ public class SceneSettingsManager : MonoBehaviour
 
     public void ExitToMenu()
     {
-        fadeManager.FadeToScene("MainMenu"); // Assuming your main menu scene is named "MainMenu"
+        if (fadeManager != null)
+        {
+            fadeManager.FadeToScene("MainMenu"); // Assuming your main menu scene is named "MainMenu"
+        }
     }
 
     private IEnumerator FadeIn()

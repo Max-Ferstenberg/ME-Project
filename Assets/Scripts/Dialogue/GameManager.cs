@@ -20,8 +20,6 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        // Start the initial dialogue sequence
-        StartDialogueSequence(0); // Start with the first dialogue (ID 0)
     }
 
     // Function to start a dialogue sequence by dialogue ID
