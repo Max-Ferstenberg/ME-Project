@@ -1301,7 +1301,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: NaN}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &357657437
@@ -4051,7 +4051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 21.565, y: 14.56}
+  m_AnchoredPosition: {x: 21.564941, y: 14.560059}
   m_SizeDelta: {x: -419.841, y: -441.911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1046982517
@@ -4468,7 +4468,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 716.3, y: -0.000030517578}
+  m_AnchoredPosition: {x: 716.3, y: -0.000061035156}
   m_SizeDelta: {x: 1402.15, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1257544785
@@ -5928,7 +5928,7 @@ MonoBehaviour:
     shouldLeftImageFadeIn: 0
     shouldLeftImageFadeOut: 0
     isLeftImageMirrored: 0
-    centerImage: {fileID: 21300000, guid: 8fe04bb35c7241a44b6bb4a54bc59382, type: 3}
+    centerImage: {fileID: 21300000, guid: 79676147ab54faa40906becbfec1972a, type: 3}
     isCenterImageVisible: 1
     isCenterImageTalking: 1
     shouldCenterImageFadeIn: 1
@@ -5946,11 +5946,11 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 1
-    text: <i>Students shuffle around the room in their seats, some getting up in
-      small clusters to head to the canteen. No one approaches Aaron, who sits by
-      the front monitor and sips from his hydroflask while scrolling mindlessly on
-      the computer. Anna, Sofia, and Kacper are sat near the back of the lecture
-      theatre, laptops and notebooks closed in front of them.</i>
+    text: <color=yellow>[Students shuffle around the room in their seats, some getting
+      up in small clusters to head to the canteen. No one approaches Aaron, who sits
+      by the front monitor and sips from his hydroflask while scrolling mindlessly
+      on the computer. Anna, Sofia, and Kacper are sat near the back of the lecture
+      theatre, laptops and notebooks closed in front of them.]</color>
     responseIDs: 
     nextDialogueID: 2
     isResponse: 0
@@ -6007,11 +6007,12 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 3
-    text: "Sofia: <i>Softly sighs while staring at the last slide on the projector.</i>
-      Yeah, he didn\u2019t mention a word about any of the coups that have plagued
-      the country before or after that revolution. Or about the massive corporations
-      who rushed in to bully the local workforce. Or about the international policies
-      and tariffs that prevented people from getting help. Not a single word. "
+    text: "Sofia: <color=yellow>[Softly sighs while staring at the last slide on
+      the projector.]</color> Yeah, he didn\u2019t mention a word about any of the
+      coups that have plagued the country before or after that revolution. Or about
+      the massive corporations who rushed in to bully the local workforce. Or about
+      the international policies and tariffs that prevented people from getting help.
+      Not a single word. "
     responseIDs: 
     nextDialogueID: 4
     isResponse: 0
@@ -6069,9 +6070,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 5
-    text: "Sofia: I mean, I do talk it through with you though. <i>Laughs quietly.</i>
-      In fairness, it\u2019s more like me and Kacper complaining together \u2013
-      but still appreciate you trying to understand what it\u2019s like for us."
+    text: "Sofia: I mean, I do talk it through with you though. <color=yellow>[Laughs
+      quietly.]</color> In fairness, it\u2019s more like me and Kacper complaining
+      together \u2013 but still appreciate you trying to understand what it\u2019s
+      like for us."
     responseIDs: 
     nextDialogueID: 7
     isResponse: 0
@@ -6099,9 +6101,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 6
-    text: "Sofia: Probably not, to be honest. <i>Shared look of defeat with Kacper.</i>
-      Most lecturers like that are too set in their ways to bother changing lectures
-      they don\u2019t care about anyway. "
+    text: "Sofia: Probably not, to be honest. <color=yellow>[Shared look of defeat
+      with Kacper.]</color> Most lecturers like that are too set in their ways to
+      bother changing lectures they don\u2019t care about anyway. "
     responseIDs: 
     nextDialogueID: 7
     isResponse: 0
@@ -6215,7 +6217,7 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 10
-    text: "Kacper: Ehhh\u2026 <i>Kacper waves his hand to indicate yes-and-no.</i>
+    text: "Kacper: Ehhh\u2026 <color=yellow>[Kacper waves his hand to indicate yes-and-no.]</color>
       Sometimes yes, mostly no. They\u2019d say to me thank you for speaking up,
       but I don\u2019t think they were particularly caring about this stuff. Kinda
       like this guy really. <i>Looks pointedly towards Dr Aaron Pearson at the front
@@ -6371,7 +6373,7 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 15
-    text: 'Kacper: <i>Nods in agreement.</i> '
+    text: 'Kacper: <color=yellow>[Nods in agreement.]</color> '
     responseIDs: 
     nextDialogueID: 16
     isResponse: 0
@@ -6559,9 +6561,9 @@ MonoBehaviour:
       standard\u201D lifestyle with a personal vehicle? And then it becomes a whole
       thing with prestige and showing face and keeping up with your richer friends
       \u2013 none of that is something you can get people to admit to in an academic
-      environment. <i>Bitterly looking at her laptop.</i> It\u2019s so unfair that
-      he gets to be unaware of all of these social consequences and has the nerve
-      to tell us to \u201Chave a little think about it\u201D.  "
+      environment. <color=yellow>[Bitterly looking at her laptop.]</color> It\u2019s
+      so unfair that he gets to be unaware of all of these social consequences and
+      has the nerve to tell us to \u201Chave a little think about it\u201D.  "
     responseIDs: 
     nextDialogueID: 22
     isResponse: 0
@@ -6946,9 +6948,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 34
-    text: "Sofia: <i>Dryly, she scoffs.</i> Yeah, it\u2019s fucking annoying, but
-      hey, at least no-one\u2019s learning the wrong stuff, right? <i>Long-suffering
-      sigh.</i>"
+    text: "Sofia: <color=yellow>[Dryly, she scoffs.]</color> Yeah, it\u2019s fucking
+      annoying, but hey, at least no-one\u2019s learning the wrong stuff, right?
+      <color=yellow>[Long-suffering sigh.]</color>"
     responseIDs: 
     nextDialogueID: 36
     isResponse: 0
@@ -6976,9 +6978,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 35
-    text: "Sofia: <i>Disdainfully, she snorts.</i> Hah, it\u2019s hardly like anyone
-      cares to see it fixed apart from us who already know better and people who
-      actually bother to speak to us. <i>Long-suffering sigh.</i>"
+    text: "Sofia: <color=yellow>[Disdainfully, she snorts.]</color> Hah, it\u2019s
+      hardly like anyone cares to see it fixed apart from us who already know better
+      and people who actually bother to speak to us. <color=yellow>[Long-suffering
+      sigh.]</color>"
     responseIDs: 
     nextDialogueID: 36
     isResponse: 0
@@ -7388,9 +7391,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 49
-    text: "Sofia: <i>Resentfully</i> And now if we\u2019re talking about unfair responsibilities,
-      how is it fair that it\u2019s my job to educate the lecturer on why his content
-      sucks, just because I happen to know it first hand?"
+    text: "Sofia: <color=yellow>[Resentfully]</color> And now if we\u2019re talking
+      about unfair responsibilities, how is it fair that it\u2019s my job to educate
+      the lecturer on why his content sucks, just because I happen to know it first
+      hand?"
     responseIDs: 
     nextDialogueID: 50
     isResponse: 0
@@ -7625,10 +7629,11 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 57
-    text: "Sofia: <i>Quietly sighs and visibly tries to relax.</i> How is it that
-      this always happens. Don\u2019t they do some kind of teacher training for this?
-      You\u2019d think they would, wouldn\u2019t you, with the amount of international
-      students they apparently keep trying to bring in to pay their bills. "
+    text: "Sofia: <color=yellow>[Quietly sighs and visibly tries to relax.]</color>
+      How is it that this always happens. Don\u2019t they do some kind of teacher
+      training for this? You\u2019d think they would, wouldn\u2019t you, with the
+      amount of international students they apparently keep trying to bring in to
+      pay their bills. "
     responseIDs: 
     nextDialogueID: 58
     isResponse: 0
@@ -7713,7 +7718,7 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 60
-    text: 'Sofia: <i>Shakes head while smiling reassuringly.</i> '
+    text: 'Sofia: <color=yellow>[Shakes head while smiling reassuringly.]</color> '
     responseIDs: 
     nextDialogueID: 61
     isResponse: 0
@@ -7769,7 +7774,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 62
-    text: "Sofia: <i>Understandingly.</i> No, it\u2019s fine, I know you.  "
+    text: "Sofia: <color=yellow>Understandingly.]</color> No, it\u2019s fine, I know
+      you.  "
     responseIDs: 
     nextDialogueID: 63
     isResponse: 0
@@ -8001,7 +8007,7 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 70
-    text: 'Kacper: <i>Humorously</i> Aww, I like you guys too! '
+    text: 'Kacper: <color=yellow>[Humorously]</color> Aww, I like you guys too! '
     responseIDs: 
     nextDialogueID: 71
     isResponse: 0
@@ -8029,8 +8035,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 71
-    text: <i>All three students share a good laugh, until the easy quiet resumes
-      between the three of them at the back of the room. </i>
+    text: <color=yellow>[All three students share a good laugh, until the easy quiet
+      resumes between the three of them at the back of the room.]</color>
     responseIDs: 
     nextDialogueID: 72
     isResponse: 0
@@ -8062,7 +8068,7 @@ MonoBehaviour:
       of these issues across to Aaron or guy who does the practical sessions, but
       is there anything I can do to help with that, like at all? Y\u2019know, use
       my white privilege and local privileges for the betterment of the world type
-      thing. <i>Small chuckle.</i> "
+      thing. <color=yellow>[Small chuckle.]</color> "
     responseIDs: 
     nextDialogueID: 73
     isResponse: 0
@@ -8090,11 +8096,11 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 73
-    text: "Sofia: <i>Laughs comfortably.</i> Aww, that\u2019s real nice of you to
-      put it that way. I mean, short of asking him yourself or dumping a ton of links
-      to articles in his inbox, I think we\u2019ve got the same problem anyway where
-      he controls our grades and we really don\u2019t wanna risk his\u2026 temperamental
-      attitude towards us \u201Cyoungins\u201D to affect our marks. "
+    text: "Sofia: <color=yellow>[Laughs comfortably.]</color> Aww, that\u2019s real
+      nice of you to put it that way. I mean, short of asking him yourself or dumping
+      a ton of links to articles in his inbox, I think we\u2019ve got the same problem
+      anyway where he controls our grades and we really don\u2019t wanna risk his\u2026
+      temperamental attitude towards us \u201Cyoungins\u201D to affect our marks. "
     responseIDs: 
     nextDialogueID: 74
     isResponse: 0
@@ -8122,8 +8128,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 74
-    text: "Kacper: Chuckles too. Oh don\u2019t even start talking about that too,
-      I\u2019ve seen it so much before. Wry, tired smile. "
+    text: "Kacper: <color=yellow>[Chuckles too.]</color> Oh don\u2019t even start
+      talking about that too, I\u2019ve seen it so much before. <color=yellow>[Wry,
+      tired smile.]</color> "
     responseIDs: 
     nextDialogueID: 75
     isResponse: 0
@@ -8650,8 +8657,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 92
-    text: "<i>Students begin filing back into the room, clutching their university
-      caf\xE9 paper cups while slowly filtering back up into the seats. </i>"
+    text: "<color=yellow>[Students begin filing back into the room, clutching their
+      university caf\xE9 paper cups while slowly filtering back up into the seats.]</color>"
     responseIDs: 
     nextDialogueID: 93
     isResponse: 0
@@ -8709,8 +8716,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 94
-    text: 'Kacper: <i>Under his breath.</i> Yeah, because I <i>really</i> trust you
-      can do that very well after this class. '
+    text: 'Kacper: <color=yellow>[Under his breath.]</color> Yeah, because I really
+      trust you can do that very well after this class. '
     responseIDs: 
     nextDialogueID: 95
     isResponse: 0
@@ -8738,8 +8745,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 95
-    text: 'Sofia: <i>Grim laugh under her breath.</i> Mhm. I feel so inspired to
-      share my experiences with you, Aaron. No sarcasm, I promise.'
+    text: 'Sofia: <color=yellow>[Grim laugh under her breath.]</color> Mhm. I feel
+      so inspired to share my experiences with you, Aaron. No sarcasm, I promise.'
     responseIDs: 
     nextDialogueID: -1
     isResponse: 0
@@ -8767,11 +8774,11 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 7569
-    text: <color=yellow>A wide mid-sized lecture room that is only half full of students,
-      all sitting towards the back. Quiet and informal conversation fills the room
-      at the back, while no-one particularly wants to approach the teaching staff
-      at any point beyond handing back the sign in sheet. Numerous students are intermittently
-      messaging on their phones.</color>
+    text: <color=yellow>[A wide mid-sized lecture room that is only half full of
+      students, all sitting towards the back. Quiet and informal conversation fills
+      the room at the back, while no-one particularly wants to approach the teaching
+      staff at any point beyond handing back the sign in sheet. Numerous students
+      are intermittently messaging on their phones.]</color>
     responseIDs: 
     nextDialogueID: 0
     isResponse: 0

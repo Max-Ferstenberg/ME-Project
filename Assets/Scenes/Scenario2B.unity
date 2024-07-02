@@ -5924,13 +5924,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - id: 0
-    text: <i>The lecture is about to resume after the mid-class break. Students may
-      their way back to the desks, and the volume in the classroom rises to a casual
-      burble as friends greet each other and students rustle their bags to allow
-      others to return to their seats. Dr Hana Lane is a guest lecturer today to
-      help with questions on academic writing and academic presentations. She hopes
-      that the break has helped students re-centre their focus and exhaust some of
-      the disruptive energy from earlier in the session. </i>
+    text: <color=yellow>[The lecture is about to resume after the mid-class break.
+      Students may their way back to the desks, and the volume in the classroom rises
+      to a casual burble as friends greet each other and students rustle their bags
+      to allow others to return to their seats. Dr Hana Lane is a guest lecturer
+      today to help with questions on academic writing and academic presentations.
+      She hopes that the break has helped students re-centre their focus and exhaust
+      some of the disruptive energy from earlier in the session.]</color>
     responseIDs: 
     nextDialogueID: 1
     isResponse: 0
@@ -5958,8 +5958,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 1
-    text: "Dr Aaron Pearson: <i>[Internally] Okay, let\u2019s do this again. I hope
-      they\u2019re a bit more co-operative this time\u2026 </i>"
+    text: "Dr Aaron Pearson: <color=yellow>[Internally] Okay, let\u2019s do this
+      again. I hope they\u2019re a bit more co-operative this time\u2026 </color>"
     responseIDs: 
     nextDialogueID: 2
     isResponse: 0
@@ -6016,8 +6016,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 3
-    text: <i>The chatter dulls as students return their focus to Aaron at the front
-      of the room, although some scuffles and muttering still continues. </i>
+    text: <color=yellow>[The chatter dulls as students return their focus to Aaron
+      at the front of the room, although some scuffles and muttering still continues.]</color>
     responseIDs: 
     nextDialogueID: 4
     isResponse: 0
@@ -6075,8 +6075,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 5
-    text: "<i>A half-raised hand and confident voice jumps in immediately, almost
-      cutting off the end of Aaron\u2019s question to the room. </i>"
+    text: "<color=yellow>[A half-raised hand and confident voice jumps in immediately,
+      almost cutting off the end of Aaron\u2019s question to the room.]</color>"
     responseIDs: 
     nextDialogueID: 6
     isResponse: 0
@@ -6134,10 +6134,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 7
-    text: "Dr Aaron Pearson: <i>[Internally] I said at least twice earlier that although
-      I am the one responsible for the grading rubric in this module, I won\u2019t
-      be prioritising either way, but I guess I\u2019m going to have to do it a third
-      time. </i>"
+    text: "Dr Aaron Pearson: <color=yellow>[Internally] I said at least twice earlier
+      that although I am the one responsible for the grading rubric in this module,
+      I won\u2019t be prioritising either way, but I guess I\u2019m going to have
+      to do it a third time. </color>"
     responseIDs: 
     nextDialogueID: 8
     isResponse: 0
@@ -6165,9 +6165,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 8
-    text: "Dr Aaron Pearson: <i>[Internally] At least this is a logical question.
-      Unlike a certain question of \u201CWhere is the closest women\u2019s bathrooms?\u201D
-      earlier.</i>"
+    text: "Dr Aaron Pearson: <color=yellow>[Internally] At least this is a logical
+      question. Unlike a certain question of \u201CWhere is the closest women\u2019s
+      bathrooms?\u201D earlier.</color>"
     responseIDs: 
     nextDialogueID: 9
     isResponse: 0
@@ -6195,8 +6195,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 9
-    text: "Dr Aaron Pearson: <i>[Internally] Why would I know that anyway? I\u2019m
-      clearly male-presenting\u2026 </i>"
+    text: "Dr Aaron Pearson: <color=yellow>[Internally] Why would I know that anyway?
+      I\u2019m clearly male-presenting\u2026 </color>"
     responseIDs: 
     nextDialogueID: 10
     isResponse: 0
@@ -6224,10 +6224,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 10
-    text: "Dr Aaron Pearson: <i>Patiently.</i> As I said earlier, I am involved with
-      the grading process for this module, but today I\u2019m here to provide you
-      with more context and information about your academic skills before Hana\u2019s
-      talk later."
+    text: "Dr Aaron Pearson: <color=yellow>[Patiently.]</color> As I said earlier,
+      I am involved with the grading process for this module, but today I\u2019m
+      here to provide you with more context and information about your academic skills
+      before Hana\u2019s talk later."
     responseIDs: 
     nextDialogueID: 11
     isResponse: 0
@@ -6371,7 +6371,7 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 15
-    text: <i>Long, awkward silence. </i>
+    text: <color=yellow>[Long, awkward silence.]</color>
     responseIDs: 
     nextDialogueID: 16
     isResponse: 0
@@ -6429,8 +6429,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 17
-    text: <i>More awkward silence, with students carefully trying to avoid eye contact
-      with Aaron. Eventually, one student raises his hand hesitantly. </i>
+    text: </color>[More awkward silence, with students carefully trying to avoid
+      eye contact with Aaron. Eventually, one student raises his hand hesitantly.]</color>
     responseIDs: 
     nextDialogueID: 18
     isResponse: 0
@@ -6489,9 +6489,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 19
-    text: "<i>Dr Aaron Pearson: [Internally] So much for an easier group today. At
-      least it\u2019s on topic, but it feels like pulling teeth to get them to engage\u2026
-      </i>"
+    text: "Dr Aaron Pearson: <color=yellow> [Internally] So much for an easier group
+      today. At least it\u2019s on topic, but it feels like pulling teeth to get
+      them to engage\u2026 </color>"
     responseIDs: 
     nextDialogueID: 20
     isResponse: 0
@@ -6550,10 +6550,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 21
-    text: "<i>At the mention of \u201Cas equal as possible\u201D, there seems to
-      be a ripple of disagreement within a couple of groups of students. It is only
-      there for a moment, but the emotions that flickered briefly are very identifiable.
-      Meanwhile, Male Student 1 seems satisfied by this answer. </i>"
+    text: "<color=yellow>[At the mention of \u201Cas equal as possible\u201D, there
+      seems to be a ripple of disagreement within a couple of groups of students.
+      It is only there for a moment, but the emotions that flickered briefly are
+      very identifiable. Meanwhile, Male Student 1 seems satisfied by this answer.]</color>"
     responseIDs: 
     nextDialogueID: 22
     isResponse: 0
@@ -6641,8 +6641,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 24
-    text: "<i>Again, only a few students seem to hear Aaron\u2019s prompt. Most avoid
-      doing anything to catch Aaron\u2019s attention. </i>"
+    text: "<color=yellow>[Again, only a few students seem to hear Aaron\u2019s prompt.
+      Most avoid doing anything to catch Aaron\u2019s attention.]</color>"
     responseIDs: 
     nextDialogueID: 25
     isResponse: 0
@@ -6670,10 +6670,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 25
-    text: "Dr Aaron Pearson: <i>[Internally] God, what else do I do here. It\u2019s
-      not like this information isn\u2019t relevant to their marks, but they still
-      seem so checked out. Let\u2019s try calling on one of them, that might get
-      things rolling.</i>"
+    text: "Dr Aaron Pearson: <color=yellow>[Internally] God, what else do I do here.
+      It\u2019s not like this information isn\u2019t relevant to their marks, but
+      they still seem so checked out. Let\u2019s try calling on one of them, that
+      might get things rolling.</color>"
     responseIDs: 
     nextDialogueID: 26
     isResponse: 0
@@ -6701,8 +6701,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 26
-    text: <i>Aaron looks around the classroom, eventually spotting a young man at
-      the back who is looking at the slide with a slightly confused expression. </i>
+    text: <color=yellow>[Aaron looks around the classroom, eventually spotting a
+      young man at the back who is looking at the slide with a slightly confused
+      expression.]</color>
     responseIDs: 
     nextDialogueID: 27
     isResponse: 0
@@ -6759,8 +6760,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 28
-    text: <i>The male student spooks a bit, looking like a deer in the headlights.
-      </i>
+    text: <color=yellow>[The male student spooks a bit, looking like a deer in the
+      headlights.]</color>
     responseIDs: 
     nextDialogueID: 29
     isResponse: 0
@@ -6788,8 +6789,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 29
-    text: 'Male Student 2: <i>Hesitantly calling from the back</i>. Um, I was going
-      to ask if the topics still free choice for both options? '
+    text: 'Male Student 2: <color=yellow>[Hesitantly calling from the back]</color>.
+      Um, I was going to ask if the topics still free choice for both options? '
     responseIDs: 0000000001000000
     nextDialogueID: -1
     isResponse: 0
@@ -6817,8 +6818,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 30
-    text: "Male Student 2: <i>Sheepishly.</i> Sorry \u2013 Hana takes a lot of questions,
-      so I was going to ask her later."
+    text: "Male Student 2: <color=yellow>[Sheepishly.]</color> Sorry \u2013 Hana
+      takes a lot of questions, so I was going to ask her later."
     responseIDs: 
     nextDialogueID: 32
     isResponse: 0
@@ -6846,8 +6847,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 31
-    text: 'Male Student 2: <i>Begrudgingly.</i> Sorry Aaron, but Hana usually takes
-      more questions, so I was going to ask in her session instead.'
+    text: 'Male Student 2: <color=yellow>[Begrudgingly.]</color> Sorry Aaron, but
+      Hana usually takes more questions, so I was going to ask in her session instead.'
     responseIDs: 
     nextDialogueID: 32
     isResponse: 0
@@ -6875,8 +6876,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 32
-    text: "Dr Aaron Pearson: <i>[Internally] It\u2019s not that Hana takes more questions,
-      it\u2019s that none of you want to ask me any questions at all ffs. </i>"
+    text: "Dr Aaron Pearson: <color=yellow>[Internally] It\u2019s not that Hana takes
+      more questions, it\u2019s that none of you want to ask me any questions at
+      all ffs. </color>"
     responseIDs: 
     nextDialogueID: 33
     isResponse: 0
@@ -6904,9 +6906,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 33
-    text: "Dr Aaron Pearson: Dryly. Hmm, yes, well of course I encourage everybody
-      to ask as many questions as needed, but remember that Hana isn\u2019t as involved
-      as I am with this module, so maybe keep some of those questions for me, alright? "
+    text: "Dr Aaron Pearson: <color=yellow>[Dryly.]</color> Hmm, yes, well of course
+      I encourage everybody to ask as many questions as needed, but remember that
+      Hana isn\u2019t as involved as I am with this module, so maybe keep some of
+      those questions for me, alright? "
     responseIDs: 
     nextDialogueID: 34
     isResponse: 0
@@ -6934,9 +6937,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 34
-    text: <i>Amused looks flicker across the student faces this time, with a couple
-      of glances between Male Student 1 and Male Student 2, who are openly trying
-      not to giggle with each other. </i>
+    text: <color=yellow>[Amused looks flicker across the student faces this time,
+      with a couple of glances between Male Student 1 and Male Student 2, who are
+      openly trying not to giggle with each other.]</color>
     responseIDs: 
     nextDialogueID: 35
     isResponse: 0
@@ -6964,8 +6967,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 35
-    text: 'Dr Aaron Pearson: <i>[Internally] God, what does it take to be taken even
-      a little seriously these days? </i>'
+    text: 'Dr Aaron Pearson: <color=yellow>[Internally] God, what does it take to
+      be taken even a little seriously these days? </color>'
     responseIDs: 
     nextDialogueID: 36
     isResponse: 0
@@ -7022,8 +7025,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 37
-    text: <i>Aaron clicks to the next slide, with a list of example topics. The students
-      turn their gaze to the projector screen behind him. </i>
+    text: <color=yellow>[Aaron clicks to the next slide, with a list of example topics.
+      The students turn their gaze to the projector screen behind him.]</color>
     responseIDs: 
     nextDialogueID: 38
     isResponse: 0
@@ -7109,10 +7112,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 40
-    text: "<i>Most students nod understandingly, although a few students\u2019 faces
-      twist at this phrasing again. Kacper, and another woman \u2013 a Sophie, or
-      a Sofia perhaps? The two steal a knowing glance between them, as if they have
-      a personal issue with academic standards of touchy topics.</i>"
+    text: "<color=yellow>[Most students nod understandingly, although a few students\u2019
+      faces twist at this phrasing again. Kacper, and another woman \u2013 a Sophie,
+      or a Sofia perhaps? The two steal a knowing glance between them, as if they
+      have a personal issue with academic standards of touchy topics.]</color>"
     responseIDs: 
     nextDialogueID: 42
     isResponse: 0
@@ -7140,11 +7143,11 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 41
-    text: "<i>Most students nod understandingly, but two students visibly show their
-      distaste for this wording. Kacper, and another woman \u2013 a Sophie, or a
-      Sofia perhaps? The two pointedly half-glare at each other, as if they would
-      never trust an outside evaluation of something that impacted them on a personal
-      level.</i>"
+    text: "<color=yellow>[Most students nod understandingly, but two students visibly
+      show their distaste for this wording. Kacper, and another woman \u2013 a Sophie,
+      or a Sofia perhaps? The two pointedly half-glare at each other, as if they
+      would never trust an outside evaluation of something that impacted them on
+      a personal level.]</color>"
     responseIDs: 
     nextDialogueID: 42
     isResponse: 0
@@ -7172,8 +7175,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 42
-    text: "Dr Aaron Pearson: <i>[Internally] Why do I feel like those two will always
-      have a bone to pick with whatever I say\u2026  </i>"
+    text: "Dr Aaron Pearson: <color=yellow>[Internally]</color> Why do I feel like
+      those two will always have a bone to pick with whatever I say\u2026  </i>"
     responseIDs: 
     nextDialogueID: 43
     isResponse: 0
@@ -7201,9 +7204,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 43
-    text: "<i>As if Aaron\u2019s thoughts were heard, Sofia motions to cautiously
-      raise a hand. She seems guarded, based on how Kacper looks to be ready to assess
-      and grade Aaron\u2019s response to whatever Sofia wants to say. </i>"
+    text: "<color=yellow>[As if Aaron\u2019s thoughts were heard, Sofia motions to
+      cautiously raise a hand. She seems guarded, based on how Kacper looks to be
+      ready to assess and grade Aaron\u2019s response to whatever Sofia wants to
+      say.]</color>"
     responseIDs: 
     nextDialogueID: 44
     isResponse: 0
@@ -7231,10 +7235,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 44
-    text: "Dr Aaron Pearson: <i>[Internally] I\u2019m really struggling to get any
-      momentum, but I don\u2019t want to jump the gun and cut off a legitimate ask\u2026
-      I don\u2019t want to push more students away if I put my foot in it here as
-      well.</i> "
+    text: "Dr Aaron Pearson: <color=yellow>[Internally] I\u2019m really struggling
+      to get any momentum, but I don\u2019t want to jump the gun and cut off a legitimate
+      ask\u2026 I don\u2019t want to push more students away if I put my foot in
+      it here as well.</color> "
     responseIDs: 0400000005000000
     nextDialogueID: -1
     isResponse: 0
@@ -7262,11 +7266,11 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 45
-    text: <i>The woman nods as if she knows that Aaron is afraid of out-of-context
+    text: <color=yellow>[The woman nods as if she knows that Aaron is afraid of out-of-context
       questions, but she still seems at odds with this call as she pulls her hand
       down. The boy next to her makes an effort to show a meaningless platitude of
       a smile. The second Aaron looks away, his lips press together in a thin line.
-      A third student looks at her friends with concern.</i>
+      A third student looks at her friends with concern.]</color>
     responseIDs: 
     nextDialogueID: 47
     isResponse: 0
@@ -7294,11 +7298,11 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 46
-    text: "<i>She seems surprised by this admission, then smiles and shakes her head
-      gently. \u201CI\u2019ll ask you afterwards,\u201D she replies quietly from
-      the far end of the room. Unnoticed by Aaron, Kacper gives a quirk of an approving
-      smile. A third student glances between her friends, a little puzzled at the
-      unspoken feelings in this exchange.</i>"
+    text: "<color=yellow>[She seems surprised by this admission, then smiles and
+      shakes her head gently. \u201CI\u2019ll ask you afterwards,\u201D she replies
+      quietly from the far end of the room. Unnoticed by Aaron, Kacper gives a quirk
+      of an approving smile. A third student glances between her friends, a little
+      puzzled at the unspoken feelings in this exchange.]</color>"
     responseIDs: 
     nextDialogueID: 47
     isResponse: 0
@@ -7326,8 +7330,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 47
-    text: "Dr Aaron Pearson:<i> [Internally] That was\u2026 something. Ah shoot,
-      did I get her name wrong? I hope not, but on we go.</i>"
+    text: "Dr Aaron Pearson:<color=yellow> [Internally] That was\u2026 something.
+      Ah shoot, did I get her name wrong? I hope not, but on we go.</color>"
     responseIDs: 
     nextDialogueID: 48
     isResponse: 0
@@ -7474,8 +7478,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 52
-    text: <i>Male Student 1 perks up, and looks as if he is pondering something again.
-      </i>
+    text: <color=yellow>[Male Student 1 perks up, and looks as if he is pondering
+      something again.]</color>
     responseIDs: 
     nextDialogueID: 53
     isResponse: 0
@@ -7503,9 +7507,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 53
-    text: "Dr Aaron Pearson:<i> [Internally] I bet he wants to ask about those doing
-      presentations, and he won\u2019t ask if I don\u2019t call on it\u2026 but what
-      if it\u2019s something else? </i>"
+    text: "Dr Aaron Pearson:<color=yellow> [Internally] I bet he wants to ask about
+      those doing presentations, and he won\u2019t ask if I don\u2019t call on it\u2026
+      but what if it\u2019s something else? </color>"
     responseIDs: 0600000007000000
     nextDialogueID: -1
     isResponse: 0
@@ -7533,9 +7537,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 54
-    text: <i>Male Student 1 closes his mouth as his face shows some confusion. Other
-      students nod, but the gesture is made on autopilot, as there is no indication
-      that these words were in any way reassuring.  </i>
+    text: <color=yellow>[Male Student 1 closes his mouth as his face shows some confusion.
+      Other students nod, but the gesture is made on autopilot, as there is no indication
+      that these words were in any way reassuring.]</color>
     responseIDs: 
     nextDialogueID: 56
     isResponse: 0
@@ -7563,9 +7567,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 55
-    text: <i>Male Student 1 closes his mouth as he smiles and nods appreciatively.
+    text: <color=yellow>[Male Student 1 closes his mouth as he smiles and nods appreciatively.
       Other students seem appreciate this as well, as a few of them also nod with
-      the same intent.</i>
+      the same intent.]</color>
     responseIDs: 
     nextDialogueID: 56
     isResponse: 0
@@ -7593,9 +7597,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 56
-    text: "Dr Aaron Pearson: <i>[Internally] Surely that\u2019s not just me noticing
-      something that isn\u2019t there? Why do I keep feeling like there\u2019s something
-      they\u2019re not saying, and that I can\u2019t ask? </i>"
+    text: "Dr Aaron Pearson: <color=yellow>[Internally] Surely that\u2019s not just
+      me noticing something that isn\u2019t there? Why do I keep feeling like there\u2019s
+      something they\u2019re not saying, and that I can\u2019t ask? </color>"
     responseIDs: 
     nextDialogueID: 57
     isResponse: 0
@@ -7652,10 +7656,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 58
-    text: <i>The classroom returns to its previous rhythms, Aaron giving information
-      and students being very reluctant to share their questions with the floor.
-      The lecture moves along, and the students jot their occasional notes as Aaron
-      clicks the occasional slide.  </i>
+    text: <color=yellow>[The classroom returns to its previous rhythms, Aaron giving
+      information and students being very reluctant to share their questions with
+      the floor. The lecture moves along, and the students jot their occasional notes
+      as Aaron clicks the occasional slide.]</color>
     responseIDs: 
     nextDialogueID: 59
     isResponse: 0
@@ -7683,9 +7687,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 59
-    text: <i>When the class is over, Aaron packs up his laptop and starts to head
-      to the staff area for a coffee. The last student to leave hesitates by the
-      lecturn, despite her friends already waiting for her by the door. </i>
+    text: <color=yellow>[When the class is over, Aaron packs up his laptop and starts
+      to head to the staff area for a coffee. The last student to leave hesitates
+      by the lecturn, despite her friends already waiting for her by the door.]</color>
     responseIDs: 
     nextDialogueID: 60
     isResponse: 0
@@ -7713,8 +7717,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 60
-    text: "Dr Aaron Pearson: <i>Looks up.</i> Hello, can I help you with something,
-      is it Sophie? Sorry, I\u2019m not too familiar with everybody. "
+    text: "Dr Aaron Pearson: <color=yellow>[Looks up.]</color> Hello, can I help
+      you with something, is it Sophie? Sorry, I\u2019m not too familiar with everybody. "
     responseIDs: 
     nextDialogueID: 61
     isResponse: 0
@@ -7828,10 +7832,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 64
-    text: "Dr Aaron Pearson: <i>Confused, but not rejecting.</i> I\u2019m not quite
-      sure what you mean? I mean, all of the stuff in the lectures needs to be approved
-      through the lecture and module planning systems, and are often cited from appropriate
-      textbooks and papers\u2026? "
+    text: "Dr Aaron Pearson: <color=yellow>[Confused, but not rejecting.]</color>
+      I\u2019m not quite sure what you mean? I mean, all of the stuff in the lectures
+      needs to be approved through the lecture and module planning systems, and are
+      often cited from appropriate textbooks and papers\u2026? "
     responseIDs: 
     nextDialogueID: 65
     isResponse: 0
@@ -7889,8 +7893,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 66
-    text: "Dr Aaron Pearson: <i>Pauses in thought.</i> I\u2026 I\u2019m not really
-      sure. I\u2019ve never thought about that before. "
+    text: "Dr Aaron Pearson: <color=yellow>[Pauses in thought.]</color> I\u2026 I\u2019m
+      not really sure. I\u2019ve never thought about that before. "
     responseIDs: 
     nextDialogueID: 67
     isResponse: 0
@@ -7918,9 +7922,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 67
-    text: "Sofia: <i>A touch disappointedly.</i> Ah, it\u2019s okay. It\u2019s not
-      super important anyway, thank you for the class today. <i>She begins to turn
-      away and make towards her friends who are dithering outside the door. </i>"
+    text: "Sofia: <color=yellow>[A touch disappointedly.]</color> Ah, it\u2019s okay.
+      It\u2019s not super important anyway, thank you for the class today. <color=yellow>[She
+      begins to turn away and make towards her friends who are dithering outside
+      the door.]</color>"
     responseIDs: 
     nextDialogueID: 68
     isResponse: 0
@@ -7948,8 +7953,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 68
-    text: "Dr Aaron Pearson: <i>Half calling out to her.</i> Sorry I don\u2019t have
-      a better answer, I\u2019ll ask around for you! "
+    text: "Dr Aaron Pearson: <color=yellow>[Half calling out to her.]</color> Sorry
+      I don\u2019t have a better answer, I\u2019ll ask around for you! "
     responseIDs: 
     nextDialogueID: 69
     isResponse: 0
@@ -7977,9 +7982,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 69
-    text: <i>Sofia gives a blameless smile and half-waves as she leaves the room,
-      leaving Aaron to finish picking up his things alone in the now-quiet room.
-      </i>
+    text: <color=yellow>[Sofia gives a blameless smile and half-waves as she leaves
+      the room, leaving Aaron to finish picking up his things alone in the now-quiet
+      room.]</color>
     responseIDs: 
     nextDialogueID: 70
     isResponse: 0
@@ -8007,12 +8012,12 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 70
-    text: '<i>The class has ended, and Aaron has gone to the staff space to discuss
-      the outcome of the class with their colleagues. In tired-looking room with
-      the basic amenities of a kettle, sink, and fading posters about staff wellbeing
-      resources, several academics are having an informal discussion exploring some
-      of their feelings and frustrations about the students and the changing nature
-      of higher education more broadly.</i> '
+    text: '<color=yellow>[The class has ended, and Aaron has gone to the staff space
+      to discuss the outcome of the class with their colleagues. In tired-looking
+      room with the basic amenities of a kettle, sink, and fading posters about staff
+      wellbeing resources, several academics are having an informal discussion exploring
+      some of their feelings and frustrations about the students and the changing
+      nature of higher education more broadly.]</color> '
     responseIDs: 
     nextDialogueID: 71
     isResponse: 0
@@ -8189,8 +8194,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 76
-    text: "Prof Mary Cooke: <i>Uncomfortably looking around.</i> ...I\u2019m sure
-      there must\u2019ve been a reason for that, though, surely? "
+    text: "Prof Mary Cooke: <color=yellow>[Uncomfortably looking around.]</color>
+      ...I\u2019m sure there must\u2019ve been a reason for that, though, surely? "
     responseIDs: 
     nextDialogueID: 77
     isResponse: 0
@@ -8402,7 +8407,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 83
-    text: 'Dr Aaron Pearson: <i>Grumbling.</i> Oh great, here we go... '
+    text: 'Dr Aaron Pearson: <color=yellow>[Grumbling.]</color> Oh great, here we
+      go... '
     responseIDs: 
     nextDialogueID: 84
     isResponse: 0
@@ -8519,13 +8525,13 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 87
-    text: "Dr Hana Lane: <i>Sharp look.</i> Don\u2019t mistake me as approving how
-      you\u2019re talking about it though... I just think new best practice is to
-      go in, remain safely distanced, deliver your content and get out. In fact I
-      actually got pulled up by a student the other week for addressing the class
-      as \u201Cguys\u201D, and then another student jokingly. Or at least, I think
-      it was jokingly... Anyways, another student then accused me of being \u201Cableist\u201D.
-      I don\u2019t even know what that means in that context- "
+    text: "Dr Hana Lane: <color=yellow>[Sharp look.]</color> Don\u2019t mistake me
+      as approving how you\u2019re talking about it though... I just think new best
+      practice is to go in, remain safely distanced, deliver your content and get
+      out. In fact I actually got pulled up by a student the other week for addressing
+      the class as \u201Cguys\u201D, and then another student jokingly. Or at least,
+      I think it was jokingly... Anyways, another student then accused me of being
+      \u201Cableist\u201D. I don\u2019t even know what that means in that context- "
     responseIDs: 
     nextDialogueID: 88
     isResponse: 0
@@ -8553,9 +8559,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 88
-    text: "Dr Hana Lane: <i>Directed to Aaron.</i> Even in the class that I was just
-      in, the students practically admitted to feeling like it was fine to interrupt
-      me and talk over me, but that they know it\u2019s not fine to do that to you! "
+    text: "Dr Hana Lane: <color=yellow>[Directed to Aaron.]</color> Even in the class
+      that I was just in, the students practically admitted to feeling like it was
+      fine to interrupt me and talk over me, but that they know it\u2019s not fine
+      to do that to you! "
     responseIDs: 
     nextDialogueID: 89
     isResponse: 0
@@ -8699,9 +8706,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 93
-    text: "Dr Luke Simpson: <i>Interrupting for the first time.</i> She\u2019s right
-      though, how is it fair that she\u2019s fighting to be heard as the voice in
-      charge, while he\u2019s fighting to get any engagement as the voice of reason? "
+    text: "Dr Luke Simpson: <color=yellow>[Interrupting for the first time.]</color>
+      She\u2019s right though, how is it fair that she\u2019s fighting to be heard
+      as the voice in charge, while he\u2019s fighting to get any engagement as the
+      voice of reason? "
     responseIDs: 
     nextDialogueID: 94
     isResponse: 0
@@ -8790,8 +8798,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 96
-    text: "Dr Hana Lane: <i>Cutting him off.</i> -but what do you mean by that? That\u2019s
-      at least some conductive insight I feel. "
+    text: "Dr Hana Lane: <color=yellow>[Cutting him off.]</color> -but what do you
+      mean by that? That\u2019s at least some conductive insight I feel. "
     responseIDs: 
     nextDialogueID: 97
     isResponse: 0
@@ -8913,8 +8921,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 100
-    text: 'Dr Aaron Pearson: <i>Begrudgingly.</i>  Alright, I will readily say that
-      is an intriguing fact worth discussing. '
+    text: 'Dr Aaron Pearson: <color=yellow>[Begrudgingly.]</color>  Alright, I will
+      readily say that is an intriguing fact worth discussing. '
     responseIDs: 
     nextDialogueID: 101
     isResponse: 0
@@ -9130,7 +9138,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 107
-    text: 'Dr Luke Simpson: <i>Hurriedly.</i> Ha! Yet more student dissatisfaction! '
+    text: 'Dr Luke Simpson: <color=yellow>[Hurriedly.]</color> Ha! Yet more student
+      dissatisfaction! '
     responseIDs: 
     nextDialogueID: 108
     isResponse: 0
@@ -9158,8 +9167,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 108
-    text: 'Dr Aaron Pearson: A moment of silence, followed by uncomfortable laughter
-      between the others. Did you have an opinion to add here Luke? '
+    text: 'Dr Aaron Pearson: <color=yellow>[A moment of silence, followed by uncomfortable
+      laughter between the others.]</color> Did you have an opinion to add here Luke? '
     responseIDs: 
     nextDialogueID: 109
     isResponse: 0
@@ -9312,8 +9321,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 113
-    text: 'Prof Mary Cooke: <i>Placating but clearly frustrated.</i> But if not now,
-      then when? '
+    text: 'Prof Mary Cooke: <color=yellow>[Placating but clearly frustrated.]</color>
+      But if not now, then when? '
     responseIDs: 
     nextDialogueID: 114
     isResponse: 0
@@ -9437,10 +9446,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 117
-    text: "Dr Aaron Pearson: Defensively. I think it\u2019s hardly fair to frame
-      it that way when I, and all of you as my hard-working colleagues, have had
-      to keep up with the changing world and present a seemingly impartial front
-      while we teach as well. "
+    text: "Dr Aaron Pearson: <color=yellow>[Defensively.]</color> I think it\u2019s
+      hardly fair to frame it that way when I, and all of you as my hard-working
+      colleagues, have had to keep up with the changing world and present a seemingly
+      impartial front while we teach as well. "
     responseIDs: 
     nextDialogueID: 118
     isResponse: 0
@@ -9530,8 +9539,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 120
-    text: "Dr Hana Lane: <i>Quietly.</i> But it shouldn\u2019t matter about how \u201Cunpopular\u201D
-      a stance is. It should be about what\u2019s best, and what\u2019s right. "
+    text: "Dr Hana Lane: <color=yellow>[Quietly.]</color> But it shouldn\u2019t matter
+      about how \u201Cunpopular\u201D a stance is. It should be about what\u2019s
+      best, and what\u2019s right. "
     responseIDs: 
     nextDialogueID: 121
     isResponse: 0
@@ -9559,8 +9569,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 121
-    text: "Prof Mary Cooke: <i>Quietly.</i> As well as what\u2019s needed, both for
-      the academic world, and for the students... "
+    text: "Prof Mary Cooke: <color=yellow>[Quietly.]</color> As well as what\u2019s
+      needed, both for the academic world, and for the students... "
     responseIDs: 
     nextDialogueID: -1
     isResponse: 0
@@ -9588,13 +9598,13 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 7569
-    text: <i>The same wide mid-sized lecture room that is once again only half full
-      of students, who are clustered into settled friend groups at this stage in
-      the module. Quiet and informal conversation fills the room at the back, interspersed
-      with more familiar discussions about non-university related topics. A few students
-      offer a small nod or brief hello to the lecturer at the front, but most are
-      more focused on finding their friends in the staggered seating arrangement.
-      </i>
+    text: <color=yellow>[The same wide mid-sized lecture room that is once again
+      only half full of students, who are clustered into settled friend groups at
+      this stage in the module. Quiet and informal conversation fills the room at
+      the back, interspersed with more familiar discussions about non-university
+      related topics. A few students offer a small nod or brief hello to the lecturer
+      at the front, but most are more focused on finding their friends in the staggered
+      seating arrangement.]</color>
     responseIDs: 
     nextDialogueID: 0
     isResponse: 0
@@ -9623,15 +9633,16 @@ MonoBehaviour:
     textColor: {r: 0.9550984, g: 1, b: 0, a: 1}
   responses:
   - id: 0
-    text: "<i>Attempting humour.</i> See, that wasn\u2019t so bad, was it?"
+    text: "<color=yellow>[Attempting humour.]</color> See, that wasn\u2019t so bad,
+      was it?"
     nextDialogueID: 30
     category: A
     isSelected: 0
     speakingCharacterImage: {fileID: 0}
   - id: 1
-    text: "<i>Genuinely.</i> It really doesn\u2019t reflect on you well on all of
-      you guys if you won\u2019t interact with me. It\u2019s much easier for me to
-      give you useful information when I can go at the correct pace."
+    text: "<color=yellow>[Genuinely.]</color> It really doesn\u2019t reflect on you
+      well on all of you guys if you won\u2019t interact with me. It\u2019s much
+      easier for me to give you useful information when I can go at the correct pace."
     nextDialogueID: 31
     category: B
     isSelected: 0
@@ -9666,18 +9677,18 @@ MonoBehaviour:
     isSelected: 0
     speakingCharacterImage: {fileID: 0}
   - id: 6
-    text: '<i>Slowly, as if reiterating should not be necessary at this stage.</i>
-      Remember that the essays and presentations will be marked similarly, and although
-      I am responsible for that part of your assignments, you are free to ask me
-      any questions about them. '
+    text: '<color=yellow>[Slowly, as if reiterating should not be necessary at this
+      stage.]</color> Remember that the essays and presentations will be marked similarly,
+      and although I am responsible for that part of your assignments, you are free
+      to ask me any questions about them. '
     nextDialogueID: 54
     category: A
     isSelected: 0
     speakingCharacterImage: {fileID: 0}
   - id: 7
-    text: "<i>Quickly, as if anticipating the question.</i> Please remember I\u2019m
-      using essay as a general term, and that this applies to those of you doing
-      presentations as well. "
+    text: "<color=yellow>[Quickly, as if anticipating the question.]</color> Please
+      remember I\u2019m using essay as a general term, and that this applies to those
+      of you doing presentations as well. "
     nextDialogueID: 55
     category: B
     isSelected: 0

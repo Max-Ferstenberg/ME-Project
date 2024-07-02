@@ -6337,8 +6337,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 0
-    text: "Li-Mei: [Finishes chewing sandwich and begins to fold up the card packaging.]
-      Have either of you heard from Callum, if he\u2019s coming in or not? "
+    text: "Li-Mei: <color=yellow>[Finishes chewing sandwich and begins to fold up
+      the card packaging.]</color> Have either of you heard from Callum, if he\u2019s
+      coming in or not? "
     responseIDs: 
     nextDialogueID: 1
     isResponse: 0
@@ -6378,9 +6379,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 1
-    text: "Kacper: [Pauses eating his fruit tub.] He\u2019s not been online on Discord
-      since yesterday, think the only thing he\u2019s put in the groupchat was when
-      he reacted to your message earlier."
+    text: "Kacper: <color=yellow>[Pauses eating his fruit tub.]</color> He\u2019s
+      not been online on Discord since yesterday, think the only thing he\u2019s
+      put in the groupchat was when he reacted to your message earlier."
     responseIDs: 
     nextDialogueID: 2
     isResponse: 0
@@ -6420,10 +6421,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 2
-    text: "Sara: [Snapping the clips on her now-empty Tupperware closed.] No, I\u2019ve
-      not heard from him either. I\u2019d like to hope he\u2019ll show, but I suspect
-      he\u2019s too mortified after what he said to you the other week. Still can\u2019t
-      believe he\u2019s got away with that."
+    text: "Sara: <color=yellow>[Snapping the clips on her now-empty Tupperware closed.]</color>
+      No, I\u2019ve not heard from him either. I\u2019d like to hope he\u2019ll show,
+      but I suspect he\u2019s too mortified after what he said to you the other week.
+      Still can\u2019t believe he\u2019s got away with that."
     responseIDs: 
     nextDialogueID: 3
     isResponse: 0
@@ -6504,9 +6505,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 4
-    text: "Li-Mei: [Grimacing.] Of course, if he makes it in at all\u2026 racist
-      p\xA3$%k. Sara, you were telling me earlier that I should maybe tell the lecturer
-      about it, or someone at least."
+    text: "Li-Mei: <color=yellow>[Grimacing.]</color> Of course, if he makes it in
+      at all\u2026 racist p\xA3$%k. Sara, you were telling me earlier that I should
+      maybe tell the lecturer about it, or someone at least."
     responseIDs: 
     nextDialogueID: 5
     isResponse: 0
@@ -6712,7 +6713,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 1}
   - id: 9
-    text: 'Li-Mei: Yes, that would be good to have. [Thank you. Li-Mei smiles gratefully.] '
+    text: 'Li-Mei: Yes, that would be good to have. <color=yellow>[Thank you. Li-Mei
+      smiles gratefully.]</color> '
     responseIDs: 
     nextDialogueID: 10
     isResponse: 0
@@ -6878,11 +6880,11 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 13
-    text: "Li-Mei: [Uncomfortable smile.] Oh, uhm, not really\u2026 I mean, I asked
-      about some pointers for learning outcomes 3 and 4 from Claire, which was a
-      little helpful, but I got a bit mentally tied up about all the things they
-      didn\u2019t mention in the class session so I got a bit stuck before I could
-      figure out how to ask more. "
+    text: "Li-Mei: <color=yellow>[Uncomfortable smile.]</color> Oh, uhm, not really\u2026
+      I mean, I asked about some pointers for learning outcomes 3 and 4 from Claire,
+      which was a little helpful, but I got a bit mentally tied up about all the
+      things they didn\u2019t mention in the class session so I got a bit stuck before
+      I could figure out how to ask more. "
     responseIDs: 
     nextDialogueID: 14
     isResponse: 0
@@ -6922,8 +6924,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 14
-    text: "Sofia: [Smiles ruefully.] Oh yeah, I\u2019ve been there. Don\u2019t worry
-      about it then, never mind. "
+    text: "Sofia: <color=yellow>[Smiles ruefully.]</color> Oh yeah, I\u2019ve been
+      there. Don\u2019t worry about it then, never mind. "
     responseIDs: 
     nextDialogueID: 15
     isResponse: 0
@@ -7004,7 +7006,7 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 16
-    text: 'Sofia: [Callously.] Yep. Not surprised anymore. '
+    text: 'Sofia: <color=yellow>[Callously.]</color> Yep. Not surprised anymore. '
     responseIDs: 
     nextDialogueID: 17
     isResponse: 0
@@ -7168,9 +7170,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 20
-    text: "Li-Mei: [Laughs.] Oh gosh yeah, I remember that. Dr Martins was so pissed
-      off at you because you were right but he wasn\u2019t allowed to actually say
-      that because it went completely against what he wanted to be teaching.  "
+    text: "Li-Mei: <color=yellow>[Laughs.]</color> Oh gosh yeah, I remember that.
+      Dr Martins was so pissed off at you because you were right but he wasn\u2019t
+      allowed to actually say that because it went completely against what he wanted
+      to be teaching.  "
     responseIDs: 
     nextDialogueID: 21
     isResponse: 0
@@ -7211,7 +7214,8 @@ MonoBehaviour:
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 21
     text: "Li-Mei: Oh, that\u2019s happened to me loads, like when the teacher gave
-      me the cold shoulder for that rant about racism? [Laughs again.] Good times. "
+      me the cold shoulder for that rant about racism? <color=yellow>[Laughs again.]</color>
+      Good times. "
     responseIDs: 
     nextDialogueID: 22
     isResponse: 0
@@ -7251,7 +7255,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 22
-    text: 'Kacper: [Gently huffing with laughter.] No, that was too funny. '
+    text: 'Kacper: <color=yellow>[Gently huffing with laughter.]</color> No, that
+      was too funny. '
     responseIDs: 
     nextDialogueID: 23
     isResponse: 0
@@ -7374,8 +7379,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 25
-    text: "Anna: [Smiles cheekily.] Ah I see the classic \u201Cbe a decent student
-      and get away with murder\u201D? "
+    text: "Anna: <color=yellow>[Smiles cheekily.]</color> Ah I see the classic \u201Cbe
+      a decent student and get away with murder\u201D? "
     responseIDs: 
     nextDialogueID: 26
     isResponse: 0
@@ -7542,8 +7547,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 29
-    text: "Kacper: [Soft mocking laugh.] And suddenly they wonder why half of us
-      don\u2019t come to class, or generally hate talking to staff at any stage. "
+    text: "Kacper: <color=yellow>[Soft mocking laugh.]</color> And suddenly they
+      wonder why half of us don\u2019t come to class, or generally hate talking to
+      staff at any stage. "
     responseIDs: 
     nextDialogueID: 30
     isResponse: 0
@@ -7757,10 +7763,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 34
-    text: "Li-Mei: [Small laugh.] That\u2019s probably why I didn\u2019t properly
-      ask either of them our points yesterday. Sorry about that by the way, Sara,
-      I know you wanted to hear what they\u2019d say about our questions for outcome
-      5 as well. "
+    text: "Li-Mei: <color=yellow>[Small laugh.]</color> That\u2019s probably why
+      I didn\u2019t properly ask either of them our points yesterday. Sorry about
+      that by the way, Sara, I know you wanted to hear what they\u2019d say about
+      our questions for outcome 5 as well. "
     responseIDs: 
     nextDialogueID: 35
     isResponse: 0
@@ -7887,7 +7893,7 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 37
-    text: 'Sara: [Gentle laugh.] Hey, are you calling me old? '
+    text: 'Sara: <color=yellow>[Gentle laugh.]</color> Hey, are you calling me old? '
     responseIDs: 
     nextDialogueID: 38
     isResponse: 0
@@ -7927,7 +7933,7 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 38
-    text: 'Li-Mei: [Smiling jokingly.] You know what she meant! '
+    text: 'Li-Mei: <color=yellow>[Smiling jokingly.]</color> You know what she meant! '
     responseIDs: 
     nextDialogueID: 39
     isResponse: 0
@@ -8806,8 +8812,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 59
-    text: "Sara: [Bittersweet, gentle smile.] I\u2019m sorry pet. We can all only
-      do what we can. "
+    text: "Sara: <color=yellow>[Bittersweet, gentle smile.]</color> I\u2019m sorry
+      pet. We can all only do what we can. "
     responseIDs: 
     nextDialogueID: 60
     isResponse: 0
@@ -8847,7 +8853,7 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 60
-    text: '[The gloomy mood lingers for a few seconds.] '
+    text: '<color=yellow>[The gloomy mood lingers for a few seconds.]</color> '
     responseIDs: 
     nextDialogueID: 61
     isResponse: 0
@@ -8927,8 +8933,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 62
-    text: "[The group quickly turn to him, hoping he\u2019ll have something less
-      dreary to occupy them with.]"
+    text: "<color=yellow>[The group quickly turn to him, hoping he\u2019ll have something
+      less dreary to occupy them with.]</color>"
     responseIDs: 
     nextDialogueID: 63
     isResponse: 0
@@ -9092,8 +9098,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 66
-    text: 'Anna: [Sarcastically.] Oh, I bet there was a concise and very helpful
-      answer to that question, right? [Raised brow with a smile.] '
+    text: 'Anna: <color=yellow>[Sarcastically.]</color> Oh, I bet there was a concise
+      and very helpful answer to that question, right? <color=yellow>[Raised brow
+      with a smile.]</color> '
     responseIDs: 
     nextDialogueID: 67
     isResponse: 0
@@ -9133,7 +9140,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 67
-    text: 'Sofia: [Returning the sarcasm.] Oh yes, of course there was! '
+    text: 'Sofia: <color=yellow>[Returning the sarcasm.]</color> Oh yes, of course
+      there was! '
     responseIDs: 
     nextDialogueID: 68
     isResponse: 0
@@ -9173,8 +9181,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 68
-    text: 'Sara: [Bright laugh.] Putting the snark to the side for moment ladies,
-      what did they actually say? '
+    text: 'Sara: <color=yellow>[Bright laugh.]</color> Putting the snark to the side
+      for moment ladies, what did they actually say? '
     responseIDs: 
     nextDialogueID: 69
     isResponse: 0
@@ -9299,8 +9307,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 71
-    text: "Anna: [Surprised, interrupting.] Wait, so there\u2019s no double checking
-      at all? From anyone? "
+    text: "Anna: <color=yellow>[Surprised, interrupting.]</color> Wait, so there\u2019s
+      no double checking at all? From anyone? "
     responseIDs: 
     nextDialogueID: 72
     isResponse: 0
@@ -9514,8 +9522,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 76
-    text: "Li-Mei: [Disheartened.] Well it\u2019s all a bit shit, when you put it
-      that way\u2026 "
+    text: "Li-Mei: <color=yellow>[Disheartened.]</color> Well it\u2019s all a bit
+      shit, when you put it that way\u2026 "
     responseIDs: 
     nextDialogueID: 77
     isResponse: 0
@@ -9555,7 +9563,7 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 77
-    text: '[The group sits in silence for a few seconds. ]'
+    text: <color=yellow>[The group sits in silence for a few seconds. ]</color>
     responseIDs: 
     nextDialogueID: 78
     isResponse: 0
@@ -9858,10 +9866,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 84
-    text: "Kacper: [Continuing.] \u2026but then the people in charge of these places
-      feel like they have something to protect from these changes, like we\u2019re
-      somehow threatening them and the universities because we\u2019re trying to
-      bring change with us\u2026 "
+    text: "Kacper: <color=yellow>[Continuing.]</color> \u2026but then the people
+      in charge of these places feel like they have something to protect from these
+      changes, like we\u2019re somehow threatening them and the universities because
+      we\u2019re trying to bring change with us\u2026 "
     responseIDs: 
     nextDialogueID: 85
     isResponse: 0
@@ -9901,10 +9909,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 85
-    text: "Li-Mei: [Continuing.] \u2026and then we can\u2019t say anything because
-      they\u2019re all asking us \u201Chow do we change!\u201D and we\u2019re still
-      only here at the whims of the inclusion initiatives half the time, or because
-      we can fill their pockets as international students\u2026 "
+    text: "Li-Mei: <color=yellow>[Continuing.]</color> \u2026and then we can\u2019t
+      say anything because they\u2019re all asking us \u201Chow do we change!\u201D
+      and we\u2019re still only here at the whims of the inclusion initiatives half
+      the time, or because we can fill their pockets as international students\u2026 "
     responseIDs: 
     nextDialogueID: 86
     isResponse: 0
@@ -9944,10 +9952,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 86
-    text: "Anna: [Continuing.] \u2026and God forbid we ask to be taught content at
-      the current speed of the outside world, because our poor lecturers are still
-      real people who have so much bureaucracy and paperwork - and probably didn\u2019t
-      even set out to teach in the first place\u2026 "
+    text: "Anna: <color=yellow>[Continuing.]</color> \u2026and God forbid we ask
+      to be taught content at the current speed of the outside world, because our
+      poor lecturers are still real people who have so much bureaucracy and paperwork
+      - and probably didn\u2019t even set out to teach in the first place\u2026 "
     responseIDs: 
     nextDialogueID: 87
     isResponse: 0
@@ -9987,12 +9995,12 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 87
-    text: "Sara: [Continuing, with finality.] \u2026gosh, it\u2019s almost like the
-      world needs the universities to change for their own survival, but these outdated
-      ways are apparently the only thing actually upholding the identity of a university
-      as its own concept \u2013 from their perspective at least \u2013 and we\u2019re
-      all stuck suffering for it. And that\u2019s what\u2019s supposed to be celebrated?
-      As the best years of a young generations\u2019 lives?! "
+    text: "Sara: <color=yellow>[Continuing, with finality.]</color> \u2026gosh, it\u2019s
+      almost like the world needs the universities to change for their own survival,
+      but these outdated ways are apparently the only thing actually upholding the
+      identity of a university as its own concept \u2013 from their perspective at
+      least \u2013 and we\u2019re all stuck suffering for it. And that\u2019s what\u2019s
+      supposed to be celebrated? As the best years of a young generations\u2019 lives?! "
     responseIDs: 
     nextDialogueID: 88
     isResponse: 0
@@ -10032,7 +10040,7 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 88
-    text: '[The introspective silence returns again for some seconds.] '
+    text: '<color=yellow>[The introspective silence returns again for some seconds.]</color> '
     responseIDs: 
     nextDialogueID: 89
     isResponse: 0
@@ -10072,8 +10080,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 89
-    text: "Sara: [Exasperated attempt at light humour.] Guys, when I said you\u2019re
-      all doom and gloom, I didn\u2019t mean I needed a double down on it! "
+    text: "Sara: <color=yellow>[Exasperated attempt at light humour.]</color> Guys,
+      when I said you\u2019re all doom and gloom, I didn\u2019t mean I needed a double
+      down on it! "
     responseIDs: 
     nextDialogueID: 90
     isResponse: 0
@@ -10113,8 +10122,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 90
-    text: '[The sullen silences breaks into a glitter of giggles and dry smiles,
-      as if a breath had been shared, held, and broken together.] '
+    text: '<color=yellow>[The sullen silences breaks into a glitter of giggles and
+      dry smiles, as if a breath had been shared, held, and broken together.]</color> '
     responseIDs: 
     nextDialogueID: 91
     isResponse: 0
@@ -10154,8 +10163,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 91
-    text: 'Anna: [With laughter.] I mean, what are the kids for, if not spooking
-      the adults in the room! '
+    text: 'Anna: <color=yellow>[With laughter.]</color> I mean, what are the kids
+      for, if not spooking the adults in the room! '
     responseIDs: 
     nextDialogueID: 92
     isResponse: 0
@@ -10236,8 +10245,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 93
-    text: "Anna: [Jokingly covering her ears and closing her eyes.] Ahhhh, don\u2019t
-      remind of that, I\u2019m not thinking about it! "
+    text: "Anna: <color=yellow>[Jokingly covering her ears and closing her eyes.]</color>
+      Ahhhh, don\u2019t remind of that, I\u2019m not thinking about it! "
     responseIDs: 
     nextDialogueID: 94
     isResponse: 0
@@ -10277,8 +10286,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 94
-    text: 'Li-Mei: [Light-heartedly, with excitement.] What if I want to think about
-      it though! What if I want to do something next, something more?'
+    text: 'Li-Mei: <color=yellow>[Light-heartedly, with excitement.]</color> What
+      if I want to think about it though! What if I want to do something next, something
+      more?'
     responseIDs: 
     nextDialogueID: 95
     isResponse: 0
@@ -10450,10 +10460,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 98
-    text: '[Sara smiles kindly at Li-Mei and the rest of the group, showing her years
-      of experience in her manner of comfort. Each student seems to accept these
-      words, Anna with ease, Kacper with honesty, Li-Mei with appreciation, and Sofia
-      with well-worn understanding.] '
+    text: <color=yellow>[Sara smiles kindly at Li-Mei and the rest of the group,
+      showing her years of experience in her manner of comfort. Each student seems
+      to accept these words, Anna with ease, Kacper with honesty, Li-Mei with appreciation,
+      and Sofia with well-worn understanding.]</color>
     responseIDs: 
     nextDialogueID: 99
     isResponse: 0
@@ -10493,8 +10503,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 99
-    text: "Li-Mei: [Brightly.] Thank you, Sara. It\u2019s nice to have this, with
-      all of us. "
+    text: "Li-Mei: <color=yellow>[Brightly.]</color> Thank you, Sara. It\u2019s nice
+      to have this, with all of us. "
     responseIDs: 
     nextDialogueID: 100
     isResponse: 0
@@ -10574,8 +10584,8 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 101
-    text: "Kacper: [Cheekily] \u2026not to put a damper on our happy little cloud,
-      but we do still have an assignment to do? "
+    text: "Kacper: <color=yellow>[Cheekily]</color \u2026not to put a damper on our
+      happy little cloud, but we do still have an assignment to do? "
     responseIDs: 
     nextDialogueID: 102
     isResponse: 0
@@ -10655,10 +10665,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 103
-    text: '[The group breaks into loud laughter once again, smiles all round, some
-      more weary than others. The bundle of students struggle to muffle their noises
-      after being treated to a disapproving looks from the students at the quiet
-      study tables further away.]  '
+    text: <color=yellow>[The group breaks into loud laughter once again, smiles all
+      round, some more weary than others. The bundle of students struggle to muffle
+      their noises after being treated to a disapproving looks from the students
+      at the quiet study tables further away.] </color>
     responseIDs: 
     nextDialogueID: 104
     isResponse: 0
@@ -10698,9 +10708,9 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 104
-    text: "[It feels easier when they\u2019re laughing together in this fleeting
-      moment, but the reality that they are all isolated within and by the university
-      is never really far away.] "
+    text: "<color=yellow>[It feels easier when they\u2019re laughing together in
+      this fleeting moment, but the reality that they are all isolated within and
+      by the university is never really far away.] </color>"
     responseIDs: 
     nextDialogueID: 105
     isResponse: 0
@@ -10740,10 +10750,10 @@ MonoBehaviour:
     fadeInBackground: 0
     textColor: {r: 1, g: 1, b: 1, a: 0}
   - id: 105
-    text: '[The late spring sunshine continues to move across the windows of the
-      buildings, and gradually, one by one, they leave for their beds at the end
-      of the day. These walls have heard these conversations before, and they will
-      hear many more every day after tomorrow.] '
+    text: <color=yellow>[The late spring sunshine continues to move across the windows
+      of the buildings, and gradually, one by one, they leave for their beds at the
+      end of the day. These walls have heard these conversations before, and they
+      will hear many more every day after tomorrow.]</color>
     responseIDs: 
     nextDialogueID: -1
     isResponse: 0
@@ -10815,17 +10825,17 @@ MonoBehaviour:
     isSelected: 0
     speakingCharacterImage: {fileID: 1611340860}
   - id: 4
-    text: "[Grim chuckle.] You\u2019d hope that, but nope. Often just replies of
-      \u201CWe value your feedback but please understand it\u2019s hard to change
-      an established curriculum.\u201D."
+    text: "<color=yellow>[Grim chuckle.]</color> You\u2019d hope that, but nope.
+      Often just replies of \u201CWe value your feedback but please understand it\u2019s
+      hard to change an established curriculum.\u201D."
     nextDialogueID: 43
     category: A
     isSelected: 0
     speakingCharacterImage: {fileID: 1611340860}
   - id: 5
-    text: "[Grim chuckle.] You\u2019d hope that, but nope. Often just replies of
-      \u201CYour experiences are valid and we\u2019re listening but they\u2019re
-      too unique to be discussed.\u201D."
+    text: "<color=yellow>[Grim chuckle.]</color> You\u2019d hope that, but nope.
+      Often just replies of \u201CYour experiences are valid and we\u2019re listening
+      but they\u2019re too unique to be discussed.\u201D."
     nextDialogueID: 44
     category: B
     isSelected: 0
