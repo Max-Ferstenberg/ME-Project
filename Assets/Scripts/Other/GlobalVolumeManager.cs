@@ -14,7 +14,7 @@ public class GlobalVolumeManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            // DontDestroyOnLoad(gameObject); // Removed to ensure it does not persist across scenes
         }
 
         LoadVolume();

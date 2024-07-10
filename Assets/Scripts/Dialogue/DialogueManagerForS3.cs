@@ -113,7 +113,8 @@ public class DialogueManagerForS3 : MonoBehaviour
     public void ShowTutorialPanel() {
         isTutorialClosed = false;
         tutorialPanel.SetActive(true);
-        SceneSettingsManager.Instance.CloseSettingsMenu();
+        SceneSettingsManager sceneSettingsManager = FindObjectOfType<SceneSettingsManager>();
+        sceneSettingsManager.CloseSettingsMenu();
         closeTutorialButton.onClick.RemoveAllListeners();
         closeTutorialButton.onClick.AddListener(CloseTutorialPanel);
     }

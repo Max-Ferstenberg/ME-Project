@@ -5,8 +5,6 @@ using System.Collections;
 
 public class SceneSettingsManager : MonoBehaviour
 {
-    public static SceneSettingsManager Instance { get; private set; }
-
     public GameObject settingsMenu;
     public GameObject settingsManager;
     public Button settingsButton;
@@ -20,17 +18,6 @@ public class SceneSettingsManager : MonoBehaviour
     {
         Debug.Log("SceneSettingsManager Awake called.");
 
-        if (Instance != null && Instance != this)
-        {
-            Debug.Log("Another instance of SceneSettingsManager exists, destroying this one.");
-            Destroy(gameObject);
-            return; // Ensure no further execution in this instance
-        }
-
-        Debug.Log("Setting this instance as the singleton instance.");
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-
         if (settingsMenu == null)
         {
             Debug.LogError("settingsMenu is not assigned in the Inspector.");
@@ -43,7 +30,7 @@ public class SceneSettingsManager : MonoBehaviour
         if (volumeSlider != null)
         {
             volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
-            volumeSlider.value = AudioListener.volume; // Initialize slider value
+            volumeSlider.value = PlayerPrefs.GetFloat("GameVolume", 1f); // Initialize slider value from PlayerPrefs
         }
         else
         {
@@ -75,6 +62,9 @@ public class SceneSettingsManager : MonoBehaviour
         {
             Debug.LogError("FadeManager not found.");
         }
+
+        // Set the volume to the saved value at the start
+        AudioListener.volume = PlayerPrefs.GetFloat("GameVolume", 1f);
     }
 
     public void OpenSettingsMenu()
@@ -93,6 +83,7 @@ public class SceneSettingsManager : MonoBehaviour
     {
         Debug.Log("OnVolumeChanged called with value: " + value);
         AudioListener.volume = value;
+        PlayerPrefs.SetFloat("GameVolume", value); // Save the volume value to PlayerPrefs
     }
 
     public void ResumeGame()
