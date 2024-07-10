@@ -1299,7 +1299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1711b49c68008a54fb9504fc534f99bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPressSFX: {fileID: 0}
+  buttonPressSFX: {fileID: 1715221838}
 --- !u!114 &426966205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2704,11 +2704,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 86.15
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 72
+  m_fontSizeMin: 12
   m_fontSizeMax: 150
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -2740,7 +2740,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 25.653442, z: 0, w: 26.03074}
+  m_margin: {x: 0, y: 2.503086, z: 0, w: 1.226738}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5597,11 +5597,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 87.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 72
+  m_fontSizeMin: 12
   m_fontSizeMax: 150
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -5633,7 +5633,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 25.585047, z: 0, w: 28.143572}
+  m_margin: {x: 0, y: 2.434658, z: 0, w: 0.032405794}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5802,7 +5802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1711b49c68008a54fb9504fc534f99bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPressSFX: {fileID: 0}
+  buttonPressSFX: {fileID: 1715221838}
 --- !u!114 &2145894369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6793,7 +6793,7 @@ MonoBehaviour:
       Um, I was going to ask if the topics still free choice for both options? '
     responseIDs: 0000000001000000
     nextDialogueID: -1
-    isResponse: 0
+    isResponse: 1
     leftImage: {fileID: 0}
     isLeftImageVisible: 0
     isLeftImageTalking: 0
@@ -9638,7 +9638,7 @@ MonoBehaviour:
     nextDialogueID: 30
     category: A
     isSelected: 0
-    speakingCharacterImage: {fileID: 0}
+    speakingCharacterImage: {fileID: 1576657037}
   - id: 1
     text: "<color=yellow>[Genuinely.]</color> It really doesn\u2019t reflect on you
       well on all of you guys if you won\u2019t interact with me. It\u2019s much
@@ -9646,28 +9646,28 @@ MonoBehaviour:
     nextDialogueID: 31
     category: B
     isSelected: 0
-    speakingCharacterImage: {fileID: 0}
+    speakingCharacterImage: {fileID: 1576657037}
   - id: 2
     text: "An idea is to consider how you\u2019ve been taught about your topic of
       choice, and if your chosen topic is going to stand up to academic standards. "
     nextDialogueID: 40
     category: A
     isSelected: 0
-    speakingCharacterImage: {fileID: 0}
+    speakingCharacterImage: {fileID: 1576657037}
   - id: 3
     text: 'An idea to consider is how your topic of choice has made you feel, and
       if your chosen topic is going to be impactful outside of your own perspective. '
     nextDialogueID: 41
     category: B
     isSelected: 0
-    speakingCharacterImage: {fileID: 0}
+    speakingCharacterImage: {fileID: 1576657037}
   - id: 4
     text: "Sorry, is it Sophie? Could you please save your questions until the end
       of the slide? I might address what you\u2019re thinking before I finish."
     nextDialogueID: 45
     category: A
     isSelected: 0
-    speakingCharacterImage: {fileID: 0}
+    speakingCharacterImage: {fileID: 1576657037}
   - id: 5
     text: "Yes, is it Sophie? I\u2019m happy to hear you, but I\u2019m just giving
       a mention to context \u2013 I\u2019m trying to keep us on track, so I\u2019ll
@@ -9675,7 +9675,7 @@ MonoBehaviour:
     nextDialogueID: 46
     category: B
     isSelected: 0
-    speakingCharacterImage: {fileID: 0}
+    speakingCharacterImage: {fileID: 1576657037}
   - id: 6
     text: '<color=yellow>[Slowly, as if reiterating should not be necessary at this
       stage.]</color> Remember that the essays and presentations will be marked similarly,
@@ -9684,7 +9684,7 @@ MonoBehaviour:
     nextDialogueID: 54
     category: A
     isSelected: 0
-    speakingCharacterImage: {fileID: 0}
+    speakingCharacterImage: {fileID: 1576657037}
   - id: 7
     text: "<color=yellow>[Quickly, as if anticipating the question.]</color> Please
       remember I\u2019m using essay as a general term, and that this applies to those
@@ -9692,49 +9692,49 @@ MonoBehaviour:
     nextDialogueID: 55
     category: B
     isSelected: 0
-    speakingCharacterImage: {fileID: 0}
+    speakingCharacterImage: {fileID: 1576657037}
   - id: 8
     text: "I mean, I could have, but that\u2019s not my point. I\u2019m saying there\u2019s
       just no productive response that helps us as teachers.   "
     nextDialogueID: 80
     category: A
     isSelected: 0
-    speakingCharacterImage: {fileID: 0}
+    speakingCharacterImage: {fileID: 1576657037}
   - id: 9
     text: "I mean, I could have, but that\u2019s not my point. I\u2019m saying there\u2019s
       just no useful response that helps them as students.  "
     nextDialogueID: 81
     category: B
     isSelected: 0
-    speakingCharacterImage: {fileID: 0}
+    speakingCharacterImage: {fileID: 1576657037}
   - id: 10
     text: 'What else can I do to make them treat me with the same interest that they
       treat you with? '
     nextDialogueID: 90
     category: A
     isSelected: 0
-    speakingCharacterImage: {fileID: 0}
+    speakingCharacterImage: {fileID: 1576657037}
   - id: 11
     text: "What else can I do to get them to ask questions without making them so\u2026
       skittish?  "
     nextDialogueID: 91
     category: B
     isSelected: 0
-    speakingCharacterImage: {fileID: 0}
+    speakingCharacterImage: {fileID: 1576657037}
   - id: 12
     text: "Where would I even go to ask questions about that? I feel like it\u2019s
       hard enough to explain, let alone learn. "
     nextDialogueID: 104
     category: A
     isSelected: 0
-    speakingCharacterImage: {fileID: 0}
+    speakingCharacterImage: {fileID: 1576657037}
   - id: 13
     text: "Who would I even go to ask questions about that? I feel like it\u2019s
       hard enough to explain, let alone learn."
     nextDialogueID: 105
     category: B
     isSelected: 0
-    speakingCharacterImage: {fileID: 0}
+    speakingCharacterImage: {fileID: 1576657037}
 --- !u!114 &3623357227327181276
 MonoBehaviour:
   m_ObjectHideFlags: 0

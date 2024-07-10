@@ -242,6 +242,7 @@ public class DialogueManager : MonoBehaviour
     // Method to set up response button
     void SetupResponseButton(Button button, int responseID)
     {
+        responseContainer.gameObject.SetActive(true);
         Response response = dialogueDatabase.GetResponseById(responseID);
         if (response != null) {
             DialogueResponseButton responseButton = button.GetComponent<DialogueResponseButton>();
