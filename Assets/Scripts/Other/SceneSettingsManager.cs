@@ -24,13 +24,12 @@ public class SceneSettingsManager : MonoBehaviour
         {
             Debug.Log("Another instance of SceneSettingsManager exists, destroying this one.");
             Destroy(gameObject);
+            return; // Ensure no further execution in this instance
         }
-        else
-        {
-            Debug.Log("Setting this instance as the singleton instance.");
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+
+        Debug.Log("Setting this instance as the singleton instance.");
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
 
         if (settingsMenu == null)
         {
