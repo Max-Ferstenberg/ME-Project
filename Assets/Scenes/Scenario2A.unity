@@ -7200,7 +7200,7 @@ MonoBehaviour:
     text: "Dr Hana Lane: <color=yellow> [Internally] Bet he\u2019s about to ask about
       those doing presentations, and I really don\u2019t want to stop again\u2026
       but what if it\u2019s something else? </color>"
-    responseIDs: 0500000006000000
+    responseIDs: 0600000007000000
     nextDialogueID: -1
     isResponse: 0
     leftImage: {fileID: 0}
