@@ -13,6 +13,8 @@ public class VideoSync : MonoBehaviour
     public Button backButton; // Reference to the back button
     public string characterName; // The name of the unlocked character
     public string mainMenuSceneName = "MainMenu"; // Name of the main menu scene
+    public string videoUrl1; // URL for the first video
+    public string videoUrl2; // URL for the second video
 
     public float typewriterSpeed = 0.01f; // Speed of the typewriter effect
 
@@ -21,6 +23,10 @@ public class VideoSync : MonoBehaviour
         // Ensure both Video Players are prepared before playing
         videoPlayer1.prepareCompleted += PrepareCompleted;
         videoPlayer2.prepareCompleted += PrepareCompleted;
+
+        // Set the URLs for the Video Players
+        videoPlayer1.url = videoUrl1;
+        videoPlayer2.url = videoUrl2;
 
         // Prepare the Video Players
         videoPlayer1.Prepare();
