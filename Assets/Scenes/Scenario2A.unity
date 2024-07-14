@@ -541,7 +541,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 59542566}
         m_TargetAssemblyTypeName: SceneSettingsManager, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -1524,7 +1524,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3623357227327181276}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: ShowTutorialPanel
         m_Mode: 1
@@ -2372,7 +2372,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 59542566}
         m_TargetAssemblyTypeName: SceneSettingsManager, Assembly-CSharp
         m_MethodName: ExitToMenu
         m_Mode: 1

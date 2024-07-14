@@ -1833,7 +1833,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1846205102}
         m_TargetAssemblyTypeName: SceneSettingsManager, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
