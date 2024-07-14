@@ -4796,8 +4796,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 7320757843319685929}
   dialogueDatabase: {fileID: 7320757843319685930}
-  nextSceneA: Menu
-  nextSceneB: Menu
+  nextSceneA: Epilogue
+  nextSceneB: Epilogue
 --- !u!1 &1665122614
 GameObject:
   m_ObjectHideFlags: 0

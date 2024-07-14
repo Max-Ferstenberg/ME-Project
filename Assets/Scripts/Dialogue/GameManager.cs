@@ -73,28 +73,4 @@ public class GameManager : MonoBehaviour
             Debug.LogError("No valid scene found for the given category.");
         }
     }
-
-    public void SimulateResponses(int countA, int countB)
-    {
-        if (dialogueManager != null)
-        {
-            dialogueManager.SimulateResponses(countA, countB);
-        }
-        else
-        {
-            Debug.LogError("DialogueManager reference is missing.");
-        }
-    }
-
-    public void TriggerEndScenarioDebug()
-    {
-        if (dialogueManager != null)
-        {
-            dialogueManager.TriggerEndScenarioDebug();
-        }
-        else
-        {
-            Debug.LogError("DialogueManager reference is missing.");
-        }
-    }
 }

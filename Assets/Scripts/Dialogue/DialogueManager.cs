@@ -44,15 +44,11 @@ public class DialogueManager : MonoBehaviour
 
     // Fade Properties
     public float fadeDuration = 1.0f; // Duration for fade effects
-    private bool fadeOutBackground = false; // Flag for fading out background
-    private bool fadeInBackground = false; // Flag for fading in background
 
     // Internal State
     private Dialogue currentDialogue; // Current dialogue being displayed
     private Coroutine typeSentenceCoroutine; // Coroutine for typing effect
     private bool isTransitioning = false; // Flag for transition state
-    private bool isInitialized = false; // Flag for initialization state
-    private bool isSkippingText = false; // Flag for skipping text
     private bool isTutorialClosed = false;
 
     // Response Tracking
@@ -177,7 +173,8 @@ public class DialogueManager : MonoBehaviour
         if (!isTransitioning) {
             UpdateImageStates(dialogue);
             TriggerFadeInAnimations(dialogue);
-            if (fadeInBackground && dialogue.backgroundImage != null)
+            TriggerFadeOutAnimations(dialogue);
+            if (dialogue.fadeInBackground && dialogue.backgroundImage != null)
             {
                 StartCoroutine(FadeInBackground(dialogue.backgroundImage));
             }
@@ -220,17 +217,6 @@ public class DialogueManager : MonoBehaviour
 
         // Adjust the vertical position to keep the text in view
         scrollRect.verticalNormalizedPosition = 1f;
-    }
-
-    void SetScrollbarToTop()
-    {
-        // Force update to ensure layout is correct before setting scroll position
-        Canvas.ForceUpdateCanvases();
-        scrollRect.verticalNormalizedPosition = 1f;
-
-        // Manually set content position
-        RectTransform contentRectTransform = scrollRect.content;
-        contentRectTransform.anchoredPosition = new Vector2(contentRectTransform.anchoredPosition.x, 0);
     }
 
     void GenerateResponseButtons(int[] responseIDs) {
@@ -393,23 +379,6 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isFadingOut", false);
     }
 
-    // Method to trigger fade out animations
-    private void TriggerFadeOutAnimations(Dialogue dialogue)
-    {
-        TriggerFadeOut(leftImageAnimator, leftImageComponent, dialogue.shouldLeftImageFadeOut);
-        TriggerFadeOut(centerImageAnimator, centerImageComponent, dialogue.shouldCenterImageFadeOut);
-        TriggerFadeOut(rightImageAnimator, rightImageComponent, dialogue.shouldRightImageFadeOut);
-    }
-
-    // Method to trigger fade out of an individual image component
-    private void TriggerFadeOut(Animator animator, Image imageComponent, bool shouldFadeOut)
-    {
-        if (shouldFadeOut && imageComponent.gameObject.activeSelf)
-        {
-            StartCoroutine(TransitionToIdleAndFadeOut(animator, imageComponent));
-        }
-    }
-
     // Method to trigger fade in animations
     private void TriggerFadeInAnimations(Dialogue dialogue)
     {
@@ -440,7 +409,7 @@ public class DialogueManager : MonoBehaviour
     // Coroutine to handle fade in completion
     private IEnumerator HandleFadeInCompletion(Animator animator, bool isTalking, bool isMirrored, Image imageComponent)
     {
-        yield return new WaitForSeconds(1.0f); // Adjust this duration to match your FadeIn animation duration
+        yield return new WaitForSeconds(0.15f);
         if (imageComponent.gameObject.activeSelf)
         {
             animator.Play("Idle");
@@ -449,14 +418,14 @@ public class DialogueManager : MonoBehaviour
             imageComponent.rectTransform.localScale = new Vector3(isMirrored ? -1 : 1, 1, 1);
 
             float elapsedTime = 0f;
-            float fadeDuration = 0.5f; // Adjust this duration as needed
+            float fadeDuration = 0.5f;
             while (elapsedTime < fadeDuration)
             {
                 imageComponent.color = new Color(1, 1, 1, Mathf.Lerp(0, 1, elapsedTime / fadeDuration));
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
-            imageComponent.color = new Color(1, 1, 1, 1); // Ensure alpha is fully opaque
+            imageComponent.color = new Color(1, 1, 1, 1);
 
             if (!isTalking)
             {
@@ -464,6 +433,59 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
+
+    private void TriggerFadeOutAnimations(Dialogue dialogue)
+    {
+        if (dialogue.isLeftImageVisible && leftImageComponent.gameObject.activeSelf)
+        {
+            TriggerFadeOut(leftImageAnimator, leftImageComponent, dialogue.shouldLeftImageFadeOut, dialogue.isLeftImageVisible, dialogue.isLeftImageTalking, dialogue.isLeftImageMirrored);
+        }
+        if (dialogue.isCenterImageVisible && centerImageComponent.gameObject.activeSelf)
+        {
+            TriggerFadeOut(centerImageAnimator, centerImageComponent, dialogue.shouldCenterImageFadeOut, dialogue.isCenterImageVisible, dialogue.isCenterImageTalking, dialogue.isCenterImageMirrored);
+        }
+        if (dialogue.isRightImageVisible && rightImageComponent.gameObject.activeSelf)
+        {
+            TriggerFadeOut(rightImageAnimator, rightImageComponent, dialogue.shouldRightImageFadeOut, dialogue.isRightImageVisible, dialogue.isRightImageTalking, dialogue.isRightImageMirrored);
+        }
+    }
+
+    private void TriggerFadeOut(Animator animator, Image imageComponent, bool shouldFadeOut, bool isVisible, bool isTalking, bool isMirrored)
+    {
+        if (shouldFadeOut && isVisible && imageComponent.gameObject.activeSelf)
+        {
+            animator.Play("FadeOut");
+            StartCoroutine(HandleFadeOutCompletion(animator, isTalking, isMirrored, imageComponent));
+        }
+    }
+
+    private IEnumerator HandleFadeOutCompletion(Animator animator, bool isTalking, bool isMirrored, Image imageComponent)
+    {
+        yield return new WaitForSeconds(0.15f);
+        if (imageComponent.gameObject.activeSelf)
+        {
+            animator.Play("Idle");
+            yield return new WaitForSeconds(0.1f);
+            animator.SetBool("isTalking", isTalking);
+            imageComponent.rectTransform.localScale = new Vector3(isMirrored ? -1 : 1, 1, 1);
+
+            float elapsedTime = 0f;
+            float fadeDuration = 0.5f;
+            while (elapsedTime < fadeDuration)
+            {
+                imageComponent.color = new Color(1, 1, 1, Mathf.Lerp(1, 0, elapsedTime / fadeDuration));
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+            imageComponent.color = new Color(1, 1, 1, 0);
+
+            if (!isTalking)
+            {
+                TriggerTalkingToIdleTransition(animator, 0.5f);
+            }
+        }
+    }
+
 
     // Coroutine to handle transition to idle and fade out
     private IEnumerator TransitionToIdleAndFadeOut(Animator animator, Image imageComponent)
@@ -515,18 +537,31 @@ public class DialogueManager : MonoBehaviour
     // Coroutine to fade in background
     private IEnumerator FadeInBackground(Sprite newBackground)
     {
-        backgroundImageComponent.sprite = newBackground;
-        backgroundImageComponent.color = new Color(0, 0, 0, 0);
+        // Fade out current background to black
+        Color initialColor = backgroundImageComponent.color;
+        Color blackColor = Color.black;
+        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
+        {
+            float normalizedTime = t / fadeDuration;
+            backgroundImageComponent.color = Color.Lerp(initialColor, blackColor, normalizedTime);
+            yield return null;
+        }
+        backgroundImageComponent.color = blackColor;
 
+        // Set the new background
+        backgroundImageComponent.sprite = newBackground;
+
+        // Fade in new background from black
         Color targetColor = Color.white;
         for (float t = 0; t < fadeDuration; t += Time.deltaTime)
         {
             float normalizedTime = t / fadeDuration;
-            backgroundImageComponent.color = Color.Lerp(new Color(0, 0, 0, 0), targetColor, normalizedTime);
+            backgroundImageComponent.color = Color.Lerp(blackColor, targetColor, normalizedTime);
             yield return null;
         }
         backgroundImageComponent.color = targetColor;
     }
+
 
     // Coroutine to temporarily disable the next button
     private IEnumerator DisableButtonTemporarily()
@@ -602,26 +637,6 @@ public class DialogueManager : MonoBehaviour
             rightImageAnimator.SetBool("isTalking", false);
             rightImageAnimator.Play("Idle");
         }
-    }
-
-    // Debug tools
-
-    // Method to simulate responses for testing
-    public void SimulateResponses(int countA, int countB)
-    {
-        responseCategoryCounts["A"] = 0;
-        responseCategoryCounts["B"] = 0;
-
-        responseCategoryCounts["A"] += countA;
-        responseCategoryCounts["B"] += countB;
-
-        Debug.Log($"Simulated {countA} responses for category A and {countB} responses for category B");
-    }
-
-    // Method to trigger end of scenario for debugging
-    public void TriggerEndScenarioDebug()
-    {
-        EndScenario();
     }
 
     // Method to reset image positions to initial positions
