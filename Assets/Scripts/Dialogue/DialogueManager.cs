@@ -190,7 +190,6 @@ public class DialogueManager : MonoBehaviour
 
         foreach (char letter in sentence.ToCharArray()) {
             dialogueText.text += letter;
-            AdjustContentHeight();
             yield return new WaitForSeconds(0.01f);
         }
 
@@ -201,28 +200,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    // Adjust the height of the Content to fit the TextMeshProUGUI component
-    void AdjustContentHeight()
-    {
-        Canvas.ForceUpdateCanvases();
-        RectTransform textRectTransform = dialogueText.GetComponent<RectTransform>();
-        RectTransform contentRectTransform = dialogueText.transform.parent.GetComponent<RectTransform>();
-
-        // Update the size of the content based on the preferred height of the text
-        float preferredHeight = dialogueText.preferredHeight;
-        contentRectTransform.sizeDelta = new Vector2(contentRectTransform.sizeDelta.x, preferredHeight);
-
-        // Recalculate the layout of the ScrollRect
-        LayoutRebuilder.ForceRebuildLayoutImmediate(contentRectTransform);
-
-        // Adjust the vertical position to keep the text in view
-        scrollRect.verticalNormalizedPosition = 1f;
-    }
-
     void GenerateResponseButtons(int[] responseIDs) {
         SetupResponseButton(responseButton1, responseIDs[0]);
         SetupResponseButton(responseButton2, responseIDs[1]);
-        PositionResponseButtons();
     }
 
     // Method to set up response button
@@ -247,17 +227,6 @@ public class DialogueManager : MonoBehaviour
                 Debug.LogError("Button is missing a DialogueResponseButton component.");
             }
         }
-    }
-
-    // Method to position response buttons
-    private void PositionResponseButtons() {
-        float dialogueBoxHeight = dialogueBoxRectTransform.rect.height;
-        float responseContainerHeight = responseContainer.rect.height;
-
-        Vector3 dialogueBoxPosition = dialogueBoxRectTransform.position;
-        float responseContainerYPosition = dialogueBoxPosition.y + (dialogueBoxHeight / 2) + responseContainerHeight + 50;
-
-        responseContainer.position = new Vector3(dialogueBoxPosition.x, responseContainerYPosition, dialogueBoxPosition.z);
     }
 
     // Method called when a response button is clicked

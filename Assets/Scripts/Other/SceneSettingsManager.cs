@@ -8,8 +8,11 @@ public class SceneSettingsManager : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject settingsManager;
     public Button settingsButton;
-    public Slider volumeSlider;
-    public AudioSource backgroundMusic; // Added from SettingsManager
+    public Slider bgmVolumeSlider;
+    public Slider sfxVolumeSlider;
+    public AudioSource backgroundMusic;
+    public AudioSource buttonSFX;
+    public AudioSource nextbuttonSFX;
     public CanvasGroup fadeCanvasGroup;
     public float fadeDuration = 0.5f;
     private FadeManager fadeManager;
@@ -27,14 +30,24 @@ public class SceneSettingsManager : MonoBehaviour
             settingsMenu.SetActive(false);
         }
 
-        if (volumeSlider != null)
+        if (bgmVolumeSlider != null)
         {
-            volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
-            volumeSlider.value = PlayerPrefs.GetFloat("GameVolume", 1f); // Initialize slider value from PlayerPrefs
+            bgmVolumeSlider.onValueChanged.AddListener(OnBGMVolumeChanged);
+            bgmVolumeSlider.value = PlayerPrefs.GetFloat("BGMVolume", 1f); // Initialize slider value from PlayerPrefs
         }
         else
         {
-            Debug.LogError("volumeSlider is not assigned in the Inspector.");
+            Debug.LogError("bgmVolumeSlider is not assigned in the Inspector.");
+        }
+
+        if (sfxVolumeSlider != null)
+        {
+            sfxVolumeSlider.onValueChanged.AddListener(OnSFXVolumeChanged);
+            sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f); // Initialize slider value from PlayerPrefs
+        }
+        else
+        {
+            Debug.LogError("sfxVolumeSlider is not assigned in the Inspector.");
         }
     }
 
@@ -64,7 +77,10 @@ public class SceneSettingsManager : MonoBehaviour
         }
 
         // Set the volume to the saved value at the start
-        AudioListener.volume = PlayerPrefs.GetFloat("GameVolume", 1f);
+        backgroundMusic.volume = PlayerPrefs.GetFloat("BGMVolume", 1f);
+        float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        buttonSFX.volume = sfxVolume;
+        nextbuttonSFX.volume = sfxVolume;
     }
 
     public void OpenSettingsMenu()
@@ -79,11 +95,19 @@ public class SceneSettingsManager : MonoBehaviour
         StartCoroutine(FadeOut());
     }
 
-    public void OnVolumeChanged(float value)
+    public void OnBGMVolumeChanged(float value)
     {
-        Debug.Log("OnVolumeChanged called with value: " + value);
-        AudioListener.volume = value;
-        PlayerPrefs.SetFloat("GameVolume", value); // Save the volume value to PlayerPrefs
+        Debug.Log("OnBGMVolumeChanged called with value: " + value);
+        backgroundMusic.volume = value;
+        PlayerPrefs.SetFloat("BGMVolume", value); // Save the BGM volume value to PlayerPrefs
+    }
+
+    public void OnSFXVolumeChanged(float value)
+    {
+        Debug.Log("OnSFXVolumeChanged called with value: " + value);
+        buttonSFX.volume = value;
+        nextbuttonSFX.volume = value;
+        PlayerPrefs.SetFloat("SFXVolume", value); // Save the SFX volume value to PlayerPrefs
     }
 
     public void ResumeGame()

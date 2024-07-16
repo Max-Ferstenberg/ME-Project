@@ -6,10 +6,9 @@ using System.Collections.Generic;
 
 public class MainMenuController : MonoBehaviour
 {
-    // Method to be called when the Play button is pressed
     public void PlayGame()
     {
-        SceneManager.LoadScene("Menu"); // Replace "Menu" with the actual name of the scene you want to load
+        SceneManager.LoadScene("Menu");
     }
 
     public void GoToCredits()
@@ -17,9 +16,12 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("Credits");
     }
 
-    // Method to be called when the Exit button is pressed
-    public void ExitGame()
-    {
-        Application.Quit();
+    public void GoToDisclaimer(){
+        SceneManager.LoadScene("Disclaimer");
     }
+
+    public void GoToUserGuide(){
+        SceneManager.LoadScene("UserGuide");
+    }
+
 }

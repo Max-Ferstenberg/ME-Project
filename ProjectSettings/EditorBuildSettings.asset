@@ -11,12 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scenario1.unity
     guid: a29a9c4d41095f3408adbd44e61dec29
-  - enabled: 0
-    path: Assets/Scenes/Scenario2.unity
-    guid: 853be87a53b1f95489dd2505693c1e64
-  - enabled: 0
-    path: Assets/Scenes/Scenario3.unity
-    guid: ccfcb73d6904e1d46af1a8aa91618c7e
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
@@ -28,10 +22,10 @@ EditorBuildSettings:
     guid: b853afd951beff54a9867f2484f796d0
   - enabled: 1
     path: Assets/Scenes/Scenario3A.unity
-    guid: fb2a1d1faac63e24ba9bcaad1b5ecd61
+    guid: 7eb053082fc223f42907824b758660e0
   - enabled: 1
     path: Assets/Scenes/Scenario3B.unity
-    guid: 3dd08ddba9c579b42b35c7e7ae0dbbe4
+    guid: cd69b540d0252fc4b9052cdf81aaff80
   - enabled: 1
     path: Assets/Scenes/UnlockAaronPearson.unity
     guid: aa12b2d0afb234047abc26ed701a4c4b
@@ -56,4 +50,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scenario2A.unity
     guid: fcff19e0dfdd0a0478c00fe3638abac3
+  - enabled: 1
+    path: Assets/Scenes/Disclaimer.unity
+    guid: 512248b8b02027542b1cdb95417c9811
+  - enabled: 1
+    path: Assets/Scenes/UserGuide.unity
+    guid: 247206a660c0106468c603d781c4e1a9
   m_configObjects: {}
