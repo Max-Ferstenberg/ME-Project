@@ -13,8 +13,6 @@ public class SceneSettingsManager : MonoBehaviour
     public AudioSource backgroundMusic;
     public AudioSource buttonSFX;
     public AudioSource nextbuttonSFX;
-    public CanvasGroup fadeCanvasGroup;
-    public float fadeDuration = 0.5f;
     private FadeManager fadeManager;
 
     private void Awake()
@@ -85,26 +83,22 @@ public class SceneSettingsManager : MonoBehaviour
 
     public void OpenSettingsMenu()
     {
-        Debug.Log("OpenSettingsMenu called.");
-        StartCoroutine(FadeIn());
+        settingsMenu.SetActive(true);
     }
 
     public void CloseSettingsMenu()
     {
-        Debug.Log("CloseSettingsMenu called.");
-        StartCoroutine(FadeOut());
+        settingsMenu.SetActive(false);
     }
 
     public void OnBGMVolumeChanged(float value)
     {
-        Debug.Log("OnBGMVolumeChanged called with value: " + value);
         backgroundMusic.volume = value;
         PlayerPrefs.SetFloat("BGMVolume", value); // Save the BGM volume value to PlayerPrefs
     }
 
     public void OnSFXVolumeChanged(float value)
     {
-        Debug.Log("OnSFXVolumeChanged called with value: " + value);
         buttonSFX.volume = value;
         nextbuttonSFX.volume = value;
         PlayerPrefs.SetFloat("SFXVolume", value); // Save the SFX volume value to PlayerPrefs
@@ -112,13 +106,11 @@ public class SceneSettingsManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        Debug.Log("ResumeGame called.");
         CloseSettingsMenu();
     }
 
     public void ExitToMenu()
     {
-        Debug.Log("ExitToMenu called.");
         if (fadeManager != null)
         {
             fadeManager.FadeToScene("MainMenu"); // Assuming your main menu scene is named "MainMenu"
@@ -127,40 +119,5 @@ public class SceneSettingsManager : MonoBehaviour
         {
             Debug.LogError("Cannot exit to menu. FadeManager is null.");
         }
-    }
-
-    private IEnumerator FadeIn()
-    {
-        Debug.Log("FadeIn started.");
-        settingsMenu.SetActive(true);
-        fadeCanvasGroup.blocksRaycasts = true;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < fadeDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            fadeCanvasGroup.alpha = Mathf.Clamp01(elapsedTime / fadeDuration * 0.5f); // Slightly darken the screen
-            Debug.Log("Fading in... alpha: " + fadeCanvasGroup.alpha);
-            yield return null;
-        }
-        Debug.Log("FadeIn completed.");
-    }
-
-    private IEnumerator FadeOut()
-    {
-        Debug.Log("FadeOut started.");
-        float elapsedTime = 0f;
-
-        while (elapsedTime < fadeDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            fadeCanvasGroup.alpha = 1 - Mathf.Clamp01(elapsedTime / fadeDuration * 0.5f);
-            Debug.Log("Fading out... alpha: " + fadeCanvasGroup.alpha);
-            yield return null;
-        }
-
-        fadeCanvasGroup.blocksRaycasts = false;
-        settingsMenu.SetActive(false);
-        Debug.Log("FadeOut completed. Settings menu deactivated.");
     }
 }
