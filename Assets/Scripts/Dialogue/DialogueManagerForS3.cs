@@ -12,6 +12,8 @@ public class DialogueManagerForS3 : MonoBehaviour
 
     // Flags for various states
     private bool isTyping = false;
+    private string fullText;
+    private Queue<string> tagsQueue = new Queue<string>();
 
     // UI Components
     public TMP_Text dialogueText; // Main dialogue text
@@ -40,6 +42,12 @@ public class DialogueManagerForS3 : MonoBehaviour
     public Image centerImageComponent;
     public Image centerRightImageComponent;
     public Image rightImageComponent;
+
+    public Image leftOmbreImage;
+    public Image centerLeftOmbreImage;
+    public Image centerOmbreImage;
+    public Image centerRightOmbreImage;
+    public Image rightOmbreImage;
 
     // Game Manager
     public GameManagerForS3 gameManager;
@@ -78,6 +86,12 @@ public class DialogueManagerForS3 : MonoBehaviour
         centerImageInitialPosition = centerImageComponent.rectTransform.localPosition;
         centerRightImageInitialPosition = centerRightImageComponent.rectTransform.localPosition;
         rightImageInitialPosition = rightImageComponent.rectTransform.localPosition;
+
+        leftOmbreImage.gameObject.SetActive(false);
+        centerLeftOmbreImage.gameObject.SetActive(false);
+        centerOmbreImage.gameObject.SetActive(false);
+        centerRightOmbreImage.gameObject.SetActive(false);
+        rightOmbreImage.gameObject.SetActive(false);
     }
 
     // Initialization on start
@@ -182,7 +196,6 @@ public class DialogueManagerForS3 : MonoBehaviour
         {
             Debug.Log("No more dialogues");
         }
-
     }
 
     public void OnSkipButtonClicked()
@@ -226,11 +239,11 @@ public class DialogueManagerForS3 : MonoBehaviour
         }
 
         // Set the speaking character image to the talking state
-        SetImageToTalkingState(leftImageComponent, dialogue.isLeftImageTalking);
-        SetImageToTalkingState(centerLeftImageComponent, dialogue.isCenterLeftImageTalking);
-        SetImageToTalkingState(centerImageComponent, dialogue.isCenterImageTalking);
-        SetImageToTalkingState(centerRightImageComponent, dialogue.isCenterRightImageTalking);
-        SetImageToTalkingState(rightImageComponent, dialogue.isRightImageTalking);
+        SetImageToTalkingState(leftImageComponent, dialogue.isLeftImageTalking, leftOmbreImage);
+        SetImageToTalkingState(centerLeftImageComponent, dialogue.isCenterLeftImageTalking, centerLeftOmbreImage);
+        SetImageToTalkingState(centerImageComponent, dialogue.isCenterImageTalking, centerOmbreImage);
+        SetImageToTalkingState(centerRightImageComponent, dialogue.isCenterRightImageTalking, centerRightOmbreImage);
+        SetImageToTalkingState(rightImageComponent, dialogue.isRightImageTalking, rightOmbreImage);
 
         responseButton1.gameObject.SetActive(false);
         responseButton2.gameObject.SetActive(false);
@@ -240,25 +253,57 @@ public class DialogueManagerForS3 : MonoBehaviour
     }
 
     // Coroutine to type out the sentence letter by letter
-    IEnumerator TypeSentence(string sentence)
+    private IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
         isTyping = true;
+        fullText = sentence;
 
-        foreach (char letter in sentence.ToCharArray())
+        // Process the text to extract tags
+        string processedText = "";
+        int index = 0;
+        while (index < fullText.Length)
         {
-            dialogueText.text += letter;
+            if (fullText[index] == '<')
+            {
+                int endIndex = fullText.IndexOf('>', index);
+                if (endIndex != -1)
+                {
+                    string tag = fullText.Substring(index, endIndex - index + 1);
+                    tagsQueue.Enqueue(tag);
+                    processedText += tag;
+                    index = endIndex + 1;
+                    continue;
+                }
+            }
+            processedText += fullText[index];
+            index++;
+        }
+
+        // Display the text character by character, handling tags
+        index = 0;
+        while (index < processedText.Length)
+        {
+            if (processedText[index] == '<')
+            {
+                int endIndex = processedText.IndexOf('>', index);
+                if (endIndex != -1)
+                {
+                    string tag = processedText.Substring(index, endIndex - index + 1);
+                    dialogueText.text += tag;
+                    index = endIndex + 1;
+                    continue;
+                }
+            }
+            dialogueText.text += processedText[index];
+            index++;
             yield return new WaitForSeconds(0.01f);
             Canvas.ForceUpdateCanvases();
-            scrollRect.verticalNormalizedPosition = 0f; // Auto scroll to the bottom
+            scrollRect.verticalNormalizedPosition = 0f;
         }
 
         isTyping = false;
-
-        if (currentDialogue.nextDialogueID != -1)
-        {
-            EnableNextButton();
-        }
+        EnableNextButton();
     }
 
     void GenerateResponseButtons(int[] responseIDs)
@@ -285,7 +330,26 @@ public class DialogueManagerForS3 : MonoBehaviour
 
                 // Set the speaking character image to the talking state
                 bool isTalking = true;
-                SetImageToTalkingState(response.speakingCharacterImage, isTalking);
+                if (response.speakingCharacterImage == leftImageComponent)
+                {
+                    SetImageToTalkingState(response.speakingCharacterImage, isTalking, leftOmbreImage);
+                }
+                else if (response.speakingCharacterImage == centerLeftImageComponent)
+                {
+                    SetImageToTalkingState(response.speakingCharacterImage, isTalking, centerLeftOmbreImage);
+                }
+                else if (response.speakingCharacterImage == centerImageComponent)
+                {
+                    SetImageToTalkingState(response.speakingCharacterImage, isTalking, centerOmbreImage);
+                }
+                else if (response.speakingCharacterImage == centerRightImageComponent)
+                {
+                    SetImageToTalkingState(response.speakingCharacterImage, isTalking, centerRightOmbreImage);
+                }
+                else if (response.speakingCharacterImage == rightImageComponent)
+                {
+                    SetImageToTalkingState(response.speakingCharacterImage, isTalking, rightOmbreImage);
+                }
             }
             else
             {
@@ -489,7 +553,7 @@ public class DialogueManagerForS3 : MonoBehaviour
     }
 
     // Method to set an image to talking state
-    private void SetImageToTalkingState(Image image, bool isTalking)
+    private void SetImageToTalkingState(Image image, bool isTalking, Image ombreImage)
     {
         if (image != null)
         {
@@ -500,11 +564,13 @@ public class DialogueManagerForS3 : MonoBehaviour
                 {
                     animator.SetBool("isTalking", true);
                     animator.CrossFade("Talking", 0.25f);
+                    StartCoroutine(FadeInOmbre(ombreImage));
                 }
                 else
                 {
                     animator.SetBool("isTalking", false);
                     animator.CrossFade("Idle", 0.25f);
+                    ombreImage.gameObject.SetActive(false); // Hide ombre when not talking
                 }
             }
             else
@@ -515,6 +581,31 @@ public class DialogueManagerForS3 : MonoBehaviour
         else
         {
             Debug.LogError("Speaking character image is not assigned.");
+        }
+    }
+
+    private IEnumerator FadeInOmbre(Image ombreImage)
+    {
+        if (ombreImage != null)
+        {
+            ombreImage.gameObject.SetActive(true);
+            Color color = ombreImage.color;
+            color.a = 0;
+            ombreImage.color = color;
+
+            float duration = 0.25f; // Duration of the fade-in effect
+            float elapsed = 0f;
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                color.a = Mathf.Clamp01(elapsed / duration);
+                ombreImage.color = color;
+                yield return null;
+            }
+
+            color.a = 1f;
+            ombreImage.color = color;
         }
     }
 
