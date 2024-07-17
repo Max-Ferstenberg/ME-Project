@@ -46,15 +46,11 @@ public class DialogueManagerForS3 : MonoBehaviour
 
     // Fade Properties
     public float fadeDuration = 1.0f; // Duration for fade effects
-    private bool fadeOutBackground = false; // Flag for fading out background
-    private bool fadeInBackground = false; // Flag for fading in background
 
     // Internal State
     private DialogueForS3 currentDialogue; // Current dialogue being displayed
     private Coroutine typeSentenceCoroutine; // Coroutine for typing effect
     private bool isTransitioning = false; // Flag for transition state
-    private bool isInitialized = false; // Flag for initialization state
-    private bool isSkippingText = false; // Flag for skipping text
     private bool isTutorialClosed = false;
 
     // Response Tracking
@@ -68,14 +64,25 @@ public class DialogueManagerForS3 : MonoBehaviour
     private Vector3 rightImageInitialPosition;
 
     // Method to add event triggers to buttons
-    private void AddEventTrigger(EventTrigger trigger, EventTriggerType eventType, UnityEngine.Events.UnityAction<BaseEventData> action) {
+    private void AddEventTrigger(EventTrigger trigger, EventTriggerType eventType, UnityEngine.Events.UnityAction<BaseEventData> action)
+    {
         EventTrigger.Entry entry = new EventTrigger.Entry { eventID = eventType };
         entry.callback.AddListener(action);
         trigger.triggers.Add(entry);
     }
 
+    private void Awake()
+    {
+        leftImageInitialPosition = leftImageComponent.rectTransform.localPosition;
+        centerLeftImageInitialPosition = centerLeftImageComponent.rectTransform.localPosition;
+        centerImageInitialPosition = centerImageComponent.rectTransform.localPosition;
+        centerRightImageInitialPosition = centerRightImageComponent.rectTransform.localPosition;
+        rightImageInitialPosition = rightImageComponent.rectTransform.localPosition;
+    }
+
     // Initialization on start
-    void Start() {
+    async void Start()
+    {
         // Store initial positions of image components
         leftImageInitialPosition = leftImageComponent.rectTransform.localPosition;
         centerLeftImageInitialPosition = centerLeftImageComponent.rectTransform.localPosition;
@@ -83,14 +90,14 @@ public class DialogueManagerForS3 : MonoBehaviour
         centerRightImageInitialPosition = centerRightImageComponent.rectTransform.localPosition;
         rightImageInitialPosition = rightImageComponent.rectTransform.localPosition;
 
-        // Enable image components
-        leftImageComponent.gameObject.SetActive(true);
-        centerLeftImageComponent.gameObject.SetActive(true);
-        centerImageComponent.gameObject.SetActive(true);
-        centerRightImageComponent.gameObject.SetActive(true);
-        rightImageComponent.gameObject.SetActive(true);
+        // Disable image components
+        leftImageComponent.gameObject.SetActive(false);
+        centerLeftImageComponent.gameObject.SetActive(false);
+        centerImageComponent.gameObject.SetActive(false);
+        centerRightImageComponent.gameObject.SetActive(false);
+        rightImageComponent.gameObject.SetActive(false);
+        responseContainer.gameObject.SetActive(false);
         tutorialPanel.SetActive(false);
-
 
         // Set up button listeners
         nextButton.onClick.RemoveAllListeners();
@@ -98,19 +105,53 @@ public class DialogueManagerForS3 : MonoBehaviour
         nextButton.onClick.AddListener(ProceedToNextDialogue);
         skipButton.onClick.AddListener(OnSkipButtonClicked);
 
-        StartDialogueById(7569); // Start the dialogue sequence
+        if (SceneManager.GetActiveScene().name == "Scenario1")
+        {
+            ShowTutorialPanel();
+            StartCoroutine(CloseTutorialPanelAndStartDialogue());
+        }
+        else
+        {
+            StartDialogueById(7569);
+        }
 
         Canvas.ForceUpdateCanvases();
         scrollRect.verticalNormalizedPosition = 1f;
     }
 
-    //Tutorial Panel Functions
-    public void CloseTutorialPanel(){
+    private IEnumerator CloseTutorialPanelAndStartDialogue()
+    {
+        yield return new WaitUntil(() => isTutorialClosed);
+        leftImageComponent.gameObject.SetActive(true);
+        centerLeftImageComponent.gameObject.SetActive(true);
+        centerImageComponent.gameObject.SetActive(true);
+        centerRightImageComponent.gameObject.SetActive(true);
+        rightImageComponent.gameObject.SetActive(true);
+        responseContainer.gameObject.SetActive(true);
+        StartDialogueById(7569);
+    }
+
+    public void StartDialogueById(int dialogueId)
+    {
+        DialogueForS3 dialogueToStart = dialogueDatabase.GetDialogueById(dialogueId);
+        if (dialogueToStart != null)
+        {
+            DisplayDialogue(dialogueToStart);
+        }
+        else
+        {
+            Debug.LogError("No dialogue found with ID: " + dialogueId);
+        }
+    }
+
+    public void CloseTutorialPanel()
+    {
         isTutorialClosed = true;
         tutorialPanel.SetActive(false);
     }
 
-    public void ShowTutorialPanel() {
+    public void ShowTutorialPanel()
+    {
         isTutorialClosed = false;
         tutorialPanel.SetActive(true);
         SceneSettingsManager sceneSettingsManager = FindObjectOfType<SceneSettingsManager>();
@@ -119,35 +160,37 @@ public class DialogueManagerForS3 : MonoBehaviour
         closeTutorialButton.onClick.AddListener(CloseTutorialPanel);
     }
 
-    public void StartDialogueById(int dialogueId) {
-        DialogueForS3 dialogueToStart = dialogueDatabase.GetDialogueById(dialogueId);
-        if (dialogueToStart != null) {
-            DisplayDialogue(dialogueToStart);
-        } else {
-            Debug.LogError("No dialogue found with ID: " + dialogueId);
-        }
-    }
-
-    private void ProceedToNextDialogue() {
+    private void ProceedToNextDialogue()
+    {
         if (isTyping) return;
         TransitionAllToIdle();
         StartCoroutine(DisableButtonTemporarily());
 
-        if (currentDialogue.hasResponses) {
+        if (currentDialogue.hasResponses)
+        {
             GenerateResponseButtons(currentDialogue.responseIDs);
-        } else if (currentDialogue.nextDialogueID != -1) {
+        }
+        else if (currentDialogue.nextDialogueID != -1)
+        {
             StartDialogueById(currentDialogue.nextDialogueID);
-        } else if(currentDialogue.isEndDialogue){
-            EndScenario(); 
-        } else{
+        }
+        else if (currentDialogue.isEndDialogue)
+        {
+            EndScenario();
+        }
+        else
+        {
             Debug.Log("No more dialogues");
         }
 
     }
 
-    public void OnSkipButtonClicked() {
-        if (isTyping) {
-            if (typeSentenceCoroutine != null) {
+    public void OnSkipButtonClicked()
+    {
+        if (isTyping)
+        {
+            if (typeSentenceCoroutine != null)
+            {
                 StopCoroutine(typeSentenceCoroutine);
                 dialogueText.text = currentDialogue.text;
                 typeSentenceCoroutine = null;
@@ -162,7 +205,6 @@ public class DialogueManagerForS3 : MonoBehaviour
     public void DisplayDialogue(DialogueForS3 dialogue)
     {
         currentDialogue = dialogue;
-
         // If there is an ongoing coroutine for typing the sentence, stop it
         if (typeSentenceCoroutine != null)
         {
@@ -176,45 +218,51 @@ public class DialogueManagerForS3 : MonoBehaviour
         {
             UpdateImageStates(dialogue);
             TriggerFadeInAnimations(dialogue);
-            if (fadeInBackground && dialogue.backgroundImage != null)
+            TriggerFadeOutAnimations(dialogue);
+            if (dialogue.fadeInBackground && dialogue.backgroundImage != null)
             {
                 StartCoroutine(FadeInBackground(dialogue.backgroundImage));
             }
         }
+
+        // Set the speaking character image to the talking state
+        SetImageToTalkingState(leftImageComponent, dialogue.isLeftImageTalking);
+        SetImageToTalkingState(centerLeftImageComponent, dialogue.isCenterLeftImageTalking);
+        SetImageToTalkingState(centerImageComponent, dialogue.isCenterImageTalking);
+        SetImageToTalkingState(centerRightImageComponent, dialogue.isCenterRightImageTalking);
+        SetImageToTalkingState(rightImageComponent, dialogue.isRightImageTalking);
+
         responseButton1.gameObject.SetActive(false);
         responseButton2.gameObject.SetActive(false);
+
+        Canvas.ForceUpdateCanvases();
+        scrollRect.verticalNormalizedPosition = 1f; // Reset scroll position to the top
     }
 
-
     // Coroutine to type out the sentence letter by letter
-    IEnumerator TypeSentence(string sentence) {
+    IEnumerator TypeSentence(string sentence)
+    {
         dialogueText.text = "";
         isTyping = true;
 
-        foreach (char letter in sentence.ToCharArray()) {
+        foreach (char letter in sentence.ToCharArray())
+        {
             dialogueText.text += letter;
             yield return new WaitForSeconds(0.01f);
+            Canvas.ForceUpdateCanvases();
+            scrollRect.verticalNormalizedPosition = 0f; // Auto scroll to the bottom
         }
 
         isTyping = false;
 
-        if (currentDialogue.nextDialogueID != -1) {
+        if (currentDialogue.nextDialogueID != -1)
+        {
             EnableNextButton();
         }
     }
 
-    void SetScrollbarToTop()
+    void GenerateResponseButtons(int[] responseIDs)
     {
-        // Force update to ensure layout is correct before setting scroll position
-        Canvas.ForceUpdateCanvases();
-        scrollRect.verticalNormalizedPosition = 1f;
-
-        // Manually set content position
-        RectTransform contentRectTransform = scrollRect.content;
-        contentRectTransform.anchoredPosition = new Vector2(contentRectTransform.anchoredPosition.x, 0);
-    }
-
-    void GenerateResponseButtons(int[] responseIDs) {
         SetupResponseButton(responseButton1, responseIDs[0]);
         SetupResponseButton(responseButton2, responseIDs[1]);
     }
@@ -222,10 +270,13 @@ public class DialogueManagerForS3 : MonoBehaviour
     // Method to set up response button
     void SetupResponseButton(Button button, int responseID)
     {
+        responseContainer.gameObject.SetActive(true);
         Response response = dialogueDatabase.GetResponseById(responseID);
-        if (response != null) {
+        if (response != null)
+        {
             DialogueResponseButton responseButton = button.GetComponent<DialogueResponseButton>();
-            if (responseButton != null) {
+            if (responseButton != null)
+            {
                 responseButton.SetResponseText(response.text);
                 button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(() => ResponseButtonClicked(response));
@@ -233,7 +284,8 @@ public class DialogueManagerForS3 : MonoBehaviour
                 button.gameObject.SetActive(true);
 
                 // Set the speaking character image to the talking state
-                SetImageToTalkingState(response.speakingCharacterImage);
+                bool isTalking = true;
+                SetImageToTalkingState(response.speakingCharacterImage, isTalking);
             }
             else
             {
@@ -243,7 +295,8 @@ public class DialogueManagerForS3 : MonoBehaviour
     }
 
     // Method called when a response button is clicked
-    private void ResponseButtonClicked(Response response) {
+    private void ResponseButtonClicked(Response response)
+    {
         responseButton1.onClick.RemoveAllListeners();
         responseButton2.onClick.RemoveAllListeners();
 
@@ -256,16 +309,20 @@ public class DialogueManagerForS3 : MonoBehaviour
         if (response.nextDialogueID != -1)
         {
             StartDialogueById(response.nextDialogueID);
-        } else {
-            Debug.LogError("Invalid response dialogue ID");
+        }
+        else
+        {
+            Debug.Log("No more dialogues");
         }
     }
 
     // Method to track response selection
-    private void TrackResponseSelection(Response response) {
+    private void TrackResponseSelection(Response response)
+    {
         response.isSelected = true;
 
-        if (!responseCategoryCounts.ContainsKey(response.category)) {
+        if (!responseCategoryCounts.ContainsKey(response.category))
+        {
             responseCategoryCounts[response.category] = 0;
         }
 
@@ -273,7 +330,8 @@ public class DialogueManagerForS3 : MonoBehaviour
     }
 
     // Method to get the most selected category
-    public string GetMostSelectedCategory() {
+    public string GetMostSelectedCategory()
+    {
         string mostSelectedCategory = null;
         int highestCount = 0;
 
@@ -290,7 +348,8 @@ public class DialogueManagerForS3 : MonoBehaviour
     }
 
     // Method to end the scenario
-    private void EndScenario() {
+    private void EndScenario()
+    {
         foreach (var kvp in responseCategoryCounts)
         {
             Debug.Log($"Category {kvp.Key}: {kvp.Value} selections");
@@ -332,9 +391,11 @@ public class DialogueManagerForS3 : MonoBehaviour
         {
             imageComponent.sprite = image;
             imageComponent.gameObject.SetActive(true);
-            ResetAnimatorState(animator);
             animator.Play("Idle");
-            animator.SetBool("isTalking", isTalking);
+            if (isTalking)
+            {
+                animator.Play("Talking");
+            }
         }
         else
         {
@@ -342,72 +403,18 @@ public class DialogueManagerForS3 : MonoBehaviour
             imageComponent.color = new Color(0, 0, 0, 0);
             imageComponent.gameObject.SetActive(false);
         }
-
-        if (!isTalking && imageComponent.gameObject.activeSelf)
-        {
-            TriggerTalkingToIdleTransition(animator, 0.5f); // Smooth transition with a duration of 0.5 seconds
-        }
-    }
-
-    // Method to trigger transition from talking to idle
-    private void TriggerTalkingToIdleTransition(Animator animator, float transitionDuration)
-    {
-        animator.CrossFade("Idle", transitionDuration);
-    }
-
-    // Method to reset the animator state
-    private void ResetAnimatorState(Animator animator)
-    {
-        animator.SetBool("isTalking", false);
-        animator.SetBool("isFadingIn", false);
-        animator.SetBool("isFadingOut", false);
-    }
-
-    // Method to trigger fade out animations
-    private void TriggerFadeOutAnimations(DialogueForS3 dialogue)
-    {
-        TriggerFadeOut(leftImageAnimator, leftImageComponent, dialogue.shouldLeftImageFadeOut);
-        TriggerFadeOut(centerLeftImageAnimator, centerLeftImageComponent, dialogue.shouldCenterLeftImageFadeOut);
-        TriggerFadeOut(centerImageAnimator, centerImageComponent, dialogue.shouldCenterImageFadeOut);
-        TriggerFadeOut(centerRightImageAnimator, centerRightImageComponent, dialogue.shouldCenterRightImageFadeOut);
-        TriggerFadeOut(rightImageAnimator, rightImageComponent, dialogue.shouldRightImageFadeOut);
-    }
-
-    // Method to trigger fade out of an individual image component
-    private void TriggerFadeOut(Animator animator, Image imageComponent, bool shouldFadeOut)
-    {
-        if (shouldFadeOut && imageComponent.gameObject.activeSelf)
-        {
-            StartCoroutine(TransitionToIdleAndFadeOut(animator, imageComponent));
-        }
     }
 
     // Method to trigger fade in animations
-    private void TriggerFadeInAnimations(DialogueForS3 dialogue)
+    public void TriggerFadeInAnimations(DialogueForS3 dialogue)
     {
-        if (dialogue.isLeftImageVisible && leftImageComponent.gameObject.activeSelf)
-        {
-            TriggerFadeIn(leftImageAnimator, leftImageComponent, dialogue.shouldLeftImageFadeIn, dialogue.isLeftImageVisible, dialogue.isLeftImageTalking, dialogue.isLeftImageMirrored);
-        }
-        if (dialogue.isCenterLeftImageVisible && centerLeftImageComponent.gameObject.activeSelf)
-        {
-            TriggerFadeIn(centerLeftImageAnimator, centerLeftImageComponent, dialogue.shouldCenterLeftImageFadeIn, dialogue.isCenterLeftImageVisible, dialogue.isCenterLeftImageTalking, dialogue.isCenterLeftImageMirrored);
-        }
-        if (dialogue.isCenterImageVisible && centerImageComponent.gameObject.activeSelf)
-        {
-            TriggerFadeIn(centerImageAnimator, centerImageComponent, dialogue.shouldCenterImageFadeIn, dialogue.isCenterImageVisible, dialogue.isCenterImageTalking, dialogue.isCenterImageMirrored);
-        }
-        if (dialogue.isCenterRightImageVisible && centerRightImageComponent.gameObject.activeSelf)
-        {
-            TriggerFadeIn(centerRightImageAnimator, centerRightImageComponent, dialogue.shouldCenterRightImageFadeIn, dialogue.isCenterRightImageVisible, dialogue.isCenterRightImageTalking, dialogue.isCenterRightImageMirrored);
-        }
-        if (dialogue.isRightImageVisible && rightImageComponent.gameObject.activeSelf)
-        {
-            TriggerFadeIn(rightImageAnimator, rightImageComponent, dialogue.shouldRightImageFadeIn, dialogue.isRightImageVisible, dialogue.isRightImageTalking, dialogue.isRightImageMirrored);
-        }
+        TriggerFadeIn(leftImageAnimator, leftImageComponent, dialogue.shouldLeftImageFadeIn, dialogue.isLeftImageVisible, dialogue.isLeftImageTalking, dialogue.isLeftImageMirrored);
+        TriggerFadeIn(centerLeftImageAnimator, centerLeftImageComponent, dialogue.shouldCenterLeftImageFadeIn, dialogue.isCenterLeftImageVisible, dialogue.isCenterLeftImageTalking, dialogue.isCenterLeftImageMirrored);
+        TriggerFadeIn(centerImageAnimator, centerImageComponent, dialogue.shouldCenterImageFadeIn, dialogue.isCenterImageVisible, dialogue.isCenterImageTalking, dialogue.isCenterImageMirrored);
+        TriggerFadeIn(centerRightImageAnimator, centerRightImageComponent, dialogue.shouldCenterRightImageFadeIn, dialogue.isCenterRightImageVisible, dialogue.isCenterRightImageTalking, dialogue.isCenterRightImageMirrored);
+        TriggerFadeIn(rightImageAnimator, rightImageComponent, dialogue.shouldRightImageFadeIn, dialogue.isRightImageVisible, dialogue.isRightImageTalking, dialogue.isRightImageMirrored);
     }
 
-    // Method to trigger fade in of an individual image component
     private void TriggerFadeIn(Animator animator, Image imageComponent, bool shouldFadeIn, bool isVisible, bool isTalking, bool isMirrored)
     {
         if (shouldFadeIn && isVisible && imageComponent.gameObject.activeSelf)
@@ -420,53 +427,85 @@ public class DialogueManagerForS3 : MonoBehaviour
     // Coroutine to handle fade in completion
     private IEnumerator HandleFadeInCompletion(Animator animator, bool isTalking, bool isMirrored, Image imageComponent)
     {
-        yield return new WaitForSeconds(1.0f); // Adjust this duration to match your FadeIn animation duration
+        yield return new WaitForSeconds(0.15f);
         if (imageComponent.gameObject.activeSelf)
         {
             animator.Play("Idle");
-            yield return new WaitForSeconds(0.1f);
-            animator.SetBool("isTalking", isTalking);
             imageComponent.rectTransform.localScale = new Vector3(isMirrored ? -1 : 1, 1, 1);
 
             float elapsedTime = 0f;
-            float fadeDuration = 0.5f; // Adjust this duration as needed
+            float fadeDuration = 0.5f;
             while (elapsedTime < fadeDuration)
             {
                 imageComponent.color = new Color(1, 1, 1, Mathf.Lerp(0, 1, elapsedTime / fadeDuration));
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
-            imageComponent.color = new Color(1, 1, 1, 1); // Ensure alpha is fully opaque
+            imageComponent.color = new Color(1, 1, 1, 1);
 
-            if (!isTalking)
+            if (isTalking)
             {
-                TriggerTalkingToIdleTransition(animator, 0.5f);
+                animator.Play("Talking");
             }
         }
     }
 
-    // Coroutine to handle transition to idle and fade out
-    private IEnumerator TransitionToIdleAndFadeOut(Animator animator, Image imageComponent)
+    public void TriggerFadeOutAnimations(DialogueForS3 dialogue)
     {
-        animator.Play("Idle");
-        yield return new WaitForSeconds(0.1f);
-        animator.Play("FadeOut");
-        yield return new WaitForSeconds(1.0f);
-        animator.SetBool("isFadingOut", false);
+        TriggerFadeOut(leftImageAnimator, leftImageComponent, dialogue.shouldLeftImageFadeOut, dialogue.isLeftImageVisible);
+        TriggerFadeOut(centerLeftImageAnimator, centerLeftImageComponent, dialogue.shouldCenterLeftImageFadeOut, dialogue.isCenterLeftImageVisible);
+        TriggerFadeOut(centerImageAnimator, centerImageComponent, dialogue.shouldCenterImageFadeOut, dialogue.isCenterImageVisible);
+        TriggerFadeOut(centerRightImageAnimator, centerRightImageComponent, dialogue.shouldCenterRightImageFadeOut, dialogue.isCenterRightImageVisible);
+        TriggerFadeOut(rightImageAnimator, rightImageComponent, dialogue.shouldRightImageFadeOut, dialogue.isRightImageVisible);
+    }
 
-        ResetImagePosition(imageComponent);
+    private void TriggerFadeOut(Animator animator, Image imageComponent, bool shouldFadeOut, bool isVisible)
+    {
+        if (shouldFadeOut && isVisible && imageComponent.gameObject.activeSelf)
+        {
+            animator.Play("FadeOut");
+            StartCoroutine(HandleFadeOutCompletion(animator, imageComponent));
+        }
+    }
+
+    private IEnumerator HandleFadeOutCompletion(Animator animator, Image imageComponent)
+    {
+        yield return new WaitForSeconds(0.15f);
+        if (imageComponent.gameObject.activeSelf)
+        {
+            animator.Play("Idle");
+
+            float elapsedTime = 0f;
+            float fadeDuration = 0.5f;
+            while (elapsedTime < fadeDuration)
+            {
+                imageComponent.color = new Color(1, 1, 1, Mathf.Lerp(1, 0, elapsedTime / fadeDuration));
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+            imageComponent.color = new Color(1, 1, 1, 0);
+            imageComponent.gameObject.SetActive(false);
+        }
     }
 
     // Method to set an image to talking state
-    private void SetImageToTalkingState(Image image)
+    private void SetImageToTalkingState(Image image, bool isTalking)
     {
         if (image != null)
         {
             Animator animator = image.GetComponent<Animator>();
             if (animator != null)
             {
-                ResetAnimatorState(animator);
-                animator.SetBool("isTalking", true);
+                if (isTalking)
+                {
+                    animator.SetBool("isTalking", true);
+                    animator.CrossFade("Talking", 0.25f);
+                }
+                else
+                {
+                    animator.SetBool("isTalking", false);
+                    animator.CrossFade("Idle", 0.25f);
+                }
             }
             else
             {
@@ -479,30 +518,29 @@ public class DialogueManagerForS3 : MonoBehaviour
         }
     }
 
-    // Coroutine to fade out background
-    private IEnumerator FadeOutBackground()
-    {
-        Color originalColor = backgroundImageComponent.color;
-        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
-        {
-            float normalizedTime = t / fadeDuration;
-            backgroundImageComponent.color = Color.Lerp(originalColor, Color.black, normalizedTime);
-            yield return null;
-        }
-        backgroundImageComponent.color = Color.black;
-    }
-
     // Coroutine to fade in background
     private IEnumerator FadeInBackground(Sprite newBackground)
     {
-        backgroundImageComponent.sprite = newBackground;
-        backgroundImageComponent.color = new Color(0, 0, 0, 0);
+        // Fade out current background to black
+        Color initialColor = backgroundImageComponent.color;
+        Color blackColor = Color.black;
+        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
+        {
+            float normalizedTime = t / fadeDuration;
+            backgroundImageComponent.color = Color.Lerp(initialColor, blackColor, normalizedTime);
+            yield return null;
+        }
+        backgroundImageComponent.color = blackColor;
 
+        // Set the new background
+        backgroundImageComponent.sprite = newBackground;
+
+        // Fade in new background from black
         Color targetColor = Color.white;
         for (float t = 0; t < fadeDuration; t += Time.deltaTime)
         {
             float normalizedTime = t / fadeDuration;
-            backgroundImageComponent.color = Color.Lerp(new Color(0, 0, 0, 0), targetColor, normalizedTime);
+            backgroundImageComponent.color = Color.Lerp(blackColor, targetColor, normalizedTime);
             yield return null;
         }
         backgroundImageComponent.color = targetColor;
@@ -529,7 +567,8 @@ public class DialogueManagerForS3 : MonoBehaviour
     }
 
     // Method to configure hover effect for a button
-    void ConfigureButtonHoverEffect(Button button) {
+    void ConfigureButtonHoverEffect(Button button)
+    {
         EventTrigger trigger = button.GetComponent<EventTrigger>();
         if (trigger == null)
         {
@@ -565,53 +604,21 @@ public class DialogueManagerForS3 : MonoBehaviour
     }
 
     // Method to transition all images to idle state
-    private void TransitionAllToIdle()
+    public void TransitionAllToIdle()
     {
-        if (leftImageComponent.gameObject.activeSelf)
-        {
-            leftImageAnimator.SetBool("isTalking", false);
-            leftImageAnimator.Play("Idle");
-        }
-        if (centerLeftImageComponent.gameObject.activeSelf)
-        {
-            centerLeftImageAnimator.SetBool("isTalking", false);
-            centerLeftImageAnimator.Play("Idle");
-        }
-        if (centerImageComponent.gameObject.activeSelf)
-        {
-            centerImageAnimator.SetBool("isTalking", false);
-            centerImageAnimator.Play("Idle");
-        }
-        if (centerRightImageComponent.gameObject.activeSelf)
-        {
-            centerRightImageAnimator.SetBool("isTalking", false);
-            centerRightImageAnimator.Play("Idle");
-        }
-        if (rightImageComponent.gameObject.activeSelf)
-        {
-            rightImageAnimator.SetBool("isTalking", false);
-            rightImageAnimator.Play("Idle");
-        }
+        TransitionToIdle(leftImageAnimator, leftImageComponent);
+        TransitionToIdle(centerLeftImageAnimator, centerLeftImageComponent);
+        TransitionToIdle(centerImageAnimator, centerImageComponent);
+        TransitionToIdle(centerRightImageAnimator, centerRightImageComponent);
+        TransitionToIdle(rightImageAnimator, rightImageComponent);
     }
 
-    // Debug tools
-
-    // Method to simulate responses for testing
-    public void SimulateResponses(int countA, int countB)
+    private void TransitionToIdle(Animator animator, Image imageComponent)
     {
-        responseCategoryCounts["A"] = 0;
-        responseCategoryCounts["B"] = 0;
-
-        responseCategoryCounts["A"] += countA;
-        responseCategoryCounts["B"] += countB;
-
-        Debug.Log($"Simulated {countA} responses for category A and {countB} responses for category B");
-    }
-
-    // Method to trigger end of scenario for debugging
-    public void TriggerEndScenarioDebug()
-    {
-        EndScenario();
+        if (imageComponent.gameObject.activeSelf)
+        {
+            animator.Play("Idle");
+        }
     }
 
     // Method to reset image positions to initial positions
@@ -639,4 +646,3 @@ public class DialogueManagerForS3 : MonoBehaviour
         }
     }
 }
-
